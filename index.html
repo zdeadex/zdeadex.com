@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Adrien Faguet — Zdeadex</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+  <div class="glow" aria-hidden="true"></div>
+
+  <main class="container">
+    <!-- Hero Section (Center) -->
+    <section class="hero">
+      <div class="hero__profile animate-reveal">
+        <div class="photo-container">
+          <img src="me.jpg" alt="Adrien Faguet" class="photo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+          <div class="photo-placeholder">AF</div>
+        </div>
+        <h1 class="hero__name">Adrien Faguet</h1>
+        <p class="hero__handle">Zdeadex</p>
+        <p class="hero__tagline">Operation, Product, Engineering</p>
+      </div>
+    </section>
+
+    <!-- Content Grid (Lower than Center) -->
+    <div class="content-grid">
+      <!-- Left: About -->
+      <aside class="content-panel animate-reveal-delayed">
+        <div class="panel-header">
+          <span class="panel-label">Background</span>
+        </div>
+        <div class="about-text">
+          <p class="highlight">
+            Hi, I'm Adrien, better known as <strong>Zdeadex</strong>—a retired professional League of Legends player with a background in Engineering and Economics.
+          </p>
+          <p>
+            I've spent the last few years building products and leading teams to production-ready infrastructure in the crypto ecosystem (staking, DeFi, exchanges).
+          </p>
+          <p>
+            Experienced in scaling startups from 1 to 900+ people, fostering growth and engineering excellence.
+          </p>
+        </div>
+        <div class="panel-header">
+          <span class="panel-label">Side projects</span>
+        </div>
+        <div class="side-projects">
+          <a href="https://winnie.app" target="_blank" rel="noopener noreferrer" class="side-project">
+            <span class="side-project__name">Winnie</span>
+            <span class="side-project__desc">Earning mobile wallet</span>
+          </a>
+          <a href="https://winnieswap.com" target="_blank" rel="noopener noreferrer" class="side-project">
+            <span class="side-project__name">WinnieSwap</span>
+            <span class="side-project__desc">DeFi</span>
+          </a>
+          <a href="https://getmypump.com" target="_blank" rel="noopener noreferrer" class="side-project">
+            <span class="side-project__name">Mypump</span>
+            <span class="side-project__desc">Social mobile app</span>
+          </a>
+        </div>
+      </aside>
+
+      <!-- Right: Experience & Investments -->
+      <aside class="content-panel animate-reveal-delayed-more">
+        <div class="panel-header">
+          <span class="panel-label">Experience & Portfolio</span>
+        </div>
+        
+        <div class="experience-section">
+          <div class="project-list">
+            <a href="https://www.leagueoflegends.com" target="_blank" rel="noopener noreferrer" class="project-card">
+              <div class="project-card__logo" aria-hidden="true">
+                <img src="assets/logos/lol.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+                <span class="logo-initials">LoL</span>
+              </div>
+              <div class="project-card__info">
+                <span class="project-card__title">League of Legends</span>
+                <span class="project-card__role">Pro Player</span>
+              </div>
+            </a>
+            <a href="https://www.ledger.com" target="_blank" rel="noopener noreferrer" class="project-card">
+              <div class="project-card__logo" aria-hidden="true">
+                <img src="assets/logos/ledger.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+                <span class="logo-initials">L</span>
+              </div>
+              <div class="project-card__info">
+                <span class="project-card__title">Ledger</span>
+                <span class="project-card__role">Scale-up</span>
+              </div>
+            </a>
+            <a href="https://ctrl.xyz" target="_blank" rel="noopener noreferrer" class="project-card">
+              <div class="project-card__logo" aria-hidden="true">
+                <img src="assets/logos/ctrl.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+                <span class="logo-initials">Ctrl</span>
+              </div>
+              <div class="project-card__info">
+                <span class="project-card__title">Ctrl Wallet</span>
+                <span class="project-card__role">Product</span>
+              </div>
+            </a>
+            <a href="https://stakelab.zone" target="_blank" rel="noopener noreferrer" class="project-card">
+              <div class="project-card__logo" aria-hidden="true">
+                <img src="assets/logos/stakelab.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+                <span class="logo-initials">S</span>
+              </div>
+              <div class="project-card__info">
+                <span class="project-card__title">Stakelab</span>
+                <span class="project-card__role">Infrastructure</span>
+              </div>
+            </a>
+            <a href="https://junction.exchange" target="_blank" rel="noopener noreferrer" class="project-card">
+              <div class="project-card__logo" aria-hidden="true">
+                <img src="assets/logos/junction.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+                <span class="logo-initials">J</span>
+              </div>
+              <div class="project-card__info">
+                <span class="project-card__title">Junction</span>
+                <span class="project-card__role">DeFi / Exchanges</span>
+              </div>
+            </a>
+            <a href="https://philidor.io" target="_blank" rel="noopener noreferrer" class="project-card">
+              <div class="project-card__logo" aria-hidden="true">
+                <img src="assets/logos/philidor.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+                <span class="logo-initials">P</span>
+              </div>
+              <div class="project-card__info">
+                <span class="project-card__title">Philidor</span>
+                <span class="project-card__role">Institutional DeFi</span>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="invest-section">
+          <p class="invest-tagline">Passionate about investing and helping teams grow from day one.</p>
+          <div class="invest-grid">
+            <a href="https://www.ledger.com" target="_blank" rel="noopener noreferrer" class="invest-pill">Ledger</a>
+            <a href="https://www.travala.com" target="_blank" rel="noopener noreferrer" class="invest-pill">Travala</a>
+            <a href="https://delicity.com" target="_blank" rel="noopener noreferrer" class="invest-pill">Delicity</a>
+            <a href="https://frachtis.com" target="_blank" rel="noopener noreferrer" class="invest-pill">Frachtis</a>
+            <a href="https://www.50partners.fr" target="_blank" rel="noopener noreferrer" class="invest-pill">50 Partners</a>
+            <a href="https://rain.fi" target="_blank" rel="noopener noreferrer" class="invest-pill invest-pill--acq">Rain.fi <span class="acq">(acq)</span></a>
+            <a href="https://skip.go" target="_blank" rel="noopener noreferrer" class="invest-pill invest-pill--acq">Skip <span class="acq">(acq)</span></a>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
