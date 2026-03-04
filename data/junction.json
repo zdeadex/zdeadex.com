@@ -1,0 +1,31 @@
+{
+  "name": "Junction",
+  "role": "DeFi / Exchanges",
+  "url": "https://junction.exchange",
+  "description": "DeFi exchange platform: swap, bridge, perps API, referral system.",
+  "languages": [
+    "TypeScript",
+    "JavaScript",
+    "React",
+    "Vite",
+    "Node.js"
+  ],
+  "implementations": [
+    "Perps API (Express + TypeScript)",
+    "Front-end (JunctionCode: gateway, junction-front-end)",
+    "Assets, balances, fees, routing, chains registry, CoinGecko proxy",
+    "Referral & invite system"
+  ],
+  "thirdParty": [
+    "Express",
+    "Viem",
+    "CoinGecko",
+    "Hyperliquid",
+    "OpenOcean",
+    "CCTP"
+  ],
+  "repos": [
+    "JunctionCode (multi-service)",
+    "perps-api"
+  ]
+}

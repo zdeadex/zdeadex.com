@@ -1,0 +1,35 @@
+{
+  "name": "Stakelab",
+  "role": "Infrastructure",
+  "url": "https://stakelab.zone",
+  "description": "Staking platform: frontend (React + Vite) and backend (AdonisJS), multi-chain.",
+  "languages": [
+    "TypeScript",
+    "React",
+    "Vite",
+    "Node.js",
+    "AdonisJS"
+  ],
+  "implementations": [
+    "Monorepo: frontend (Vite + React) + backend (AdonisJS)",
+    "WebSocket + REST API",
+    "Multi-chain: Cosmos (CosmJS, Cosmos Kit), Starknet, EVM (Wagmi/Viem)",
+    "Lido staking vault CLI",
+    "CoinGecko proxy for prices"
+  ],
+  "thirdParty": [
+    "AdonisJS",
+    "MySQL",
+    "Redis",
+    "CosmJS",
+    "Starknet.js",
+    "Viem",
+    "Wagmi",
+    "CoinGecko",
+    "Socket.io"
+  ],
+  "repos": [
+    "Website-StakeLab",
+    "stakelab (assets/docs)"
+  ]
+}

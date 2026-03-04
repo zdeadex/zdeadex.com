@@ -1,0 +1,33 @@
+{
+  "name": "Philidor",
+  "role": "Institutional DeFi",
+  "url": "https://philidor.io",
+  "description": "Institutional-grade DeFi vault risk assessment and curation platform.",
+  "languages": [
+    "TypeScript",
+    "React",
+    "Next.js",
+    "Node.js",
+    "Hono"
+  ],
+  "implementations": [
+    "Monorepo (Turbo): landing, app, analytics, API, MCP, indexer",
+    "REST API (Hono) — single backend for all clients",
+    "On-chain indexer (sync, events, risk scores)",
+    "MCP server for AI agents (vault search, risk breakdown)",
+    "PostgreSQL (TimescaleDB), Redis (rate limit + cache)",
+    "Vercel (frontends + MCP), VPS (API + indexer)"
+  ],
+  "thirdParty": [
+    "Vercel",
+    "PostgreSQL / TimescaleDB",
+    "Redis",
+    "Viem",
+    "Enso",
+    "Resend",
+    "OpenAPI/Swagger"
+  ],
+  "repos": [
+    "philidor-io (monorepo)"
+  ]
+}

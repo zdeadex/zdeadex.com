@@ -1,0 +1,254 @@
+/* Experience detail pages — Modern redesign */
+
+.experience-page {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: var(--space);
+  padding-top: 2rem;
+  padding-bottom: 6rem;
+}
+
+/* Back link */
+.experience-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-bottom: 2.5rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 100px;
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  transition: all 0.3s var(--ease-out);
+}
+
+.experience-back:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+  background: var(--accent-soft);
+  transform: translateX(-4px);
+}
+
+/* Header */
+.experience-header {
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.experience-header-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.75rem;
+}
+
+.experience-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2.5rem, 6vw, 3.5rem);
+  font-weight: 400;
+  margin: 0;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.experience-status {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.3rem 0.75rem;
+  border-radius: 100px;
+  line-height: 1;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.experience-status--selling {
+  background: rgba(168, 85, 247, 0.1);
+  color: #a855f7;
+  border: 1px solid rgba(168, 85, 247, 0.2);
+}
+
+.experience-status--live {
+  background: rgba(34, 197, 94, 0.1);
+  color: #22c55e;
+  border: 1px solid rgba(34, 197, 94, 0.2);
+}
+
+.experience-status--left {
+  background: rgba(161, 161, 170, 0.12);
+  color: #a1a1aa;
+  border: 1px solid rgba(161, 161, 170, 0.2);
+}
+
+.experience-role {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  margin: 0 0 0.75rem;
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+.experience-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.85rem;
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+  transition: opacity 0.2s;
+}
+
+.experience-link:hover {
+  opacity: 0.8;
+}
+
+.experience-link::after {
+  content: "↗";
+  font-size: 0.75rem;
+}
+
+/* Description */
+.experience-desc {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 2.5rem;
+  font-weight: 300;
+}
+
+/* Section cards */
+.recap-section {
+  margin-bottom: 1.5rem;
+  padding: 1.5rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  transition: border-color 0.3s var(--ease-out);
+}
+
+.recap-section:hover {
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+.recap-section h2 {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin: 0 0 1rem;
+  color: var(--text-muted);
+}
+
+/* Implementation list */
+.recap-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: var(--text);
+  line-height: 1.7;
+}
+
+.recap-list li {
+  margin-bottom: 0.5rem;
+  padding-left: 1.25rem;
+  position: relative;
+  font-size: 0.95rem;
+  font-weight: 300;
+}
+
+.recap-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.65em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  opacity: 0.6;
+}
+
+.recap-list li:last-child {
+  margin-bottom: 0;
+}
+
+/* Tech pills */
+.recap-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.recap-pill {
+  display: inline-block;
+  padding: 0.4rem 0.9rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border);
+  border-radius: 100px;
+  font-size: 0.8rem;
+  color: var(--text);
+  font-weight: 400;
+  transition: all 0.2s var(--ease-out);
+}
+
+.recap-pill:hover {
+  background: var(--accent-soft);
+  border-color: rgba(34, 197, 94, 0.3);
+  color: var(--accent);
+}
+
+/* Sections grid for pills (side by side on desktop) */
+.recap-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+@media (max-width: 600px) {
+  .recap-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Animations */
+.experience-page .experience-back,
+.experience-page .experience-header,
+.experience-page .experience-desc,
+.experience-page .recap-section {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: exp-reveal 0.6s var(--ease-out) forwards;
+}
+
+.experience-page .experience-header { animation-delay: 0.05s; }
+.experience-page .experience-desc { animation-delay: 0.1s; }
+.experience-page .recap-section:nth-child(1) { animation-delay: 0.15s; }
+.experience-page .recap-section:nth-child(2) { animation-delay: 0.2s; }
+.experience-page .recap-section:nth-child(3) { animation-delay: 0.25s; }
+
+@keyframes exp-reveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .experience-page .experience-back,
+  .experience-page .experience-header,
+  .experience-page .experience-desc,
+  .experience-page .recap-section {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
