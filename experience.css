@@ -61,7 +61,7 @@
 }
 
 .ext {
-  color: var(--ink);
+  color: var(--accent);
   font-size: 0.92rem;
   text-underline-offset: 3px;
 }
@@ -137,8 +137,8 @@
 .callout {
   padding: 0.95rem 1rem;
   border-radius: 12px;
-  border: 1px dashed rgba(122, 96, 40, 0.45);
-  background: #f8f3e8;
+  border: 1px dashed rgba(34, 197, 94, 0.35);
+  background: rgba(34, 197, 94, 0.06);
 }
 
 .callout__label {
@@ -147,12 +147,12 @@
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: #6a4e16;
+  color: var(--accent);
 }
 
 .callout p:last-child {
   margin: 0;
-  color: #3f3422;
+  color: var(--body);
   font-size: 0.95rem;
 }
 
@@ -170,7 +170,7 @@
   height: auto;
   border-radius: 12px;
   border: 1px solid var(--line);
-  background: #fff;
+  background: #101012;
   box-shadow: var(--shadow);
   transition: border-color 0.2s var(--ease);
 }
@@ -195,8 +195,8 @@
     -45deg,
     transparent,
     transparent 10px,
-    rgba(26, 26, 24, 0.025) 10px,
-    rgba(26, 26, 24, 0.025) 20px
+    rgba(255, 255, 255, 0.03) 10px,
+    rgba(255, 255, 255, 0.03) 20px
   );
 }
 

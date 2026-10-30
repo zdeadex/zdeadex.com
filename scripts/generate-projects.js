@@ -48,15 +48,19 @@ function head(title, description, prefix, detail) {
 </head>`;
 }
 
+function atmosphere() {
+  return `<div class="noise" aria-hidden="true"></div>
+  <div class="glow" aria-hidden="true"></div>`;
+}
+
 function nav(prefix, homeHref) {
+  const work = prefix ? `${prefix}index.html#work` : '#work';
   return `<a class="skip" href="#content">Skip to content</a>
   <header class="nav">
     <div class="nav__inner">
       <a class="nav__brand" href="${homeHref}">Adrien Faguet</a>
       <nav class="nav__links" aria-label="Sections">
-        <a href="${prefix}index.html#experience">Experience</a>
-        <a href="${prefix}index.html#projects">Projects</a>
-        <a href="${prefix}index.html#investing">Investing</a>
+        <a href="${work}">Work</a>
       </nav>
     </div>
   </header>`;
@@ -168,6 +172,7 @@ ${paragraphs}
 
   return `${head(`${item.name} — Adrien Faguet`, item.pitch, prefix, true)}
 <body>
+  ${atmosphere()}
   ${nav(prefix, `${prefix}index.html`)}
   <main id="content" class="case-wrap">
     <div class="wrap">
@@ -200,52 +205,85 @@ ${paragraphs}
 `;
 }
 
-function homePage() {
-  const experience = projects
-    .filter((p) => p.experienceOrder != null)
-    .sort((a, b) => a.experienceOrder - b.experienceOrder);
-  const side = projects.filter((p) => p.projectGroup === 'side').sort((a, b) => a.projectOrder - b.projectOrder);
-  const more = projects.filter((p) => p.projectGroup === 'more').sort((a, b) => a.projectOrder - b.projectOrder);
+function filterTokens(item) {
+  const tokens = new Set();
+  if (item.statusKind) tokens.add(item.statusKind);
+  if (item.projectGroup === 'side') tokens.add('side');
+  if (item.experienceOrder != null) tokens.add('experience');
+  if (item.statusKind === 'preview') tokens.add('building');
+  if (item.kind === 'investment') tokens.add('investment');
+  return [...tokens].join(' ');
+}
 
-  const row = (item) => `        <li class="reveal">
-          <a class="row" href="${hrefFor(item)}">
-            ${logo(item, '')}
-            <span class="row__body">
-              <span class="row__top">
-                <span class="row__name">${escapeHtml(item.name)}</span>
+function tagLabel(item) {
+  if (item.kind === 'investment') return 'Investment';
+  if (item.projectGroup === 'side') return 'Side project';
+  if (item.experienceOrder != null) return 'Experience';
+  return '';
+}
+
+function media(item) {
+  const shot = (item.shots || [])[0];
+  const mark = logo(item, '');
+  if (!shot) {
+    return `<span class="vcard__media vcard__media--mark">${mark}</span>`;
+  }
+  const src = `assets/projects/${item.slug}/${shot.file}`;
+  return `<span class="vcard__media"><img src="${escapeHtml(src)}" alt="" /><span class="vcard__logo">${mark}</span></span>`;
+}
+
+function showcaseCard(item) {
+  const external = item.external ? ' target="_blank" rel="noopener noreferrer"' : '';
+  const role = item.experienceNote && item.experienceNote !== item.card
+    ? `<span class="vcard__role">${escapeHtml(item.experienceNote)}</span>`
+    : '';
+  const tag = tagLabel(item);
+  return `        <li>
+          <a class="vcard" href="${escapeHtml(item.href || hrefFor(item))}" data-filters="${escapeHtml(filterTokens(item))}"${external}>
+            ${media(item)}
+            <span class="vcard__body">
+              <span class="vcard__top">
+                <span class="vcard__name">${escapeHtml(item.name)}</span>
                 ${badge(item)}
               </span>
-              <span class="row__note">${escapeHtml(item.experienceNote)}</span>
+              <span class="vcard__note">${escapeHtml(item.card)}</span>
+              ${role}
+              ${tag ? `<span class="vcard__tags"><span class="tag">${escapeHtml(tag)}</span></span>` : ''}
             </span>
           </a>
         </li>`;
+}
 
-  const card = (item) => `        <li class="reveal">
-          <a class="card" href="${hrefFor(item)}">
-            <span class="card__top">
-              <span class="card__name">${escapeHtml(item.name)}</span>
-              ${badge(item)}
-            </span>
-            <span class="card__note">${escapeHtml(item.card)}</span>
-          </a>
-        </li>`;
-
-  const grid = (items) => `<ul class="grid">\n${items.map(card).join('\n')}\n      </ul>`;
+function homePage() {
+  const order = ['philidor', 'junction', 'stakelab', 'winnie', 'winnieswap', 'mypump', 'paygram', 'gymmy', 'struvo', 'ctrl', 'ledger', 'league-of-legends'];
+  const bySlug = new Map(projects.map((item) => [item.slug, item]));
+  const showcase = order.map((slug) => bySlug.get(slug)).filter(Boolean);
+  const investments = [
+    { name: 'Ledger', initials: 'L', logo: 'assets/logos/ledger.png', href: 'https://www.ledger.com', card: 'Investment', status: 'Investment', statusKind: 'investment', kind: 'investment', external: true },
+    { name: 'Travala', initials: 'T', href: 'https://www.travala.com', card: 'Investment', status: 'Investment', statusKind: 'investment', kind: 'investment', external: true },
+    { name: 'Delicity', initials: 'D', href: 'https://delicity.com', card: 'Investment', status: 'Investment', statusKind: 'investment', kind: 'investment', external: true },
+    { name: 'Frachtis', initials: 'F', href: 'https://frachtis.com', card: 'Investment', status: 'Investment', statusKind: 'investment', kind: 'investment', external: true },
+    { name: '50 Partners', initials: '50', href: 'https://www.50partners.fr', card: 'Investment', status: 'Investment', statusKind: 'investment', kind: 'investment', external: true },
+    { name: 'Rain.fi', initials: 'R', href: 'https://rain.fi', card: 'Investment (acq)', status: 'Acq', statusKind: 'investment', kind: 'investment', external: true },
+    { name: 'Skip', initials: 'Sk', href: 'https://skip.go', card: 'Investment (acq)', status: 'Acq', statusKind: 'investment', kind: 'investment', external: true },
+  ];
+  const cards = [...showcase, ...investments];
 
   return `${head('Adrien Faguet — Zdeadex', 'Adrien Faguet (Zdeadex). Operation, Product, Engineering, AI.', '', false)}
 <body>
+  ${atmosphere()}
   ${nav('', '#top')}
   <main id="content">
     <div class="wrap">
       <section class="hero" id="top">
-        <div class="hero__id reveal">
-          <img class="hero__photo" src="me.jpg" alt="Adrien Faguet" width="84" height="84" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+        <div class="photo-container reveal">
+          <img class="photo" src="me.jpg" alt="Adrien Faguet" width="200" height="200" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
           <span class="photo-fallback">AF</span>
-          <div>
-            <p class="eyebrow">Zdeadex</p>
-            <h1>Adrien Faguet</h1>
-            <p class="hero__tagline">Operation, Product, Engineering, AI</p>
-          </div>
+        </div>
+        <div class="reveal">
+          <h1>Adrien Faguet</h1>
+          <p class="hero__handle">Zdeadex</p>
+          <p class="hero__tagline">Operation, Product, Engineering, AI</p>
         </div>
         <div class="prose reveal">
           <p class="lead">Hi, I'm Adrien, better known as <strong>Zdeadex</strong>—a retired professional League of Legends player with a background in Engineering and Economics.</p>
@@ -254,41 +292,23 @@ function homePage() {
         </div>
       </section>
 
-      <section class="section" id="experience" aria-labelledby="experience-title">
-        <div class="section__head reveal">
-          <h2 id="experience-title">Experience</h2>
-          <span class="section__count">${experience.length}</span>
+      <section class="work" id="work" aria-labelledby="work-title">
+        <h2 id="work-title" class="work__label">Work</h2>
+        <p class="invest-lead">Passionate about investing and helping teams grow from day one.</p>
+        <div class="filters" role="toolbar" aria-label="Filter projects">
+          <button type="button" class="chip is-on" data-filter="all" aria-pressed="true">All</button>
+          <button type="button" class="chip" data-filter="live" aria-pressed="false">Live</button>
+          <button type="button" class="chip" data-filter="building" aria-pressed="false">Building</button>
+          <button type="button" class="chip" data-filter="left" aria-pressed="false">Left</button>
+          <button type="button" class="chip" data-filter="retired" aria-pressed="false">Retired</button>
+          <button type="button" class="chip" data-filter="side" aria-pressed="false">Side projects</button>
+          <button type="button" class="chip" data-filter="experience" aria-pressed="false">Experience</button>
+          <button type="button" class="chip" data-filter="investment" aria-pressed="false">Investments</button>
+          <span class="filters__count" aria-live="polite">${cards.length} projects</span>
         </div>
-        <ul class="list">
-${experience.map(row).join('\n')}
+        <ul class="showcase">
+${cards.map(showcaseCard).join('\n')}
         </ul>
-      </section>
-
-      <section class="section" id="projects" aria-labelledby="projects-title">
-        <div class="section__head reveal">
-          <h2 id="projects-title">Projects</h2>
-          <span class="section__count">${side.length + more.length}</span>
-        </div>
-        <h3 class="group-label">Side projects</h3>
-        ${grid(side)}
-        <h3 class="group-label">More projects</h3>
-        ${grid(more)}
-      </section>
-
-      <section class="section" id="investing" aria-labelledby="investing-title">
-        <div class="section__head reveal">
-          <h2 id="investing-title">Investing</h2>
-        </div>
-        <p class="invest-lead reveal">Passionate about investing and helping teams grow from day one.</p>
-        <div class="pills reveal">
-          <a class="pill" href="https://www.ledger.com" target="_blank" rel="noopener noreferrer">Ledger</a>
-          <a class="pill" href="https://www.travala.com" target="_blank" rel="noopener noreferrer">Travala</a>
-          <a class="pill" href="https://delicity.com" target="_blank" rel="noopener noreferrer">Delicity</a>
-          <a class="pill" href="https://frachtis.com" target="_blank" rel="noopener noreferrer">Frachtis</a>
-          <a class="pill" href="https://www.50partners.fr" target="_blank" rel="noopener noreferrer">50 Partners</a>
-          <a class="pill" href="https://rain.fi" target="_blank" rel="noopener noreferrer">Rain.fi <span class="acq">(acq)</span></a>
-          <a class="pill" href="https://skip.go" target="_blank" rel="noopener noreferrer">Skip <span class="acq">(acq)</span></a>
-        </div>
       </section>
     </div>
   </main>
