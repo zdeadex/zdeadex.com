@@ -25,84 +25,33 @@
   }
 
   var chips = document.querySelectorAll(".chip");
-  var cards = document.querySelectorAll(".vcard");
+  var items = document.querySelectorAll(".showcase > li");
   var count = document.querySelector(".filters__count");
-  if (!chips.length || !cards.length) return;
+  if (!chips.length || !items.length) return;
 
-  var timer = 0;
-
-  function matches(card, filter) {
+  function matches(item, filter) {
+    var card = item.querySelector(".vcard");
+    if (!card) return false;
     if (filter === "all") return true;
     return card.getAttribute("data-filters").split(/\s+/).indexOf(filter) !== -1;
   }
 
-  function visibleCount() {
+  function writeCount() {
     var n = 0;
-    cards.forEach(function (card) { if (!card.hidden && !card.classList.contains("is-leaving")) n += 1; });
-    return n;
-  }
-
-  function writeCount(n) {
+    items.forEach(function (item) { if (!item.hidden) n += 1; });
     if (count) count.textContent = n + (n === 1 ? " project" : " projects");
   }
 
-  function flip() {
-    cards.forEach(function (card) {
-      if (card.hidden || !card._first) return;
-      var last = card.getBoundingClientRect();
-      var dx = card._first.left - last.left;
-      var dy = card._first.top - last.top;
-      card._first = null;
-      if (Math.abs(dx) < 1 && Math.abs(dy) < 1) return;
-      card.animate(
-        [{ transform: "translate(" + dx + "px," + dy + "px)" }, { transform: "none" }],
-        { duration: 340, easing: "cubic-bezier(0.22, 1, 0.36, 1)" }
-      );
-    });
-  }
-
   function apply(filter) {
-    clearTimeout(timer);
     chips.forEach(function (chip) {
       var on = chip.getAttribute("data-filter") === filter;
       chip.classList.toggle("is-on", on);
       chip.setAttribute("aria-pressed", on ? "true" : "false");
     });
-
-    if (reduce) {
-      cards.forEach(function (card) { card.hidden = !matches(card, filter); });
-      writeCount(visibleCount());
-      return;
-    }
-
-    cards.forEach(function (card) {
-      var show = matches(card, filter);
-      card.classList.remove("is-leaving");
-      if (!show && !card.hidden) card.classList.add("is-leaving");
-      if (show && card.hidden) {
-        card.hidden = false;
-        card.classList.add("is-entering");
-      }
+    items.forEach(function (item) {
+      item.hidden = !matches(item, filter);
     });
-
-    requestAnimationFrame(function () {
-      requestAnimationFrame(function () {
-        cards.forEach(function (card) { card.classList.remove("is-entering"); });
-      });
-    });
-
-    timer = setTimeout(function () {
-      cards.forEach(function (card) {
-        if (!card.hidden) card._first = card.getBoundingClientRect();
-      });
-      cards.forEach(function (card) {
-        if (!card.classList.contains("is-leaving")) return;
-        card.hidden = true;
-        card.classList.remove("is-leaving");
-      });
-      flip();
-      writeCount(visibleCount());
-    }, 220);
+    writeCount();
   }
 
   chips.forEach(function (chip) {

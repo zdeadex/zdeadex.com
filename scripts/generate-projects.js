@@ -14,6 +14,7 @@ const ROOT = path.join(__dirname, '..');
 const projects = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'projects.json'), 'utf8'));
 
 const FONTS = 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Instrument+Serif&display=swap';
+const ASSET_V = '4';
 
 function escapeHtml(s) {
   return String(s)
@@ -43,8 +44,8 @@ function head(title, description, prefix, detail) {
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="${FONTS}" rel="stylesheet" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231a1a18'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='Georgia,serif' font-size='16' fill='%23f3f2ee'%3EA%3C/text%3E%3C/svg%3E" />
-  <link rel="stylesheet" href="${prefix}styles.css" />
-  ${detail ? `<link rel="stylesheet" href="${prefix}experience.css" />\n  ` : ''}<script>document.documentElement.classList.add('js')</script>
+  <link rel="stylesheet" href="${prefix}styles.css?v=${ASSET_V}" />
+  ${detail ? `<link rel="stylesheet" href="${prefix}experience.css?v=${ASSET_V}" />\n  ` : ''}<script>document.documentElement.classList.add('js')</script>
 </head>`;
 }
 
@@ -53,9 +54,11 @@ function atmosphere() {
   <div class="glow" aria-hidden="true"></div>`;
 }
 
-function nav(prefix, homeHref) {
-  return `<a class="skip" href="#content">Skip to content</a>
-  <p class="home-link"><a href="${homeHref}">zdeadex.com</a></p>`;
+function nav(showHomeLink) {
+  const skip = `<a class="skip" href="#content">Skip to content</a>`;
+  if (!showHomeLink) return skip;
+  return `${skip}
+  <p class="home-link"><a href="index.html">zdeadex.com</a></p>`;
 }
 
 function logo(item, prefix) {
@@ -169,7 +172,7 @@ ${paragraphs}
   return `${head(`${item.name}: Adrien Faguet`, item.pitch, prefix, true)}
 <body>
   ${atmosphere()}
-  ${nav(prefix, `${prefix}index.html`)}
+  ${nav(false)}
   <main id="content" class="case-wrap">
     <div class="wrap">
       <a class="back" href="${prefix}index.html"><span class="back__arrow" aria-hidden="true">←</span> Portfolio</a>
@@ -195,7 +198,7 @@ ${linkHtml}
       <a href="${prefix}index.html">Portfolio</a>
     </div>
   </footer>
-  <script src="${prefix}script.js"></script>
+  <script src="${prefix}script.js?v=${ASSET_V}"></script>
 </body>
 </html>
 `;
@@ -243,6 +246,7 @@ function showcaseCard(item) {
                 ${badge(item)}
               </span>
               <span class="vcard__note">${escapeHtml(item.card)}</span>
+              ${!item.external && item.urlLabel ? `<span class="vcard__url">${escapeHtml(item.urlLabel)}</span>` : ''}
               ${role}
               ${tag ? `<span class="vcard__tags"><span class="tag">${escapeHtml(tag)}</span></span>` : ''}
             </span>
@@ -251,7 +255,7 @@ function showcaseCard(item) {
 }
 
 function homePage() {
-  const order = ['philidor', 'junction', 'stakelab', 'winnie', 'mypump', 'paygram', 'gymmy', 'struvo', 'ctrl', 'ledger', 'league-of-legends'];
+  const order = ['philidor', 'junction', 'stakelab', 'mypump', 'paygram', 'gymmy', 'struvo', 'ctrl', 'ledger', 'league-of-legends'];
   const bySlug = new Map(projects.map((item) => [item.slug, item]));
   const showcase = order.map((slug) => bySlug.get(slug)).filter(Boolean);
   const investments = [
@@ -268,12 +272,12 @@ function homePage() {
   return `${head('Adrien Faguet: Zdeadex', 'Adrien Faguet (Zdeadex). Operation, Product, Engineering, AI.', '', false)}
 <body>
   ${atmosphere()}
-  ${nav('', 'index.html')}
+  ${nav(true)}
   <main id="content">
     <div class="wrap">
       <section class="hero" id="top">
         <div class="photo-container reveal">
-          <img class="photo" src="me.jpg" alt="Adrien Faguet" width="200" height="200" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+          <img class="photo" src="me.jpg?v=${ASSET_V}" alt="Adrien Faguet" width="200" height="200" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
           <span class="photo-fallback">AF</span>
         </div>
         <div class="reveal">
@@ -313,7 +317,7 @@ ${cards.map(showcaseCard).join('\n')}
       <a href="#top">Back to top</a>
     </div>
   </footer>
-  <script src="script.js"></script>
+  <script src="script.js?v=${ASSET_V}"></script>
 </body>
 </html>
 `;
@@ -331,13 +335,13 @@ function redirectPage(target) {
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>WinnieSwap</title>
+  <title>Redirect</title>
   <meta http-equiv="refresh" content="0; url=${target}" />
   <link rel="canonical" href="${target}" />
   <script>location.replace(${JSON.stringify(target)});</script>
 </head>
 <body>
-  <p>This page has moved. <a href="${target}">Winnie and WinnieSwap</a>.</p>
+  <p><a href="${target}">Home</a></p>
 </body>
 </html>
 `;
@@ -347,4 +351,5 @@ write(path.join(ROOT, 'index.html'), homePage());
 for (const item of projects) {
   write(path.join(ROOT, item.dir, `${item.slug}.html`), projectPage(item));
 }
-write(path.join(ROOT, 'projects', 'winnieswap.html'), redirectPage('winnie.html'));
+write(path.join(ROOT, 'projects', 'winnie.html'), redirectPage('../index.html'));
+write(path.join(ROOT, 'projects', 'winnieswap.html'), redirectPage('../index.html'));

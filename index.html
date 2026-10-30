@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Instrument+Serif&display=swap" rel="stylesheet" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231a1a18'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='Georgia,serif' font-size='16' fill='%23f3f2ee'%3EA%3C/text%3E%3C/svg%3E" />
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css?v=4" />
   <script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
@@ -21,7 +21,7 @@
     <div class="wrap">
       <section class="hero" id="top">
         <div class="photo-container reveal">
-          <img class="photo" src="me.jpg" alt="Adrien Faguet" width="200" height="200" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+          <img class="photo" src="me.jpg?v=4" alt="Adrien Faguet" width="200" height="200" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
           <span class="photo-fallback">AF</span>
         </div>
         <div class="reveal">
@@ -47,7 +47,7 @@
           <button type="button" class="chip" data-filter="side" aria-pressed="false">Side projects</button>
           <button type="button" class="chip" data-filter="experience" aria-pressed="false">Experience</button>
           <button type="button" class="chip" data-filter="investment" aria-pressed="false">Investments</button>
-          <span class="filters__count" aria-live="polite">18 projects</span>
+          <span class="filters__count" aria-live="polite">17 projects</span>
         </div>
         <ul class="showcase">
         <li>
@@ -59,6 +59,7 @@
                 <span class="badge badge--live">Live</span>
               </span>
               <span class="vcard__note">Institutional-grade DeFi vault risk assessment and curation platform.</span>
+              <span class="vcard__url">philidor.io</span>
               <span class="vcard__role">Founder of the institutional DeFi layer focusing on transparent security and risk analysis</span>
               <span class="vcard__tags"><span class="tag">Experience</span></span>
             </span>
@@ -73,6 +74,7 @@
                 <span class="badge badge--live">Live</span>
               </span>
               <span class="vcard__note">DeFi exchange platform: swap, bridge, perps API, referral system.</span>
+              <span class="vcard__url">app.junction.exchange</span>
               <span class="vcard__role">Founder of the trading infrastructure across all blockchains and tokens</span>
               <span class="vcard__tags"><span class="tag">Experience</span></span>
             </span>
@@ -87,22 +89,9 @@
                 <span class="badge badge--live">Live</span>
               </span>
               <span class="vcard__note">Staking platform: frontend (React + Vite) and backend (AdonisJS), multi-chain.</span>
+              <span class="vcard__url">stakelab.zone</span>
               <span class="vcard__role">Founder of the Staking infrastructure managing $200M in assets</span>
               <span class="vcard__tags"><span class="tag">Experience</span></span>
-            </span>
-          </a>
-        </li>
-        <li>
-          <a class="vcard" href="projects/winnie.html" data-filters="live side">
-            <span class="vcard__media"><img src="assets/projects/winnie/01-home.jpg" alt="" /><span class="vcard__logo"><span class="logo-tile"><img class="logo" src="assets/logos/winnie.svg" alt="" /></span></span></span>
-            <span class="vcard__body">
-              <span class="vcard__top">
-                <span class="vcard__name">Winnie and WinnieSwap</span>
-                <span class="badge badge--live">Live</span>
-              </span>
-              <span class="vcard__note">Earning mobile wallet, and the liquidity and trading layer on Berachain.</span>
-              
-              <span class="vcard__tags"><span class="tag">Side project</span></span>
             </span>
           </a>
         </li>
@@ -115,6 +104,7 @@
                 <span class="badge badge--live">Live</span>
               </span>
               <span class="vcard__note">Social mobile app for creators</span>
+              <span class="vcard__url">getmypump.com</span>
               
               <span class="vcard__tags"><span class="tag">Side project</span></span>
             </span>
@@ -129,6 +119,7 @@
                 <span class="badge badge--live">Live</span>
               </span>
               <span class="vcard__note">Launch a token routed to a Telegram, X, GitHub, or Fomo @username.</span>
+              <span class="vcard__url">usepaygram.com</span>
               
               
             </span>
@@ -136,13 +127,14 @@
         </li>
         <li>
           <a class="vcard" href="projects/gymmy.html" data-filters="live">
-            <span class="vcard__media"><img src="assets/projects/gymmy/01-home.jpg" alt="" /><span class="vcard__logo"><span class="logo-tile"><img class="logo" src="assets/logos/gymmy.png" alt="" /></span></span></span>
+            <span class="vcard__media"><img src="assets/projects/gymmy/01-landing.jpg" alt="" /><span class="vcard__logo"><span class="logo-tile"><img class="logo" src="assets/logos/gymmy.png" alt="" /></span></span></span>
             <span class="vcard__body">
               <span class="vcard__top">
                 <span class="vcard__name">Gymmy</span>
                 <span class="badge badge--live">Live</span>
               </span>
               <span class="vcard__note">Gym and studio software: schedule, members, payments, and a website.</span>
+              <span class="vcard__url">hellogymmy.com</span>
               
               
             </span>
@@ -157,6 +149,7 @@
                 <span class="badge badge--live">Live</span>
               </span>
               <span class="vcard__note">Verified building companies, rated on real jobs.</span>
+              <span class="vcard__url">struvo.fr</span>
               
               
             </span>
@@ -171,6 +164,7 @@
                 <span class="badge badge--left">Left</span>
               </span>
               <span class="vcard__note">Multichain wallet. The site says it shut down in 2026.</span>
+              <span class="vcard__url">ctrl.xyz</span>
               <span class="vcard__role">Head of Integration/Ecosystem for all products/protocols/blockchains</span>
               <span class="vcard__tags"><span class="tag">Experience</span></span>
             </span>
@@ -185,6 +179,7 @@
                 <span class="badge badge--left">Left</span>
               </span>
               <span class="vcard__note">Crypto wallets for securing assets.</span>
+              <span class="vcard__url">ledger.com</span>
               <span class="vcard__role">Blockchain Developer across UTXO's, EVM's, Solana and Cosmos ecosystems</span>
               <span class="vcard__tags"><span class="tag">Experience</span></span>
             </span>
@@ -199,6 +194,7 @@
                 <span class="badge badge--retired">Retired</span>
               </span>
               <span class="vcard__note">A 5v5 MOBA where teams battle to destroy the enemy Nexus.</span>
+              <span class="vcard__url">leagueoflegends.com</span>
               <span class="vcard__role">Pro Player</span>
               <span class="vcard__tags"><span class="tag">Experience</span></span>
             </span>
@@ -214,6 +210,7 @@
               </span>
               <span class="vcard__note">Investment</span>
               
+              
               <span class="vcard__tags"><span class="tag">Investment</span></span>
             </span>
           </a>
@@ -227,6 +224,7 @@
                 <span class="badge badge--investment">Investment</span>
               </span>
               <span class="vcard__note">Investment</span>
+              
               
               <span class="vcard__tags"><span class="tag">Investment</span></span>
             </span>
@@ -242,6 +240,7 @@
               </span>
               <span class="vcard__note">Investment</span>
               
+              
               <span class="vcard__tags"><span class="tag">Investment</span></span>
             </span>
           </a>
@@ -255,6 +254,7 @@
                 <span class="badge badge--investment">Investment</span>
               </span>
               <span class="vcard__note">Investment</span>
+              
               
               <span class="vcard__tags"><span class="tag">Investment</span></span>
             </span>
@@ -270,6 +270,7 @@
               </span>
               <span class="vcard__note">Investment</span>
               
+              
               <span class="vcard__tags"><span class="tag">Investment</span></span>
             </span>
           </a>
@@ -283,6 +284,7 @@
                 <span class="badge badge--investment">Acq</span>
               </span>
               <span class="vcard__note">Investment (acq)</span>
+              
               
               <span class="vcard__tags"><span class="tag">Investment</span></span>
             </span>
@@ -298,6 +300,7 @@
               </span>
               <span class="vcard__note">Investment (acq)</span>
               
+              
               <span class="vcard__tags"><span class="tag">Investment</span></span>
             </span>
           </a>
@@ -312,6 +315,6 @@
       <a href="#top">Back to top</a>
     </div>
   </footer>
-  <script src="script.js"></script>
+  <script src="script.js?v=4"></script>
 </body>
 </html>

@@ -145,8 +145,8 @@
     "card": "DeFi exchange platform: swap, bridge, perps API, referral system.",
     "status": "Live",
     "statusKind": "live",
-    "url": "https://junction.exchange",
-    "urlLabel": "junction.exchange",
+    "url": "https://app.junction.exchange",
+    "urlLabel": "app.junction.exchange",
     "role": "Founder of the trading infrastructure across all blockchains and tokens",
     "experienceNote": "Founder of the trading infrastructure across all blockchains and tokens",
     "experienceOrder": 5,
@@ -173,7 +173,7 @@
     "stack": ["TypeScript", "JavaScript", "React", "Vite", "Node.js"],
     "services": ["Express", "Viem", "CoinGecko", "Hyperliquid", "OpenOcean", "CCTP"],
     "shots": [
-      {"file": "01-home.jpg", "alt": "Junction homepage", "caption": "junction.exchange"},
+      {"file": "01-home.jpg", "alt": "Junction homepage", "caption": "app.junction.exchange"},
       {"file": "02-further.jpg", "alt": "Further down the Junction homepage", "caption": "Further down the homepage"}
     ]
   },
@@ -218,51 +218,6 @@
     "shots": [
       {"file": "01-home.jpg", "alt": "Philidor homepage", "caption": "philidor.io"},
       {"file": "02-further.jpg", "alt": "Further down the Philidor homepage", "caption": "Further down the homepage"}
-    ]
-  },
-  {
-    "slug": "winnie",
-    "name": "Winnie and WinnieSwap",
-    "initials": "W",
-    "logo": "assets/logos/winnie.svg",
-    "dir": "projects",
-    "pitch": "Earning mobile wallet, and the liquidity and trading layer on Berachain.",
-    "card": "Earning mobile wallet, and the liquidity and trading layer on Berachain.",
-    "status": "Live",
-    "statusKind": "live",
-    "url": "https://winnie.app",
-    "urlLabel": "winnie.app",
-    "links": [
-      {"href": "https://winnie.app", "label": "winnie.app"},
-      {"href": "https://winnieswap.com", "label": "winnieswap.com"}
-    ],
-    "role": "Side project",
-    "projectGroup": "side",
-    "projectOrder": 1,
-    "paragraphs": [
-      "Listed on this site as an earning mobile wallet.",
-      "StakeLab’s site describes Winnie as a pocket earning companion to manage your finance from anywhere: earn, stake, trade, and spend from a phone.",
-      "The page at winnie.app keeps the Winnie name in the navigation and footer. Its hero currently reads “Your capital, at work” and “Philidor”, then “Unlock crypto earnings in seconds.” Further down, the page calls Winnie the first BERAligned wallet and describes yield using the Berachain Proof of Liquidity mechanism.",
-      "WinnieSwap is listed on this site as the liquidity and trading layer on Berachain. Its navigation is Swap, Earn, Explore, Portfolio, and Leaderboard, and the page shows a Swap on Mobile QR code."
-    ],
-    "features": [
-      "Sign in with Apple or email",
-      "Fiat-to-crypto onramp",
-      "Monitor yields and withdraw",
-      "Buy back: the page says part of Winnie revenue accumulates $BERA",
-      "Bribes: the page says $BERA staking is used to bribe vaults with $BGT accumulation",
-      "Incentives: the page says part of Winnie revenue is used to deploy incentives into vaults",
-      "App Store and Google Play links on the page",
-      "The page says “Powered by WinnieSwap”",
-      "WinnieSwap navigation: Swap, Earn, Explore, Portfolio, and Leaderboard",
-      "WinnieSwap shows a “Swap on Mobile” QR code"
-    ],
-    "stackTodo": true,
-    "shots": [
-      {"file": "01-home.jpg", "alt": "Winnie homepage", "caption": "winnie.app"},
-      {"file": "02-further.jpg", "alt": "Further down the Winnie homepage", "caption": "Further down winnie.app"},
-      {"file": "winnieswap-home.jpg", "alt": "WinnieSwap app", "caption": "winnieswap.com"},
-      {"file": "winnieswap-further.jpg", "alt": "WinnieSwap app and footer", "caption": "Further down winnieswap.com"}
     ]
   },
   {
@@ -380,8 +335,8 @@
     "statusKind": "live",
     "url": "https://hellogymmy.com",
     "urlLabel": "hellogymmy.com",
-    "role": null,
-    "roleTodoDetail": "The terms of service say Gymmy is published by StakeLab Pte. Ltd. They do not state a personal title.",
+    "role": "Founder, built everything",
+    "why": "I train in a lot of different gyms, and I kept running into the same frustrating experience in gym apps. So I built one complete package, with every tool a gym, a CrossFit box, or a pilates studio needs, and I used AI so it stays current with how people actually work.",
     "projectGroup": "more",
     "projectOrder": 20,
     "paragraphs": [
@@ -400,11 +355,26 @@
       "For members: book a class, waitlist alerts, today’s WOD with loads, scores and PR history",
       "Website included, as stated on the pricing page"
     ],
-    "stackTodo": true,
+    "stack": [
+      "Next.js 16",
+      "React 19",
+      "TypeScript",
+      "Tailwind CSS 4",
+      "shadcn/ui",
+      "Prisma 7 + PostgreSQL",
+      "Stripe",
+      "Resend",
+      "Cloudflare (custom domains worker)",
+      "Railway",
+      "Expo / React Native mobile app",
+      "Grok (xAI) AI assistant",
+      "MCP server + ChatGPT app",
+      "Playwright"
+    ],
     "shots": [
-      {"file": "01-home.jpg", "alt": "Gymmy homepage", "caption": "hellogymmy.com"},
-      {"file": "02-owners.jpg", "alt": "Gymmy owners product page", "caption": "Owners product page"},
-      {"file": "02-further.jpg", "alt": "Further down the Gymmy homepage", "caption": "Further down the homepage"}
+      {"file": "01-landing.jpg", "alt": "Gymmy public landing", "caption": "hellogymmy.com"},
+      {"file": "02-app.jpg", "alt": "Gymmy web app sign-in on desktop", "caption": "Web app, desktop"},
+      {"file": "03-mobile.jpg", "alt": "Gymmy landing on a phone", "caption": "Landing, mobile"}
     ]
   }
 ]
