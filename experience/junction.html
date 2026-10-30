@@ -3,67 +3,131 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Junction — Experience</title>
+  <meta name="description" content="DeFi exchange platform: swap, bridge, perps API, referral system." />
+  <title>Junction — Adrien Faguet</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Instrument+Serif&display=swap" rel="stylesheet" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231a1a18'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='Georgia,serif' font-size='16' fill='%23f3f2ee'%3EA%3C/text%3E%3C/svg%3E" />
   <link rel="stylesheet" href="../styles.css" />
   <link rel="stylesheet" href="../experience.css" />
+  <script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
-  <div class="noise" aria-hidden="true"></div>
-  <div class="glow" aria-hidden="true"></div>
-  <main class="experience-page">
-    <a href="../index.html" class="experience-back"><span class="back-arrow">←</span> Back to portfolio</a>
-    <header class="experience-header">
-      <div class="experience-header-top">
-        <div class="experience-title-group">
-          <div class="experience-logo">
-            <img src="../assets/logos/junction.png" alt="Junction" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
-            <span class="logo-initials">J</span>
+  <a class="skip" href="#content">Skip to content</a>
+  <header class="nav">
+    <div class="nav__inner">
+      <a class="nav__brand" href="../index.html">Adrien Faguet</a>
+      <nav class="nav__links" aria-label="Sections">
+        <a href="../index.html#experience">Experience</a>
+        <a href="../index.html#projects">Projects</a>
+        <a href="../index.html#investing">Investing</a>
+      </nav>
+    </div>
+  </header>
+  <main id="content" class="case-wrap">
+    <div class="wrap">
+      <a class="back" href="../index.html"><span class="back__arrow" aria-hidden="true">←</span> Portfolio</a>
+      <header class="case">
+        <div class="case__id">
+          <img class="logo" src="../assets/logos/junction.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+            <span class="logo-fallback">J</span>
+          <h1>Junction</h1>
+        </div>
+        <p class="case__pitch">DeFi exchange platform: swap, bridge, perps API, referral system.</p>
+        <div class="case__meta">
+          <span class="badge badge--live">Live</span>
+          <a class="ext" href="https://junction.exchange" target="_blank" rel="noopener noreferrer">junction.exchange <span class="ext__arrow" aria-hidden="true">↗</span></a>
+        </div>
+      </header>
+      <div class="blocks">
+      <section class="block reveal">
+        <h2>Why I built it</h2>
+        <div class="callout"><p class="callout__label">TODO</p><p>Why I built it is not stated in this portfolio or on the product site. Replace this note with the problem and the motivation.</p></div>
+      </section>
+
+      <section class="block reveal">
+        <h2>Role</h2>
+        <p>Founder of the trading infrastructure across all blockchains and tokens</p>
+      </section>
+
+      <section class="block reveal">
+        <h2>What it does</h2>
+          <p>DeFi exchange platform: swap, bridge, perps API, referral system.</p>
+          <p>The homepage says “One app for all markets” and “Trade crypto, equities, FX, and commodities from one place.”</p>
+          <p>The site describes Junction as a cross-chain DeFi exchange that unifies liquidity from 1inch, LiFi, Morpho, Hyperliquid, and native bridges behind one REST API, GraphQL gateway, TypeScript SDK, embeddable widget, and MCP server. It lists same-chain and cross-chain swaps, one-call bridges, Hyperliquid perpetual futures, Morpho lending vaults, validator staking, and fiat on-ramp, across Ethereum, Arbitrum, Optimism, Base, Polygon, BSC, Avalanche, Solana, and Hyperliquid L1.</p>
+      </section>
+
+      <section class="block reveal">
+        <h2>Key features</h2>
+        <ul>
+            <li>Smart-routed swaps and one-call bridges</li>
+            <li>Hyperliquid perpetual futures</li>
+            <li>Morpho lending vaults and validator staking</li>
+            <li>Fiat on-ramp</li>
+            <li>REST API, GraphQL gateway, TypeScript SDK, embeddable widget, and MCP server</li>
+          </ul>
+      </section>
+
+      <section class="block reveal">
+        <h2>What was implemented</h2>
+        <ul>
+            <li>Perps API (Express + TypeScript)</li>
+            <li>Front-end (JunctionCode: gateway, junction-front-end)</li>
+            <li>Assets, balances, fees, routing, chains registry, CoinGecko proxy</li>
+            <li>Referral &amp; invite system</li>
+          </ul>
+      </section>
+
+      <section class="block reveal">
+        <h2>Stack</h2>
+        <div class="pills pills--stack">
+            <span class="pill pill--static">TypeScript</span>
+            <span class="pill pill--static">JavaScript</span>
+            <span class="pill pill--static">React</span>
+            <span class="pill pill--static">Vite</span>
+            <span class="pill pill--static">Node.js</span>
           </div>
-          <h1 class="experience-title">Junction</h1>
+      </section>
+
+      <section class="block reveal">
+        <h2>Third-party services and APIs</h2>
+        <div class="pills pills--stack">
+            <span class="pill pill--static">Express</span>
+            <span class="pill pill--static">Viem</span>
+            <span class="pill pill--static">CoinGecko</span>
+            <span class="pill pill--static">Hyperliquid</span>
+            <span class="pill pill--static">OpenOcean</span>
+            <span class="pill pill--static">CCTP</span>
+          </div>
+      </section>
+
+      <section class="block reveal">
+        <h2>Gallery</h2>
+        <div class="gallery">
+        <figure class="shot">
+          <a href="../assets/projects/junction/01-home.jpg">
+            <img src="../assets/projects/junction/01-home.jpg" alt="Junction homepage" width="1440" height="900" loading="eager" decoding="async" />
+          </a>
+          <figcaption>junction.exchange</figcaption>
+        </figure>
+        <figure class="shot">
+          <a href="../assets/projects/junction/02-further.jpg">
+            <img src="../assets/projects/junction/02-further.jpg" alt="Further down the Junction homepage" width="1440" height="900" loading="lazy" decoding="async" />
+          </a>
+          <figcaption>Further down the homepage</figcaption>
+        </figure>
         </div>
-        <span class="experience-status experience-status--live">Live</span>
+      </section>
       </div>
-      <p class="experience-role">Founder of the trading infrastructure across all blockchains and tokens</p>
-      <a href="https://junction.exchange" target="_blank" rel="noopener noreferrer" class="experience-link">junction.exchange</a>
-    </header>
-    <p class="experience-desc">DeFi exchange platform: swap, bridge, perps API, referral system.</p>
-
-    <section class="recap-section">
-      <h2>What was implemented</h2>
-      <ul class="recap-list">
-        <li>Perps API (Express + TypeScript)</li>
-        <li>Front-end (JunctionCode: gateway, junction-front-end)</li>
-        <li>Assets, balances, fees, routing, chains registry, CoinGecko proxy</li>
-        <li>Referral &amp; invite system</li>
-      </ul>
-    </section>
-
-    <div class="recap-grid">
-      <section class="recap-section">
-        <h2>Languages & frameworks</h2>
-        <div class="recap-pills">
-          <span class="recap-pill">TypeScript</span>
-          <span class="recap-pill">JavaScript</span>
-          <span class="recap-pill">React</span>
-          <span class="recap-pill">Vite</span>
-          <span class="recap-pill">Node.js</span>
-        </div>
-      </section>
-      <section class="recap-section">
-        <h2>Third-party services & APIs</h2>
-        <div class="recap-pills">
-          <span class="recap-pill">Express</span>
-          <span class="recap-pill">Viem</span>
-          <span class="recap-pill">CoinGecko</span>
-          <span class="recap-pill">Hyperliquid</span>
-          <span class="recap-pill">OpenOcean</span>
-          <span class="recap-pill">CCTP</span>
-        </div>
-      </section>
     </div>
   </main>
+  <footer class="site-footer">
+    <div class="wrap">
+      <span>Adrien Faguet · Zdeadex</span>
+      <a href="../index.html">Portfolio</a>
+    </div>
+  </footer>
+  <script src="../script.js"></script>
 </body>
 </html>

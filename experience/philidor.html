@@ -3,70 +3,133 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Philidor — Experience</title>
+  <meta name="description" content="Institutional-grade DeFi vault risk assessment and curation platform." />
+  <title>Philidor — Adrien Faguet</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Instrument+Serif&display=swap" rel="stylesheet" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231a1a18'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='Georgia,serif' font-size='16' fill='%23f3f2ee'%3EA%3C/text%3E%3C/svg%3E" />
   <link rel="stylesheet" href="../styles.css" />
   <link rel="stylesheet" href="../experience.css" />
+  <script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
-  <div class="noise" aria-hidden="true"></div>
-  <div class="glow" aria-hidden="true"></div>
-  <main class="experience-page">
-    <a href="../index.html" class="experience-back"><span class="back-arrow">←</span> Back to portfolio</a>
-    <header class="experience-header">
-      <div class="experience-header-top">
-        <div class="experience-title-group">
-          <div class="experience-logo">
-            <img src="../assets/logos/philidor.png" alt="Philidor" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
-            <span class="logo-initials">P</span>
+  <a class="skip" href="#content">Skip to content</a>
+  <header class="nav">
+    <div class="nav__inner">
+      <a class="nav__brand" href="../index.html">Adrien Faguet</a>
+      <nav class="nav__links" aria-label="Sections">
+        <a href="../index.html#experience">Experience</a>
+        <a href="../index.html#projects">Projects</a>
+        <a href="../index.html#investing">Investing</a>
+      </nav>
+    </div>
+  </header>
+  <main id="content" class="case-wrap">
+    <div class="wrap">
+      <a class="back" href="../index.html"><span class="back__arrow" aria-hidden="true">←</span> Portfolio</a>
+      <header class="case">
+        <div class="case__id">
+          <img class="logo" src="../assets/logos/philidor.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+            <span class="logo-fallback">P</span>
+          <h1>Philidor</h1>
+        </div>
+        <p class="case__pitch">Institutional-grade DeFi vault risk assessment and curation platform.</p>
+        <div class="case__meta">
+          <span class="badge badge--live">Live</span>
+          <a class="ext" href="https://philidor.io" target="_blank" rel="noopener noreferrer">philidor.io <span class="ext__arrow" aria-hidden="true">↗</span></a>
+        </div>
+      </header>
+      <div class="blocks">
+      <section class="block reveal">
+        <h2>Why I built it</h2>
+        <div class="callout"><p class="callout__label">TODO</p><p>Why I built it is not stated in this portfolio or on the product site. Replace this note with the problem and the motivation.</p></div>
+      </section>
+
+      <section class="block reveal">
+        <h2>Role</h2>
+        <p>Founder of the institutional DeFi layer focusing on transparent security and risk analysis</p>
+      </section>
+
+      <section class="block reveal">
+        <h2>What it does</h2>
+          <p>Institutional-grade DeFi vault risk assessment and curation platform.</p>
+          <p>The site says Philidor scores and monitors vaults and tokenized funds, maps what each product depends on, and issues signed risk decisions under your policy, with an open methodology, dashboards, and APIs for institutional allocators.</p>
+          <p>The homepage shows 1000+ vaults scored, 450+ assets covered, 13 protocol modules, and 12 chains. It describes one score from 0 to 10 for each covered vault, with tiers Prime, Core, and Edge, and says scores are reproducible and are not changed by hand.</p>
+      </section>
+
+      <section class="block reveal">
+        <h2>Key features</h2>
+        <ul>
+            <li>Vault and tokenized-fund scoring and monitoring</li>
+            <li>Dependency mapping</li>
+            <li>Signed risk decisions under a policy</li>
+            <li>Dashboards, a public API, and MCP for agents</li>
+          </ul>
+      </section>
+
+      <section class="block reveal">
+        <h2>What was implemented</h2>
+        <ul>
+            <li>Monorepo (Turbo): landing, app, analytics, API, MCP, indexer</li>
+            <li>REST API (Hono) — single backend for all clients</li>
+            <li>On-chain indexer (sync, events, risk scores)</li>
+            <li>MCP server for AI agents (vault search, risk breakdown)</li>
+            <li>PostgreSQL (TimescaleDB), Redis (rate limit + cache)</li>
+            <li>Vercel (frontends + MCP), VPS (API + indexer)</li>
+          </ul>
+      </section>
+
+      <section class="block reveal">
+        <h2>Stack</h2>
+        <div class="pills pills--stack">
+            <span class="pill pill--static">TypeScript</span>
+            <span class="pill pill--static">React</span>
+            <span class="pill pill--static">Next.js</span>
+            <span class="pill pill--static">Node.js</span>
+            <span class="pill pill--static">Hono</span>
           </div>
-          <h1 class="experience-title">Philidor</h1>
+      </section>
+
+      <section class="block reveal">
+        <h2>Third-party services and APIs</h2>
+        <div class="pills pills--stack">
+            <span class="pill pill--static">Vercel</span>
+            <span class="pill pill--static">PostgreSQL / TimescaleDB</span>
+            <span class="pill pill--static">Redis</span>
+            <span class="pill pill--static">Viem</span>
+            <span class="pill pill--static">Enso</span>
+            <span class="pill pill--static">Resend</span>
+            <span class="pill pill--static">OpenAPI/Swagger</span>
+          </div>
+      </section>
+
+      <section class="block reveal">
+        <h2>Gallery</h2>
+        <div class="gallery">
+        <figure class="shot">
+          <a href="../assets/projects/philidor/01-home.jpg">
+            <img src="../assets/projects/philidor/01-home.jpg" alt="Philidor homepage" width="1440" height="900" loading="eager" decoding="async" />
+          </a>
+          <figcaption>philidor.io</figcaption>
+        </figure>
+        <figure class="shot">
+          <a href="../assets/projects/philidor/02-further.jpg">
+            <img src="../assets/projects/philidor/02-further.jpg" alt="Further down the Philidor homepage" width="1440" height="900" loading="lazy" decoding="async" />
+          </a>
+          <figcaption>Further down the homepage</figcaption>
+        </figure>
         </div>
-        <span class="experience-status experience-status--live">Live</span>
+      </section>
       </div>
-      <p class="experience-role">Founder of the institutional DeFi layer focusing on transparent security and risk analysis</p>
-      <a href="https://philidor.io" target="_blank" rel="noopener noreferrer" class="experience-link">philidor.io</a>
-    </header>
-    <p class="experience-desc">Institutional-grade DeFi vault risk assessment and curation platform.</p>
-
-    <section class="recap-section">
-      <h2>What was implemented</h2>
-      <ul class="recap-list">
-        <li>Monorepo (Turbo): landing, app, analytics, API, MCP, indexer</li>
-        <li>REST API (Hono) — single backend for all clients</li>
-        <li>On-chain indexer (sync, events, risk scores)</li>
-        <li>MCP server for AI agents (vault search, risk breakdown)</li>
-        <li>PostgreSQL (TimescaleDB), Redis (rate limit + cache)</li>
-        <li>Vercel (frontends + MCP), VPS (API + indexer)</li>
-      </ul>
-    </section>
-
-    <div class="recap-grid">
-      <section class="recap-section">
-        <h2>Languages & frameworks</h2>
-        <div class="recap-pills">
-          <span class="recap-pill">TypeScript</span>
-          <span class="recap-pill">React</span>
-          <span class="recap-pill">Next.js</span>
-          <span class="recap-pill">Node.js</span>
-          <span class="recap-pill">Hono</span>
-        </div>
-      </section>
-      <section class="recap-section">
-        <h2>Third-party services & APIs</h2>
-        <div class="recap-pills">
-          <span class="recap-pill">Vercel</span>
-          <span class="recap-pill">PostgreSQL / TimescaleDB</span>
-          <span class="recap-pill">Redis</span>
-          <span class="recap-pill">Viem</span>
-          <span class="recap-pill">Enso</span>
-          <span class="recap-pill">Resend</span>
-          <span class="recap-pill">OpenAPI/Swagger</span>
-        </div>
-      </section>
     </div>
   </main>
+  <footer class="site-footer">
+    <div class="wrap">
+      <span>Adrien Faguet · Zdeadex</span>
+      <a href="../index.html">Portfolio</a>
+    </div>
+  </footer>
+  <script src="../script.js"></script>
 </body>
 </html>

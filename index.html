@@ -3,181 +3,277 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Adrien Faguet (Zdeadex). Operation, Product, Engineering, AI." />
   <title>Adrien Faguet — Zdeadex</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Instrument+Serif&display=swap" rel="stylesheet" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231a1a18'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='Georgia,serif' font-size='16' fill='%23f3f2ee'%3EA%3C/text%3E%3C/svg%3E" />
   <link rel="stylesheet" href="styles.css" />
+  <script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
-  <div class="noise" aria-hidden="true"></div>
-  <div class="glow" aria-hidden="true"></div>
-
-  <main class="container">
-    <!-- Hero Section (Center) -->
-    <section class="hero">
-      <div class="hero__profile animate-reveal">
-        <div class="photo-container">
-          <img src="me.jpg" alt="Adrien Faguet" class="photo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-          <div class="photo-placeholder">AF</div>
-        </div>
-        <h1 class="hero__name">Adrien Faguet</h1>
-        <p class="hero__handle">Zdeadex</p>
-        <p class="hero__tagline">Operation, Product, Engineering, AI</p>
-      </div>
-    </section>
-
-    <!-- Content Grid (Lower than Center) -->
-    <div class="content-grid">
-      <!-- Left: About -->
-      <aside class="content-panel animate-reveal-delayed">
-        <div class="panel-header">
-          <span class="panel-label">Background</span>
-        </div>
-        <div class="about-text">
-          <p class="highlight">
-            Hi, I'm Adrien, better known as <strong>Zdeadex</strong>—a retired professional League of Legends player with a background in Engineering and Economics.
-          </p>
-          <p>
-            I've spent the last few years building products and leading teams to production-ready infrastructure in the crypto ecosystem (staking, DeFi, exchanges).
-          </p>
-          <p>
-            Experienced in scaling startups from 1 to 900+ people, fostering growth and engineering excellence.
-          </p>
-        </div>
-        <div class="panel-header">
-          <span class="panel-label">Side projects</span>
-        </div>
-        <div class="side-projects">
-          <a href="https://winnie.app" target="_blank" rel="noopener noreferrer" class="side-project">
-            <div class="side-project__content">
-              <span class="side-project__name">Winnie</span>
-              <span class="side-project__desc">Earning mobile wallet</span>
-            </div>
-            <span class="side-project__chevron">›</span>
-          </a>
-          <a href="https://winnieswap.com" target="_blank" rel="noopener noreferrer" class="side-project">
-            <div class="side-project__content">
-              <span class="side-project__name">WinnieSwap</span>
-              <span class="side-project__desc">Liquidity and trading layer on Berachain</span>
-            </div>
-            <span class="side-project__chevron">›</span>
-          </a>
-          <a href="https://getmypump.com" target="_blank" rel="noopener noreferrer" class="side-project">
-            <div class="side-project__content">
-              <span class="side-project__name">Mypump</span>
-              <span class="side-project__desc">Social mobile app for creators</span>
-            </div>
-            <span class="side-project__chevron">›</span>
-          </a>
-        </div>
-      </aside>
-
-      <!-- Right: Experience & Investments -->
-      <aside class="content-panel animate-reveal-delayed-more">
-        <div class="panel-header">
-          <span class="panel-label">Experience & Portfolio</span>
-        </div>
-        
-        <div class="experience-section">
-          <div class="project-list">
-            <a href="https://www.leagueoflegends.com" target="_blank" rel="noopener noreferrer" class="project-card">
-              <div class="project-card__logo" aria-hidden="true">
-                <img src="assets/logos/lol.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
-                <span class="logo-initials">LoL</span>
-              </div>
-              <div class="project-card__info">
-                <div class="project-card__title-row">
-                  <span class="project-card__title">League of Legends</span>
-                  <span class="project-card__tag project-card__tag--retired">Retired</span>
-                </div>
-                <span class="project-card__role">Pro Player</span>
-              </div>
-            </a>
-            <a href="https://www.ledger.com" target="_blank" rel="noopener noreferrer" class="project-card">
-              <div class="project-card__logo" aria-hidden="true">
-                <img src="assets/logos/ledger.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
-                <span class="logo-initials">L</span>
-              </div>
-              <div class="project-card__info">
-                <div class="project-card__title-row">
-                  <span class="project-card__title">Ledger</span>
-                  <span class="project-card__tag project-card__tag--left">Left</span>
-                </div>
-                <span class="project-card__role">Blockchain Developer across UTXO's, EVM's, Solana and Cosmos ecosystems</span>
-              </div>
-            </a>
-            <a href="https://ctrl.xyz" target="_blank" rel="noopener noreferrer" class="project-card">
-              <div class="project-card__logo" aria-hidden="true">
-                <img src="assets/logos/ctrl.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
-                <span class="logo-initials">Ctrl</span>
-              </div>
-              <div class="project-card__info">
-                <div class="project-card__title-row">
-                  <span class="project-card__title">Ctrl Wallet</span>
-                  <span class="project-card__tag project-card__tag--left">Left</span>
-                </div>
-                <span class="project-card__role">Head of Integration/Ecosystem for all products/protocols/blockchains</span>
-              </div>
-            </a>
-            <a href="experience/stakelab.html" class="project-card">
-              <div class="project-card__logo" aria-hidden="true">
-                <img src="assets/logos/stakelab.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
-                <span class="logo-initials">S</span>
-              </div>
-              <div class="project-card__info">
-                <div class="project-card__title-row">
-                  <span class="project-card__title">Stakelab</span>
-                  <span class="project-card__tag project-card__tag--selling">Live</span>
-                </div>
-                <span class="project-card__role">Founder of the Staking infrastructure managing $200M in assets</span>
-              </div>
-            </a>
-            <a href="experience/junction.html" class="project-card">
-              <div class="project-card__logo" aria-hidden="true">
-                <img src="assets/logos/junction.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
-                <span class="logo-initials">J</span>
-              </div>
-              <div class="project-card__info">
-                <div class="project-card__title-row">
-                  <span class="project-card__title">Junction</span>
-                  <span class="project-card__tag project-card__tag--selling">Live</span>
-                </div>
-                <span class="project-card__role">Founder of the trading infrastructure across all blockchains and tokens</span>
-              </div>
-            </a>
-            <a href="experience/philidor.html" class="project-card">
-              <div class="project-card__logo" aria-hidden="true">
-                <img src="assets/logos/philidor.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
-                <span class="logo-initials">P</span>
-              </div>
-              <div class="project-card__info">
-                <div class="project-card__title-row">
-                  <span class="project-card__title">Philidor</span>
-                  <span class="project-card__tag project-card__tag--live">Live</span>
-                </div>
-                <span class="project-card__role">Founder of the institutional DeFi layer focusing on transparent security and risk analysis</span>
-              </div>
-            </a>
+  <a class="skip" href="#content">Skip to content</a>
+  <header class="nav">
+    <div class="nav__inner">
+      <a class="nav__brand" href="#top">Adrien Faguet</a>
+      <nav class="nav__links" aria-label="Sections">
+        <a href="index.html#experience">Experience</a>
+        <a href="index.html#projects">Projects</a>
+        <a href="index.html#investing">Investing</a>
+      </nav>
+    </div>
+  </header>
+  <main id="content">
+    <div class="wrap">
+      <section class="hero" id="top">
+        <div class="hero__id reveal">
+          <img class="hero__photo" src="me.jpg" alt="Adrien Faguet" width="84" height="84" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+          <span class="photo-fallback">AF</span>
+          <div>
+            <p class="eyebrow">Zdeadex</p>
+            <h1>Adrien Faguet</h1>
+            <p class="hero__tagline">Operation, Product, Engineering, AI</p>
           </div>
         </div>
-
-        <div class="invest-section">
-          <p class="invest-tagline">Passionate about investing and helping teams grow from day one.</p>
-          <div class="invest-grid">
-            <a href="https://www.ledger.com" target="_blank" rel="noopener noreferrer" class="invest-pill">Ledger</a>
-            <a href="https://www.travala.com" target="_blank" rel="noopener noreferrer" class="invest-pill">Travala</a>
-            <a href="https://delicity.com" target="_blank" rel="noopener noreferrer" class="invest-pill">Delicity</a>
-            <a href="https://frachtis.com" target="_blank" rel="noopener noreferrer" class="invest-pill">Frachtis</a>
-            <a href="https://www.50partners.fr" target="_blank" rel="noopener noreferrer" class="invest-pill">50 Partners</a>
-            <a href="https://rain.fi" target="_blank" rel="noopener noreferrer" class="invest-pill invest-pill--acq">Rain.fi <span class="acq">(acq)</span></a>
-            <a href="https://skip.go" target="_blank" rel="noopener noreferrer" class="invest-pill invest-pill--acq">Skip <span class="acq">(acq)</span></a>
-          </div>
+        <div class="prose reveal">
+          <p class="lead">Hi, I'm Adrien, better known as <strong>Zdeadex</strong>—a retired professional League of Legends player with a background in Engineering and Economics.</p>
+          <p>I've spent the last few years building products and leading teams to production-ready infrastructure in the crypto ecosystem (staking, DeFi, exchanges).</p>
+          <p>Experienced in scaling startups from 1 to 900+ people, fostering growth and engineering excellence.</p>
         </div>
-      </aside>
+      </section>
+
+      <section class="section" id="experience" aria-labelledby="experience-title">
+        <div class="section__head reveal">
+          <h2 id="experience-title">Experience</h2>
+          <span class="section__count">6</span>
+        </div>
+        <ul class="list">
+        <li class="reveal">
+          <a class="row" href="projects/league-of-legends.html">
+            <img class="logo" src="assets/logos/lol.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+            <span class="logo-fallback">LoL</span>
+            <span class="row__body">
+              <span class="row__top">
+                <span class="row__name">League of Legends</span>
+                <span class="badge badge--retired">Retired</span>
+              </span>
+              <span class="row__note">Pro Player</span>
+            </span>
+          </a>
+        </li>
+        <li class="reveal">
+          <a class="row" href="projects/ledger.html">
+            <img class="logo" src="assets/logos/ledger.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+            <span class="logo-fallback">L</span>
+            <span class="row__body">
+              <span class="row__top">
+                <span class="row__name">Ledger</span>
+                <span class="badge badge--left">Left</span>
+              </span>
+              <span class="row__note">Blockchain Developer across UTXO's, EVM's, Solana and Cosmos ecosystems</span>
+            </span>
+          </a>
+        </li>
+        <li class="reveal">
+          <a class="row" href="projects/ctrl.html">
+            <img class="logo" src="assets/logos/ctrl.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+            <span class="logo-fallback">Ctrl</span>
+            <span class="row__body">
+              <span class="row__top">
+                <span class="row__name">Ctrl Wallet</span>
+                <span class="badge badge--left">Left</span>
+              </span>
+              <span class="row__note">Head of Integration/Ecosystem for all products/protocols/blockchains</span>
+            </span>
+          </a>
+        </li>
+        <li class="reveal">
+          <a class="row" href="experience/stakelab.html">
+            <img class="logo" src="assets/logos/stakelab.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+            <span class="logo-fallback">S</span>
+            <span class="row__body">
+              <span class="row__top">
+                <span class="row__name">Stakelab</span>
+                <span class="badge badge--live">Live</span>
+              </span>
+              <span class="row__note">Founder of the Staking infrastructure managing $200M in assets</span>
+            </span>
+          </a>
+        </li>
+        <li class="reveal">
+          <a class="row" href="experience/junction.html">
+            <img class="logo" src="assets/logos/junction.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+            <span class="logo-fallback">J</span>
+            <span class="row__body">
+              <span class="row__top">
+                <span class="row__name">Junction</span>
+                <span class="badge badge--live">Live</span>
+              </span>
+              <span class="row__note">Founder of the trading infrastructure across all blockchains and tokens</span>
+            </span>
+          </a>
+        </li>
+        <li class="reveal">
+          <a class="row" href="experience/philidor.html">
+            <img class="logo" src="assets/logos/philidor.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+            <span class="logo-fallback">P</span>
+            <span class="row__body">
+              <span class="row__top">
+                <span class="row__name">Philidor</span>
+                <span class="badge badge--live">Live</span>
+              </span>
+              <span class="row__note">Founder of the institutional DeFi layer focusing on transparent security and risk analysis</span>
+            </span>
+          </a>
+        </li>
+        </ul>
+      </section>
+
+      <section class="section" id="projects" aria-labelledby="projects-title">
+        <div class="section__head reveal">
+          <h2 id="projects-title">Projects</h2>
+          <span class="section__count">12</span>
+        </div>
+        <h3 class="group-label">Side projects</h3>
+        <ul class="grid">
+        <li class="reveal">
+          <a class="card" href="projects/winnie.html">
+            <span class="card__top">
+              <span class="card__name">Winnie</span>
+              <span class="badge badge--live">Live</span>
+            </span>
+            <span class="card__note">Earning mobile wallet</span>
+          </a>
+        </li>
+        <li class="reveal">
+          <a class="card" href="projects/winnieswap.html">
+            <span class="card__top">
+              <span class="card__name">WinnieSwap</span>
+              <span class="badge badge--live">Live</span>
+            </span>
+            <span class="card__note">Liquidity and trading layer on Berachain</span>
+          </a>
+        </li>
+        <li class="reveal">
+          <a class="card" href="projects/mypump.html">
+            <span class="card__top">
+              <span class="card__name">Mypump</span>
+              <span class="badge badge--live">Live</span>
+            </span>
+            <span class="card__note">Social mobile app for creators</span>
+          </a>
+        </li>
+      </ul>
+        <h3 class="group-label">More projects</h3>
+        <ul class="grid">
+        <li class="reveal">
+          <a class="card" href="projects/paygram.html">
+            <span class="card__top">
+              <span class="card__name">Paygram</span>
+              <span class="badge badge--live">Live</span>
+            </span>
+            <span class="card__note">Launch a token routed to a Telegram, X, GitHub, or Fomo @username.</span>
+          </a>
+        </li>
+        <li class="reveal">
+          <a class="card" href="projects/gymmy.html">
+            <span class="card__top">
+              <span class="card__name">Gymmy</span>
+              <span class="badge badge--live">Live</span>
+            </span>
+            <span class="card__note">Gym and studio software: schedule, members, payments, and a website.</span>
+          </a>
+        </li>
+        <li class="reveal">
+          <a class="card" href="projects/struvo.html">
+            <span class="card__top">
+              <span class="card__name">Struvo</span>
+              <span class="badge badge--preview">Preview</span>
+            </span>
+            <span class="card__note">Find and book a coach. Train in person, follow an online plan, or get monthly coaching.</span>
+          </a>
+        </li>
+        <li class="reveal">
+          <a class="card" href="experience/stakelab.html">
+            <span class="card__top">
+              <span class="card__name">Stakelab</span>
+              <span class="badge badge--live">Live</span>
+            </span>
+            <span class="card__note">Staking platform: frontend (React + Vite) and backend (AdonisJS), multi-chain.</span>
+          </a>
+        </li>
+        <li class="reveal">
+          <a class="card" href="experience/junction.html">
+            <span class="card__top">
+              <span class="card__name">Junction</span>
+              <span class="badge badge--live">Live</span>
+            </span>
+            <span class="card__note">DeFi exchange platform: swap, bridge, perps API, referral system.</span>
+          </a>
+        </li>
+        <li class="reveal">
+          <a class="card" href="experience/philidor.html">
+            <span class="card__top">
+              <span class="card__name">Philidor</span>
+              <span class="badge badge--live">Live</span>
+            </span>
+            <span class="card__note">Institutional-grade DeFi vault risk assessment and curation platform.</span>
+          </a>
+        </li>
+        <li class="reveal">
+          <a class="card" href="projects/ctrl.html">
+            <span class="card__top">
+              <span class="card__name">Ctrl Wallet</span>
+              <span class="badge badge--left">Left</span>
+            </span>
+            <span class="card__note">Multichain wallet. The site says it shut down in 2026.</span>
+          </a>
+        </li>
+        <li class="reveal">
+          <a class="card" href="projects/ledger.html">
+            <span class="card__top">
+              <span class="card__name">Ledger</span>
+              <span class="badge badge--left">Left</span>
+            </span>
+            <span class="card__note">Crypto wallets for securing assets.</span>
+          </a>
+        </li>
+        <li class="reveal">
+          <a class="card" href="projects/league-of-legends.html">
+            <span class="card__top">
+              <span class="card__name">League of Legends</span>
+              <span class="badge badge--retired">Retired</span>
+            </span>
+            <span class="card__note">A 5v5 MOBA where teams battle to destroy the enemy Nexus.</span>
+          </a>
+        </li>
+      </ul>
+      </section>
+
+      <section class="section" id="investing" aria-labelledby="investing-title">
+        <div class="section__head reveal">
+          <h2 id="investing-title">Investing</h2>
+        </div>
+        <p class="invest-lead reveal">Passionate about investing and helping teams grow from day one.</p>
+        <div class="pills reveal">
+          <a class="pill" href="https://www.ledger.com" target="_blank" rel="noopener noreferrer">Ledger</a>
+          <a class="pill" href="https://www.travala.com" target="_blank" rel="noopener noreferrer">Travala</a>
+          <a class="pill" href="https://delicity.com" target="_blank" rel="noopener noreferrer">Delicity</a>
+          <a class="pill" href="https://frachtis.com" target="_blank" rel="noopener noreferrer">Frachtis</a>
+          <a class="pill" href="https://www.50partners.fr" target="_blank" rel="noopener noreferrer">50 Partners</a>
+          <a class="pill" href="https://rain.fi" target="_blank" rel="noopener noreferrer">Rain.fi <span class="acq">(acq)</span></a>
+          <a class="pill" href="https://skip.go" target="_blank" rel="noopener noreferrer">Skip <span class="acq">(acq)</span></a>
+        </div>
+      </section>
     </div>
   </main>
-
+  <footer class="site-footer">
+    <div class="wrap">
+      <span>Adrien Faguet · Zdeadex</span>
+      <a href="#top">Back to top</a>
+    </div>
+  </footer>
   <script src="script.js"></script>
 </body>
 </html>
