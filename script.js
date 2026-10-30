@@ -24,9 +24,10 @@
     window.addEventListener("scroll", onScroll, { passive: true });
   }
 
-  var chips = document.querySelectorAll(".chip");
-  var items = document.querySelectorAll(".showcase > li");
-  var count = document.querySelector(".filters__count");
+  var work = document.querySelector("#work");
+  var chips = work ? work.querySelectorAll(".chip") : [];
+  var items = work ? work.querySelectorAll(".showcase > li") : [];
+  var count = work ? work.querySelector(".filters__count") : null;
   if (!chips.length || !items.length) return;
 
   function matches(item, filter) {
