@@ -54,24 +54,15 @@ function atmosphere() {
 }
 
 function nav(prefix, homeHref) {
-  const work = prefix ? `${prefix}index.html#work` : '#work';
   return `<a class="skip" href="#content">Skip to content</a>
-  <header class="nav">
-    <div class="nav__inner">
-      <a class="nav__brand" href="${homeHref}">Adrien Faguet</a>
-      <nav class="nav__links" aria-label="Sections">
-        <a href="${work}">Work</a>
-      </nav>
-    </div>
-  </header>`;
+  <p class="home-link"><a href="${homeHref}">zdeadex.com</a></p>`;
 }
 
 function logo(item, prefix) {
   if (!item.logo) {
-    return `<span class="logo-fallback" style="display:flex">${escapeHtml(item.initials)}</span>`;
+    return `<span class="logo-tile logo-tile--empty">${escapeHtml(item.initials)}</span>`;
   }
-  return `<img class="logo" src="${prefix}${escapeHtml(item.logo)}" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
-            <span class="logo-fallback">${escapeHtml(item.initials)}</span>`;
+  return `<span class="logo-tile"><img class="logo" src="${prefix}${escapeHtml(item.logo)}" alt="" /></span>`;
 }
 
 function badge(item) {
@@ -277,7 +268,7 @@ function homePage() {
   return `${head('Adrien Faguet: Zdeadex', 'Adrien Faguet (Zdeadex). Operation, Product, Engineering, AI.', '', false)}
 <body>
   ${atmosphere()}
-  ${nav('', '#top')}
+  ${nav('', 'index.html')}
   <main id="content">
     <div class="wrap">
       <section class="hero" id="top">

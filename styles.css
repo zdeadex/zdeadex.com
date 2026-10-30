@@ -99,49 +99,25 @@ button { font: inherit; color: inherit; }
   z-index: 0;
 }
 
-.nav {
-  position: sticky;
-  top: 0;
-  z-index: 40;
-  height: var(--header);
-  display: flex;
-  align-items: center;
-  background: rgba(8, 8, 9, 0.72);
-  backdrop-filter: blur(16px);
-  border-bottom: 1px solid transparent;
+.home-link {
+  position: relative;
+  z-index: 2;
+  width: min(var(--max), calc(100% - 2.5rem));
+  margin: 1.15rem auto 0;
 }
 
-.nav.is-scrolled { border-bottom-color: var(--border); }
+.home-link a {
+  color: var(--muted);
+  font-size: 0.875rem;
+  text-decoration: none;
+}
 
-.nav__inner,
+.home-link a:hover { color: var(--text); }
+
 .wrap {
   width: min(var(--max), calc(100% - 2.5rem));
   margin-inline: auto;
 }
-
-.nav__inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-}
-
-.nav__brand {
-  font-weight: 500;
-  letter-spacing: -0.02em;
-  text-decoration: none;
-}
-
-.nav__links { display: flex; gap: 1.25rem; }
-
-.nav__links a {
-  font-size: 0.875rem;
-  color: var(--muted);
-  text-decoration: none;
-  transition: color 0.2s var(--ease);
-}
-
-.nav__links a:hover { color: var(--accent); }
 
 main { position: relative; z-index: 1; }
 
@@ -248,7 +224,7 @@ main { position: relative; z-index: 1; }
   gap: 0.45rem;
   align-items: center;
   position: sticky;
-  top: var(--header);
+  top: 0;
   z-index: 15;
   padding: 0.7rem 0 0.85rem;
   background: linear-gradient(to bottom, rgba(8, 8, 9, 0.94), rgba(8, 8, 9, 0.88) 70%, transparent);
@@ -331,7 +307,7 @@ main { position: relative; z-index: 1; }
   overflow: hidden;
 }
 
-.vcard__media img {
+.vcard__media > img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -339,7 +315,7 @@ main { position: relative; z-index: 1; }
   transition: transform 0.55s var(--ease);
 }
 
-.vcard:hover .vcard__media img { transform: scale(1.045); }
+.vcard:hover .vcard__media > img { transform: scale(1.045); }
 
 .vcard__media--mark {
   display: grid;
@@ -349,55 +325,41 @@ main { position: relative; z-index: 1; }
     #101012;
 }
 
-.vcard__logo,
-.vcard__media--mark .logo,
-.vcard__media--mark .logo-fallback {
-  width: 40px;
-  height: 40px;
-  border-radius: 10px;
-}
-
 .vcard__logo {
   position: absolute;
-  left: 0.7rem;
-  bottom: 0.7rem;
-  display: grid;
-  place-items: center;
-  overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  background: rgba(8, 8, 9, 0.78);
-  backdrop-filter: blur(8px);
+  left: 0.75rem;
+  bottom: 0.75rem;
+  line-height: 0;
 }
 
-.vcard__media--mark .logo,
-.vcard__media--mark .logo-fallback {
-  width: 72px;
-  height: 72px;
-  border-radius: 18px;
-  border: 1px solid var(--border);
-  background: rgba(255, 255, 255, 0.04);
+.logo-tile {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  overflow: hidden;
+  display: block;
+  flex-shrink: 0;
+  line-height: 0;
+}
+
+.logo-tile--empty {
+  display: grid;
+  place-items: center;
+  background: #161618;
+  color: var(--muted);
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1;
 }
 
 .logo {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
   display: block;
-  padding: 3px;
-  box-sizing: border-box;
+  padding: 0;
+  border: 0;
 }
-
-.logo-fallback {
-  display: none;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.68rem;
-  font-weight: 600;
-  letter-spacing: 0.02em;
-  color: var(--muted);
-}
-
-.vcard__media--mark .logo-fallback { font-size: 1rem; }
 
 .vcard__body {
   display: flex;
@@ -510,18 +472,16 @@ main { position: relative; z-index: 1; }
 }
 
 .work,
-.hero { scroll-margin-top: calc(var(--header) + 0.5rem); }
+.hero { scroll-margin-top: 0.75rem; }
 
 @media (max-width: 980px) {
   .showcase { grid-template-columns: 1fr 1fr; }
 }
 
 @media (max-width: 700px) {
-  .nav__inner,
+  .home-link,
   .wrap { width: min(var(--max), calc(100% - 1.5rem)); }
-  .nav { height: auto; }
-  .nav__inner { padding: 0.85rem 0; }
-  .filters { top: 3.4rem; }
+  .filters { top: 0; }
   .photo-container { width: 168px; height: 168px; }
   .showcase { grid-template-columns: 1fr; }
   .filters__count { width: 100%; margin-left: 0; }
@@ -536,7 +496,7 @@ main { position: relative; z-index: 1; }
   .vcard,
   .vcard__media img,
   .chip,
-  .nav__links a,
+  .home-link a,
   .back,
   .ext {
     transition: none !important;
