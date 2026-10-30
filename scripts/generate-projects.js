@@ -14,7 +14,7 @@ const ROOT = path.join(__dirname, '..');
 const projects = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'projects.json'), 'utf8'));
 
 const FONTS = 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Instrument+Serif&display=swap';
-const ASSET_V = '5';
+const ASSET_V = '6';
 
 function escapeHtml(s) {
   return String(s)
@@ -233,8 +233,9 @@ function media(item) {
 
 function markCard(item) {
   const external = item.external ? ' target="_blank" rel="noopener noreferrer"' : '';
+  const filters = item.group ? ` data-filters="${escapeHtml(item.group)}"` : '';
   return `        <li>
-          <a class="mark" href="${escapeHtml(item.href)}"${external}>
+          <a class="mark" href="${escapeHtml(item.href)}"${filters}${external}>
             ${logo(item, '')}
             <span class="mark__body">
               <span class="mark__top">
@@ -275,12 +276,12 @@ function homePage() {
   const bySlug = new Map(projects.map((item) => [item.slug, item]));
   const showcase = order.map((slug) => bySlug.get(slug)).filter(Boolean);
   const investments = [
-    { name: 'Travala', initials: 'T', logo: 'assets/logos/travala.png', href: 'https://www.travala.com', card: 'Investment', status: 'Investment', statusKind: 'investment', external: true },
-    { name: 'Delicity', initials: 'D', logo: 'assets/logos/delicity.png', href: 'https://delicity.com', card: 'Investment', status: 'Investment', statusKind: 'investment', external: true },
-    { name: 'Frachtis', initials: 'F', logo: 'assets/logos/frachtis.png', href: 'https://frachtis.com', card: 'Investment', status: 'Investment', statusKind: 'investment', external: true },
-    { name: '50 Partners', initials: '50', logo: 'assets/logos/50partners.png', href: 'https://www.50partners.fr', card: 'Investment', status: 'Investment', statusKind: 'investment', external: true },
-    { name: 'Rain.fi', initials: 'R', logo: 'assets/logos/rain.png', href: 'https://rain.fi', card: 'Investment (acq)', status: 'Acq', statusKind: 'investment', external: true },
-    { name: 'Skip', initials: 'Sk', logo: 'assets/logos/skip.png', href: 'https://skip.go', card: 'Investment (acq)', status: 'Acq', statusKind: 'investment', external: true },
+    { name: 'Travala', initials: 'T', logo: 'assets/logos/travala.png', href: 'https://www.travala.com', card: 'Active', status: 'Active', statusKind: 'investment', group: 'active', external: true },
+    { name: 'Delicity', initials: 'D', logo: 'assets/logos/delicity.png', href: 'https://delicity.com', card: 'Active', status: 'Active', statusKind: 'investment', group: 'active', external: true },
+    { name: 'Frachtis', initials: 'F', logo: 'assets/logos/frachtis.png', href: 'https://frachtis.com', card: 'Active', status: 'Active', statusKind: 'investment', group: 'active', external: true },
+    { name: '50 Partners', initials: '50', logo: 'assets/logos/50partners.png', href: 'https://www.50partners.fr', card: 'Active', status: 'Active', statusKind: 'investment', group: 'active', external: true },
+    { name: 'Rain.fi', initials: 'R', logo: 'assets/logos/rain.png', href: 'https://rain.fi', card: 'Exit', status: 'Acquired', statusKind: 'investment', group: 'acquired', external: true },
+    { name: 'Skip', initials: 'Sk', logo: 'assets/logos/skip.png', href: 'https://skip.go', card: 'Exit', status: 'Acquired', statusKind: 'investment', group: 'acquired', external: true },
   ];
   const holdings = [
     { name: 'Hyperliquid', initials: 'HYPE', logo: 'assets/logos/hype.png', href: 'https://hyperliquid.xyz', card: 'HYPE', external: true },
@@ -313,8 +314,13 @@ function homePage() {
         </div>
       </section>
 
-      <section class="work" id="work" aria-labelledby="work-title">
-        <h2 id="work-title" class="work__label">Work</h2>
+      <div class="section-tabs" role="tablist" aria-label="Portfolio">
+        <a class="section-tab is-on" id="tab-work" href="#work" role="tab" aria-selected="true" aria-controls="work">Work</a>
+        <a class="section-tab" id="tab-investments" href="#investments" role="tab" aria-selected="false" aria-controls="investments">Investments</a>
+        <a class="section-tab" id="tab-holdings" href="#holdings" role="tab" aria-selected="false" aria-controls="holdings">Holdings</a>
+      </div>
+
+      <section class="panel is-on" id="work" role="tabpanel" aria-labelledby="tab-work">
         <div class="filters" role="toolbar" aria-label="Filter projects">
           <button type="button" class="chip is-on" data-filter="all" aria-pressed="true">All</button>
           <button type="button" class="chip" data-filter="live" aria-pressed="false">Live</button>
@@ -330,15 +336,19 @@ ${showcase.map(showcaseCard).join('\n')}
         </ul>
       </section>
 
-      <section class="band" id="investments" aria-labelledby="investments-title">
-        <h2 id="investments-title" class="work__label">Investments</h2>
+      <section class="panel" id="investments" role="tabpanel" aria-labelledby="tab-investments">
+        <div class="filters" role="toolbar" aria-label="Filter investments">
+          <button type="button" class="chip is-on" data-filter="all" aria-pressed="true">All</button>
+          <button type="button" class="chip" data-filter="active" aria-pressed="false">Active</button>
+          <button type="button" class="chip" data-filter="acquired" aria-pressed="false">Acquired</button>
+          <span class="filters__count" aria-live="polite">${investments.length} investments</span>
+        </div>
         <ul class="marks">
 ${investments.map(markCard).join('\n')}
         </ul>
       </section>
 
-      <section class="band" id="holdings" aria-labelledby="holdings-title">
-        <h2 id="holdings-title" class="work__label">Holdings</h2>
+      <section class="panel" id="holdings" role="tabpanel" aria-labelledby="tab-holdings">
         <ul class="marks">
 ${holdings.map(markCard).join('\n')}
         </ul>
