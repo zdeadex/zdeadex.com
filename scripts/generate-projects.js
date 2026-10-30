@@ -265,7 +265,7 @@ function homePage() {
   const showcase = order.map((slug) => bySlug.get(slug)).filter(Boolean);
   const investments = [
     { name: 'Ledger', initials: 'L', logo: 'assets/logos/ledger.png', href: 'https://www.ledger.com', card: 'Investment', status: 'Investment', statusKind: 'investment', kind: 'investment', external: true },
-    { name: 'Travala', initials: 'T', logo: 'assets/logos/travala.svg', href: 'https://www.travala.com', card: 'Investment', status: 'Investment', statusKind: 'investment', kind: 'investment', external: true },
+    { name: 'Travala', initials: 'T', logo: 'assets/logos/travala.png', href: 'https://www.travala.com', card: 'Investment', status: 'Investment', statusKind: 'investment', kind: 'investment', external: true },
     { name: 'Delicity', initials: 'D', logo: 'assets/logos/delicity.png', href: 'https://delicity.com', card: 'Investment', status: 'Investment', statusKind: 'investment', kind: 'investment', external: true },
     { name: 'Frachtis', initials: 'F', logo: 'assets/logos/frachtis.png', href: 'https://frachtis.com', card: 'Investment', status: 'Investment', statusKind: 'investment', kind: 'investment', external: true },
     { name: '50 Partners', initials: '50', logo: 'assets/logos/50partners.png', href: 'https://www.50partners.fr', card: 'Investment', status: 'Investment', statusKind: 'investment', kind: 'investment', external: true },
