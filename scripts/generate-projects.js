@@ -299,7 +299,6 @@ function homePage() {
 
       <section class="work" id="work" aria-labelledby="work-title">
         <h2 id="work-title" class="work__label">Work</h2>
-        <p class="invest-lead">Passionate about investing and helping teams grow from day one.</p>
         <div class="filters" role="toolbar" aria-label="Filter projects">
           <button type="button" class="chip is-on" data-filter="all" aria-pressed="true">All</button>
           <button type="button" class="chip" data-filter="live" aria-pressed="false">Live</button>
