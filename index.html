@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Instrument+Serif&display=swap" rel="stylesheet" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231a1a18'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='Georgia,serif' font-size='16' fill='%23f3f2ee'%3EA%3C/text%3E%3C/svg%3E" />
-  <link rel="stylesheet" href="styles.css?v=4" />
+  <link rel="stylesheet" href="styles.css?v=5" />
   <script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
@@ -21,7 +21,7 @@
     <div class="wrap">
       <section class="hero" id="top">
         <div class="photo-container reveal">
-          <img class="photo" src="me.jpg?v=4" alt="Adrien Faguet" width="200" height="200" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+          <img class="photo" src="me.jpg?v=5" alt="Adrien Faguet" width="200" height="200" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
           <span class="photo-fallback">AF</span>
         </div>
         <div class="reveal">
@@ -46,8 +46,7 @@
           <button type="button" class="chip" data-filter="retired" aria-pressed="false">Retired</button>
           <button type="button" class="chip" data-filter="side" aria-pressed="false">Side projects</button>
           <button type="button" class="chip" data-filter="experience" aria-pressed="false">Experience</button>
-          <button type="button" class="chip" data-filter="investment" aria-pressed="false">Investments</button>
-          <span class="filters__count" aria-live="polite">17 projects</span>
+          <span class="filters__count" aria-live="polite">10 projects</span>
         </div>
         <ul class="showcase">
         <li>
@@ -126,7 +125,7 @@
           </a>
         </li>
         <li>
-          <a class="vcard" href="projects/gymmy.html" data-filters="live">
+          <a class="vcard" href="projects/gymmy.html" data-filters="live side">
             <span class="vcard__media"><img src="assets/projects/gymmy/01-landing.jpg" alt="" /><span class="vcard__logo"><span class="logo-tile"><img class="logo" src="assets/logos/gymmy.png" alt="" /></span></span></span>
             <span class="vcard__body">
               <span class="vcard__top">
@@ -136,12 +135,12 @@
               <span class="vcard__note">Gym and studio software: schedule, members, payments, and a website.</span>
               <span class="vcard__url">hellogymmy.com</span>
               
-              
+              <span class="vcard__tags"><span class="tag">Side project</span></span>
             </span>
           </a>
         </li>
         <li>
-          <a class="vcard" href="projects/struvo.html" data-filters="live">
+          <a class="vcard" href="projects/struvo.html" data-filters="live side">
             <span class="vcard__media"><img src="assets/projects/struvo/01-home.jpg" alt="" /><span class="vcard__logo"><span class="logo-tile"><img class="logo" src="assets/logos/struvo.svg" alt="" /></span></span></span>
             <span class="vcard__body">
               <span class="vcard__top">
@@ -151,7 +150,7 @@
               <span class="vcard__note">Verified building companies, rated on real jobs.</span>
               <span class="vcard__url">struvo.fr</span>
               
-              
+              <span class="vcard__tags"><span class="tag">Side project</span></span>
             </span>
           </a>
         </li>
@@ -200,108 +199,147 @@
             </span>
           </a>
         </li>
+        </ul>
+      </section>
+
+      <section class="band" id="investments" aria-labelledby="investments-title">
+        <h2 id="investments-title" class="work__label">Investments</h2>
+        <ul class="marks">
         <li>
-          <a class="vcard" href="https://www.ledger.com" data-filters="investment" target="_blank" rel="noopener noreferrer">
-            <span class="vcard__media vcard__media--mark"><span class="logo-tile"><img class="logo" src="assets/logos/ledger.png" alt="" /></span></span>
-            <span class="vcard__body">
-              <span class="vcard__top">
-                <span class="vcard__name">Ledger</span>
+          <a class="mark" href="https://www.travala.com" target="_blank" rel="noopener noreferrer">
+            <span class="logo-tile"><img class="logo" src="assets/logos/travala.png" alt="" /></span>
+            <span class="mark__body">
+              <span class="mark__top">
+                <span class="mark__name">Travala</span>
                 <span class="badge badge--investment">Investment</span>
               </span>
-              <span class="vcard__note">Investment</span>
-              
-              
-              <span class="vcard__tags"><span class="tag">Investment</span></span>
+              <span class="mark__note">Investment</span>
             </span>
           </a>
         </li>
         <li>
-          <a class="vcard" href="https://www.travala.com" data-filters="investment" target="_blank" rel="noopener noreferrer">
-            <span class="vcard__media vcard__media--mark"><span class="logo-tile"><img class="logo" src="assets/logos/travala.png" alt="" /></span></span>
-            <span class="vcard__body">
-              <span class="vcard__top">
-                <span class="vcard__name">Travala</span>
+          <a class="mark" href="https://delicity.com" target="_blank" rel="noopener noreferrer">
+            <span class="logo-tile"><img class="logo" src="assets/logos/delicity.png" alt="" /></span>
+            <span class="mark__body">
+              <span class="mark__top">
+                <span class="mark__name">Delicity</span>
                 <span class="badge badge--investment">Investment</span>
               </span>
-              <span class="vcard__note">Investment</span>
-              
-              
-              <span class="vcard__tags"><span class="tag">Investment</span></span>
+              <span class="mark__note">Investment</span>
             </span>
           </a>
         </li>
         <li>
-          <a class="vcard" href="https://delicity.com" data-filters="investment" target="_blank" rel="noopener noreferrer">
-            <span class="vcard__media vcard__media--mark"><span class="logo-tile"><img class="logo" src="assets/logos/delicity.png" alt="" /></span></span>
-            <span class="vcard__body">
-              <span class="vcard__top">
-                <span class="vcard__name">Delicity</span>
+          <a class="mark" href="https://frachtis.com" target="_blank" rel="noopener noreferrer">
+            <span class="logo-tile"><img class="logo" src="assets/logos/frachtis.png" alt="" /></span>
+            <span class="mark__body">
+              <span class="mark__top">
+                <span class="mark__name">Frachtis</span>
                 <span class="badge badge--investment">Investment</span>
               </span>
-              <span class="vcard__note">Investment</span>
-              
-              
-              <span class="vcard__tags"><span class="tag">Investment</span></span>
+              <span class="mark__note">Investment</span>
             </span>
           </a>
         </li>
         <li>
-          <a class="vcard" href="https://frachtis.com" data-filters="investment" target="_blank" rel="noopener noreferrer">
-            <span class="vcard__media vcard__media--mark"><span class="logo-tile"><img class="logo" src="assets/logos/frachtis.png" alt="" /></span></span>
-            <span class="vcard__body">
-              <span class="vcard__top">
-                <span class="vcard__name">Frachtis</span>
+          <a class="mark" href="https://www.50partners.fr" target="_blank" rel="noopener noreferrer">
+            <span class="logo-tile"><img class="logo" src="assets/logos/50partners.png" alt="" /></span>
+            <span class="mark__body">
+              <span class="mark__top">
+                <span class="mark__name">50 Partners</span>
                 <span class="badge badge--investment">Investment</span>
               </span>
-              <span class="vcard__note">Investment</span>
-              
-              
-              <span class="vcard__tags"><span class="tag">Investment</span></span>
+              <span class="mark__note">Investment</span>
             </span>
           </a>
         </li>
         <li>
-          <a class="vcard" href="https://www.50partners.fr" data-filters="investment" target="_blank" rel="noopener noreferrer">
-            <span class="vcard__media vcard__media--mark"><span class="logo-tile"><img class="logo" src="assets/logos/50partners.png" alt="" /></span></span>
-            <span class="vcard__body">
-              <span class="vcard__top">
-                <span class="vcard__name">50 Partners</span>
-                <span class="badge badge--investment">Investment</span>
-              </span>
-              <span class="vcard__note">Investment</span>
-              
-              
-              <span class="vcard__tags"><span class="tag">Investment</span></span>
-            </span>
-          </a>
-        </li>
-        <li>
-          <a class="vcard" href="https://rain.fi" data-filters="investment" target="_blank" rel="noopener noreferrer">
-            <span class="vcard__media vcard__media--mark"><span class="logo-tile"><img class="logo" src="assets/logos/rain.png" alt="" /></span></span>
-            <span class="vcard__body">
-              <span class="vcard__top">
-                <span class="vcard__name">Rain.fi</span>
+          <a class="mark" href="https://rain.fi" target="_blank" rel="noopener noreferrer">
+            <span class="logo-tile"><img class="logo" src="assets/logos/rain.png" alt="" /></span>
+            <span class="mark__body">
+              <span class="mark__top">
+                <span class="mark__name">Rain.fi</span>
                 <span class="badge badge--investment">Acq</span>
               </span>
-              <span class="vcard__note">Investment (acq)</span>
-              
-              
-              <span class="vcard__tags"><span class="tag">Investment</span></span>
+              <span class="mark__note">Investment (acq)</span>
             </span>
           </a>
         </li>
         <li>
-          <a class="vcard" href="https://skip.go" data-filters="investment" target="_blank" rel="noopener noreferrer">
-            <span class="vcard__media vcard__media--mark"><span class="logo-tile"><img class="logo" src="assets/logos/skip.png" alt="" /></span></span>
-            <span class="vcard__body">
-              <span class="vcard__top">
-                <span class="vcard__name">Skip</span>
+          <a class="mark" href="https://skip.go" target="_blank" rel="noopener noreferrer">
+            <span class="logo-tile"><img class="logo" src="assets/logos/skip.png" alt="" /></span>
+            <span class="mark__body">
+              <span class="mark__top">
+                <span class="mark__name">Skip</span>
                 <span class="badge badge--investment">Acq</span>
               </span>
-              <span class="vcard__note">Investment (acq)</span>
-              
-              
-              <span class="vcard__tags"><span class="tag">Investment</span></span>
+              <span class="mark__note">Investment (acq)</span>
+            </span>
+          </a>
+        </li>
+        </ul>
+      </section>
+
+      <section class="band" id="holdings" aria-labelledby="holdings-title">
+        <h2 id="holdings-title" class="work__label">Holdings</h2>
+        <ul class="marks">
+        <li>
+          <a class="mark" href="https://hyperliquid.xyz" target="_blank" rel="noopener noreferrer">
+            <span class="logo-tile"><img class="logo" src="assets/logos/hype.png" alt="" /></span>
+            <span class="mark__body">
+              <span class="mark__top">
+                <span class="mark__name">Hyperliquid</span>
+                
+              </span>
+              <span class="mark__note">HYPE</span>
+            </span>
+          </a>
+        </li>
+        <li>
+          <a class="mark" href="https://pump.fun" target="_blank" rel="noopener noreferrer">
+            <span class="logo-tile"><img class="logo" src="assets/logos/pump.png" alt="" /></span>
+            <span class="mark__body">
+              <span class="mark__top">
+                <span class="mark__name">pump.fun</span>
+                
+              </span>
+              <span class="mark__note">PUMP</span>
+            </span>
+          </a>
+        </li>
+        <li>
+          <a class="mark" href="https://ethena.fi" target="_blank" rel="noopener noreferrer">
+            <span class="logo-tile"><img class="logo" src="assets/logos/ena.svg" alt="" /></span>
+            <span class="mark__body">
+              <span class="mark__top">
+                <span class="mark__name">Ethena</span>
+                
+              </span>
+              <span class="mark__note">ENA</span>
+            </span>
+          </a>
+        </li>
+        <li>
+          <a class="mark" href="https://aave.com" target="_blank" rel="noopener noreferrer">
+            <span class="logo-tile"><img class="logo" src="assets/logos/aave.svg" alt="" /></span>
+            <span class="mark__body">
+              <span class="mark__top">
+                <span class="mark__name">Aave</span>
+                
+              </span>
+              <span class="mark__note">AAVE</span>
+            </span>
+          </a>
+        </li>
+        <li>
+          <a class="mark" href="https://ondo.finance" target="_blank" rel="noopener noreferrer">
+            <span class="logo-tile"><img class="logo" src="assets/logos/ondo.svg" alt="" /></span>
+            <span class="mark__body">
+              <span class="mark__top">
+                <span class="mark__name">Ondo</span>
+                
+              </span>
+              <span class="mark__note">ONDO</span>
             </span>
           </a>
         </li>
@@ -315,6 +353,6 @@
       <a href="#top">Back to top</a>
     </div>
   </footer>
-  <script src="script.js?v=4"></script>
+  <script src="script.js?v=5"></script>
 </body>
 </html>
