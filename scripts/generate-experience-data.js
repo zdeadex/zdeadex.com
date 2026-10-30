@@ -77,7 +77,7 @@ function buildJunction() {
   return {
     name: 'Junction',
     role: 'DeFi / Exchanges',
-    url: 'https://junction.exchange',
+    url: 'https://app.junction.exchange',
     description: 'DeFi exchange platform: swap, bridge, perps API, referral system.',
     languages: ['TypeScript', 'JavaScript', 'React', 'Vite', 'Node.js'],
     implementations: [
