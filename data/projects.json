@@ -87,7 +87,7 @@
     "features": [
       "2,500+ blockchains, as stated on the site",
       "Portfolio overview",
-      "Hardware wallet support — the site names Ledger and Trezor",
+      "Hardware wallet support: the site names Ledger and Trezor",
       "Malicious address alerts",
       "The site says it does not record user IP addresses"
     ],
@@ -207,7 +207,7 @@
     ],
     "implemented": [
       "Monorepo (Turbo): landing, app, analytics, API, MCP, indexer",
-      "REST API (Hono) — single backend for all clients",
+      "REST API (Hono): single backend for all clients",
       "On-chain indexer (sync, events, risk scores)",
       "MCP server for AI agents (vault search, risk breakdown)",
       "PostgreSQL (TimescaleDB), Redis (rate limit + cache)",
@@ -222,23 +222,28 @@
   },
   {
     "slug": "winnie",
-    "name": "Winnie",
+    "name": "Winnie and WinnieSwap",
     "initials": "W",
     "logo": null,
     "dir": "projects",
-    "pitch": "Earning mobile wallet.",
-    "card": "Earning mobile wallet",
+    "pitch": "Earning mobile wallet, and the liquidity and trading layer on Berachain.",
+    "card": "Earning mobile wallet, and the liquidity and trading layer on Berachain.",
     "status": "Live",
     "statusKind": "live",
     "url": "https://winnie.app",
     "urlLabel": "winnie.app",
+    "links": [
+      {"href": "https://winnie.app", "label": "winnie.app"},
+      {"href": "https://winnieswap.com", "label": "winnieswap.com"}
+    ],
     "role": "Side project",
     "projectGroup": "side",
     "projectOrder": 1,
     "paragraphs": [
       "Listed on this site as an earning mobile wallet.",
       "StakeLab’s site describes Winnie as a pocket earning companion to manage your finance from anywhere: earn, stake, trade, and spend from a phone.",
-      "The page at winnie.app keeps the Winnie name in the navigation and footer. Its hero currently reads “Your capital, at work” and “Philidor”, then “Unlock crypto earnings in seconds.” Further down, the page calls Winnie the first BERAligned wallet and describes yield using the Berachain Proof of Liquidity mechanism."
+      "The page at winnie.app keeps the Winnie name in the navigation and footer. Its hero currently reads “Your capital, at work” and “Philidor”, then “Unlock crypto earnings in seconds.” Further down, the page calls Winnie the first BERAligned wallet and describes yield using the Berachain Proof of Liquidity mechanism.",
+      "WinnieSwap is listed on this site as the liquidity and trading layer on Berachain. Its navigation is Swap, Earn, Explore, Portfolio, and Leaderboard, and the page shows a Swap on Mobile QR code."
     ],
     "features": [
       "Sign in with Apple or email",
@@ -248,45 +253,16 @@
       "Bribes: the page says $BERA staking is used to bribe vaults with $BGT accumulation",
       "Incentives: the page says part of Winnie revenue is used to deploy incentives into vaults",
       "App Store and Google Play links on the page",
-      "The page says “Powered by WinnieSwap”"
+      "The page says “Powered by WinnieSwap”",
+      "WinnieSwap navigation: Swap, Earn, Explore, Portfolio, and Leaderboard",
+      "WinnieSwap shows a “Swap on Mobile” QR code"
     ],
     "stackTodo": true,
     "shots": [
       {"file": "01-home.jpg", "alt": "Winnie homepage", "caption": "winnie.app"},
-      {"file": "02-further.jpg", "alt": "Further down the Winnie homepage", "caption": "Further down the homepage"}
-    ]
-  },
-  {
-    "slug": "winnieswap",
-    "name": "WinnieSwap",
-    "initials": "WS",
-    "logo": null,
-    "dir": "projects",
-    "pitch": "Liquidity and trading layer on Berachain.",
-    "card": "Liquidity and trading layer on Berachain",
-    "status": "Live",
-    "statusKind": "live",
-    "url": "https://winnieswap.com",
-    "urlLabel": "winnieswap.com",
-    "role": "Side project",
-    "projectGroup": "side",
-    "projectOrder": 2,
-    "paragraphs": [
-      "Listed on this site as the liquidity and trading layer on Berachain.",
-      "The live app’s navigation is Swap, Earn, Explore, Portfolio, and Leaderboard. The page also shows a “Swap on Mobile” QR code."
-    ],
-    "features": [
-      "Swap",
-      "Earn",
-      "Explore",
-      "Portfolio",
-      "Leaderboard",
-      "Mobile swap QR code on the page"
-    ],
-    "stackTodo": true,
-    "shots": [
-      {"file": "01-home.jpg", "alt": "WinnieSwap app", "caption": "winnieswap.com"},
-      {"file": "02-further.jpg", "alt": "WinnieSwap app and footer", "caption": "Further down the page"}
+      {"file": "02-further.jpg", "alt": "Further down the Winnie homepage", "caption": "Further down winnie.app"},
+      {"file": "winnieswap-home.jpg", "alt": "WinnieSwap app", "caption": "winnieswap.com"},
+      {"file": "winnieswap-further.jpg", "alt": "WinnieSwap app and footer", "caption": "Further down winnieswap.com"}
     ]
   },
   {

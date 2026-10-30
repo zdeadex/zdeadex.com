@@ -1,4 +1,4 @@
-# Logos — Experience & portfolio
+# Logos: Experience and portfolio
 
 Add or replace logo files here. The site uses these filenames for the **Experience** section.
 

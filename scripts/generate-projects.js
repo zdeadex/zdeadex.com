@@ -170,7 +170,12 @@ ${paragraphs}
       </section>`,
   ].filter(Boolean).join('\n\n      ');
 
-  return `${head(`${item.name} — Adrien Faguet`, item.pitch, prefix, true)}
+  const links = item.links && item.links.length
+    ? item.links
+    : [{ href: item.url, label: item.urlLabel || item.url }];
+  const linkHtml = links.map((link) => `          <a class="ext" href="${escapeHtml(link.href)}" target="_blank" rel="noopener noreferrer">${escapeHtml(link.label)} <span class="ext__arrow" aria-hidden="true">↗</span></a>`).join('\n');
+
+  return `${head(`${item.name}: Adrien Faguet`, item.pitch, prefix, true)}
 <body>
   ${atmosphere()}
   ${nav(prefix, `${prefix}index.html`)}
@@ -185,7 +190,7 @@ ${paragraphs}
         <p class="case__pitch">${escapeHtml(item.pitch)}</p>
         <div class="case__meta">
           ${badge(item)}
-          <a class="ext" href="${escapeHtml(item.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(item.urlLabel)} <span class="ext__arrow" aria-hidden="true">↗</span></a>
+${linkHtml}
         </div>
       </header>
       <div class="blocks">
@@ -255,21 +260,21 @@ function showcaseCard(item) {
 }
 
 function homePage() {
-  const order = ['philidor', 'junction', 'stakelab', 'winnie', 'winnieswap', 'mypump', 'paygram', 'gymmy', 'struvo', 'ctrl', 'ledger', 'league-of-legends'];
+  const order = ['philidor', 'junction', 'stakelab', 'winnie', 'mypump', 'paygram', 'gymmy', 'struvo', 'ctrl', 'ledger', 'league-of-legends'];
   const bySlug = new Map(projects.map((item) => [item.slug, item]));
   const showcase = order.map((slug) => bySlug.get(slug)).filter(Boolean);
   const investments = [
     { name: 'Ledger', initials: 'L', logo: 'assets/logos/ledger.png', href: 'https://www.ledger.com', card: 'Investment', status: 'Investment', statusKind: 'investment', kind: 'investment', external: true },
-    { name: 'Travala', initials: 'T', href: 'https://www.travala.com', card: 'Investment', status: 'Investment', statusKind: 'investment', kind: 'investment', external: true },
-    { name: 'Delicity', initials: 'D', href: 'https://delicity.com', card: 'Investment', status: 'Investment', statusKind: 'investment', kind: 'investment', external: true },
-    { name: 'Frachtis', initials: 'F', href: 'https://frachtis.com', card: 'Investment', status: 'Investment', statusKind: 'investment', kind: 'investment', external: true },
-    { name: '50 Partners', initials: '50', href: 'https://www.50partners.fr', card: 'Investment', status: 'Investment', statusKind: 'investment', kind: 'investment', external: true },
-    { name: 'Rain.fi', initials: 'R', href: 'https://rain.fi', card: 'Investment (acq)', status: 'Acq', statusKind: 'investment', kind: 'investment', external: true },
-    { name: 'Skip', initials: 'Sk', href: 'https://skip.go', card: 'Investment (acq)', status: 'Acq', statusKind: 'investment', kind: 'investment', external: true },
+    { name: 'Travala', initials: 'T', logo: 'assets/logos/travala.svg', href: 'https://www.travala.com', card: 'Investment', status: 'Investment', statusKind: 'investment', kind: 'investment', external: true },
+    { name: 'Delicity', initials: 'D', logo: 'assets/logos/delicity.png', href: 'https://delicity.com', card: 'Investment', status: 'Investment', statusKind: 'investment', kind: 'investment', external: true },
+    { name: 'Frachtis', initials: 'F', logo: 'assets/logos/frachtis.png', href: 'https://frachtis.com', card: 'Investment', status: 'Investment', statusKind: 'investment', kind: 'investment', external: true },
+    { name: '50 Partners', initials: '50', logo: 'assets/logos/50partners.png', href: 'https://www.50partners.fr', card: 'Investment', status: 'Investment', statusKind: 'investment', kind: 'investment', external: true },
+    { name: 'Rain.fi', initials: 'R', logo: 'assets/logos/rain.png', href: 'https://rain.fi', card: 'Investment (acq)', status: 'Acq', statusKind: 'investment', kind: 'investment', external: true },
+    { name: 'Skip', initials: 'Sk', logo: 'assets/logos/skip.png', href: 'https://skip.go', card: 'Investment (acq)', status: 'Acq', statusKind: 'investment', kind: 'investment', external: true },
   ];
   const cards = [...showcase, ...investments];
 
-  return `${head('Adrien Faguet — Zdeadex', 'Adrien Faguet (Zdeadex). Operation, Product, Engineering, AI.', '', false)}
+  return `${head('Adrien Faguet: Zdeadex', 'Adrien Faguet (Zdeadex). Operation, Product, Engineering, AI.', '', false)}
 <body>
   ${atmosphere()}
   ${nav('', '#top')}
@@ -286,7 +291,7 @@ function homePage() {
           <p class="hero__tagline">Operation, Product, Engineering, AI</p>
         </div>
         <div class="prose reveal">
-          <p class="lead">Hi, I'm Adrien, better known as <strong>Zdeadex</strong>—a retired professional League of Legends player with a background in Engineering and Economics.</p>
+          <p class="lead">Hi, I'm Adrien, better known as <strong>Zdeadex</strong>, a retired professional League of Legends player with a background in Engineering and Economics.</p>
           <p>I've spent the last few years building products and leading teams to production-ready infrastructure in the crypto ecosystem (staking, DeFi, exchanges).</p>
           <p>Experienced in scaling startups from 1 to 900+ people, fostering growth and engineering excellence.</p>
         </div>
@@ -330,7 +335,26 @@ function write(file, html) {
   console.log('Wrote', path.relative(ROOT, file));
 }
 
+function redirectPage(target) {
+  return `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WinnieSwap</title>
+  <meta http-equiv="refresh" content="0; url=${target}" />
+  <link rel="canonical" href="${target}" />
+  <script>location.replace(${JSON.stringify(target)});</script>
+</head>
+<body>
+  <p>This page has moved. <a href="${target}">Winnie and WinnieSwap</a>.</p>
+</body>
+</html>
+`;
+}
+
 write(path.join(ROOT, 'index.html'), homePage());
 for (const item of projects) {
   write(path.join(ROOT, item.dir, `${item.slug}.html`), projectPage(item));
 }
+write(path.join(ROOT, 'projects', 'winnieswap.html'), redirectPage('winnie.html'));

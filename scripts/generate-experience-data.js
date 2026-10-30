@@ -65,7 +65,7 @@ function getReadmeSnippet(dir, maxLines = 15) {
   return '';
 }
 
-// ——— Junction ———
+// Junction
 function buildJunction() {
   const base = path.join(VIBECODING, 'junction');
   const junctionCode = path.join(base, 'JunctionCode');
@@ -91,7 +91,7 @@ function buildJunction() {
   };
 }
 
-// ——— Philidor ———
+// Philidor
 function buildPhilidor() {
   const base = path.join(VIBECODING, 'philidor-io');
   const pkgPaths = findPackageJson(base, []);
@@ -106,7 +106,7 @@ function buildPhilidor() {
     languages: ['TypeScript', 'React', 'Next.js', 'Node.js', 'Hono'],
     implementations: [
       'Monorepo (Turbo): landing, app, analytics, API, MCP, indexer',
-      'REST API (Hono) — single backend for all clients',
+      'REST API (Hono): single backend for all clients',
       'On-chain indexer (sync, events, risk scores)',
       'MCP server for AI agents (vault search, risk breakdown)',
       'PostgreSQL (TimescaleDB), Redis (rate limit + cache)',
@@ -117,7 +117,7 @@ function buildPhilidor() {
   };
 }
 
-// ——— Stakelab ———
+// Stakelab
 function buildStakelab() {
   const base = path.join(VIBECODING, 'Website-StakeLab');
   const pkg = readJson(path.join(base, 'package.json'));
@@ -146,7 +146,7 @@ function buildStakelab() {
   };
 }
 
-// ——— Write data & HTML ———
+// Write data and HTML
 function writeJson(name, data) {
   const outDir = path.join(ROOT, 'data');
   if (!fs.existsSync(outDir)) fs.mkdirSync(outDir, { recursive: true });

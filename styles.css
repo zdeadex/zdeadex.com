@@ -1,4 +1,4 @@
-/* Portfolio — original dark identity, tightened.
+/* Portfolio. Original dark identity, tightened.
    Green glow, near-black ground, Instrument Serif + Inter. */
 
 :root {
@@ -145,7 +145,7 @@ button { font: inherit; color: inherit; }
 
 main { position: relative; z-index: 1; }
 
-/* Hero — photo is the mark, as on the original site */
+/* Hero. The portrait is the mark, as on the original site. */
 .hero {
   text-align: center;
   padding: 3.25rem 0 0.5rem;
@@ -166,7 +166,12 @@ main { position: relative; z-index: 1; }
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 18%;
+  /* Face sits in the upper-middle of the tall source frame.
+     40% keeps the full head inside the circle; the slight scale
+     adds margin so the circle does not clip hair or chin. */
+  object-position: center 40%;
+  transform: scale(0.9);
+  transform-origin: center 42%;
   display: block;
 }
 
@@ -388,7 +393,14 @@ main { position: relative; z-index: 1; }
   background: rgba(255, 255, 255, 0.04);
 }
 
-.logo { width: 100%; height: 100%; object-fit: cover; display: block; }
+.logo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  padding: 3px;
+  box-sizing: border-box;
+}
 
 .logo-fallback {
   display: none;
