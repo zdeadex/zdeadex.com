@@ -65,7 +65,7 @@ function getReadmeSnippet(dir, maxLines = 15) {
   return '';
 }
 
-// ——— Junction ———
+// Junction
 function buildJunction() {
   const base = path.join(VIBECODING, 'junction');
   const junctionCode = path.join(base, 'JunctionCode');
@@ -91,7 +91,7 @@ function buildJunction() {
   };
 }
 
-// ——— Philidor ———
+// Philidor
 function buildPhilidor() {
   const base = path.join(VIBECODING, 'philidor-io');
   const pkgPaths = findPackageJson(base, []);
@@ -106,7 +106,7 @@ function buildPhilidor() {
     languages: ['TypeScript', 'React', 'Next.js', 'Node.js', 'Hono'],
     implementations: [
       'Monorepo (Turbo): landing, app, analytics, API, MCP, indexer',
-      'REST API (Hono) — single backend for all clients',
+      'REST API (Hono): single backend for all clients',
       'On-chain indexer (sync, events, risk scores)',
       'MCP server for AI agents (vault search, risk breakdown)',
       'PostgreSQL (TimescaleDB), Redis (rate limit + cache)',
@@ -117,7 +117,7 @@ function buildPhilidor() {
   };
 }
 
-// ——— Stakelab ———
+// Stakelab
 function buildStakelab() {
   const base = path.join(VIBECODING, 'Website-StakeLab');
   const pkg = readJson(path.join(base, 'package.json'));
@@ -146,67 +146,12 @@ function buildStakelab() {
   };
 }
 
-// ——— Write data & HTML ———
+// Write data and HTML
 function writeJson(name, data) {
   const outDir = path.join(ROOT, 'data');
   if (!fs.existsSync(outDir)) fs.mkdirSync(outDir, { recursive: true });
   fs.writeFileSync(path.join(outDir, `${name}.json`), JSON.stringify(data, null, 2));
   console.log(`Wrote data/${name}.json`);
-}
-
-function escapeHtml(s) {
-  return String(s)
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;');
-}
-
-function buildExperiencePage(slug, data, backHref) {
-  const impl = (data.implementations || []).map((i) => `    <li>${escapeHtml(i)}</li>`).join('\n');
-  const third = (data.thirdParty || []).map((t) => `<span class="recap-pill">${escapeHtml(t)}</span>`).join('\n');
-  const lang = (data.languages || []).map((l) => `<span class="recap-pill">${escapeHtml(l)}</span>`).join('\n');
-  return `<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>${escapeHtml(data.name)} — Experience</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="${backHref}styles.css" />
-  <link rel="stylesheet" href="${backHref}experience.css" />
-</head>
-<body>
-  <div class="noise" aria-hidden="true"></div>
-  <div class="glow" aria-hidden="true"></div>
-  <main class="experience-page">
-    <a href="${backHref}index.html" class="experience-back">← Back to portfolio</a>
-    <header class="experience-header">
-      <h1 class="experience-title">${escapeHtml(data.name)}</h1>
-      <p class="experience-role">${escapeHtml(data.role)}</p>
-      <a href="${escapeHtml(data.url)}" target="_blank" rel="noopener noreferrer" class="experience-link">${escapeHtml(data.url)}</a>
-    </header>
-    <p class="experience-desc">${escapeHtml(data.description)}</p>
-    <section class="recap-section">
-      <h2>What was implemented</h2>
-      <ul class="recap-list">
-${impl}
-      </ul>
-    </section>
-    <section class="recap-section">
-      <h2>Languages & frameworks</h2>
-      <div class="recap-pills">${lang}</div>
-    </section>
-    <section class="recap-section">
-      <h2>Third-party services & APIs</h2>
-      <div class="recap-pills">${third}</div>
-    </section>
-    ${data.repos ? `<section class="recap-section"><h2>Repos / folders (vibecoding)</h2><p class="recap-repos">${escapeHtml(data.repos.join(', '))}</p></section>` : ''}
-  </main>
-</body>
-</html>`;
 }
 
 function main() {
@@ -221,13 +166,7 @@ function main() {
   writeJson('philidor', philidor);
   writeJson('stakelab', stakelab);
 
-  const expDir = path.join(ROOT, 'experience');
-  if (!fs.existsSync(expDir)) fs.mkdirSync(expDir, { recursive: true });
-  const back = '../';
-  fs.writeFileSync(path.join(expDir, 'junction.html'), buildExperiencePage('junction', junction, back));
-  fs.writeFileSync(path.join(expDir, 'philidor.html'), buildExperiencePage('philidor', philidor, back));
-  fs.writeFileSync(path.join(expDir, 'stakelab.html'), buildExperiencePage('stakelab', stakelab, back));
-  console.log('Wrote experience/junction.html, experience/philidor.html, experience/stakelab.html');
+  console.log('JSON only. Project pages are rendered by scripts/generate-projects.js from data/projects.json.');
 }
 
 main();

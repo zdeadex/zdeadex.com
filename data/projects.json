@@ -1,0 +1,405 @@
+[
+  {
+    "slug": "league-of-legends",
+    "name": "League of Legends",
+    "initials": "LoL",
+    "logo": "assets/logos/lol.png",
+    "dir": "projects",
+    "pitch": "A 5v5 MOBA where teams battle to destroy the enemy Nexus.",
+    "card": "A 5v5 MOBA where teams battle to destroy the enemy Nexus.",
+    "status": "Retired",
+    "statusKind": "retired",
+    "url": "https://www.leagueoflegends.com",
+    "urlLabel": "leagueoflegends.com",
+    "role": "Pro Player",
+    "experienceNote": "Pro Player",
+    "experienceOrder": 1,
+    "projectGroup": "more",
+    "projectOrder": 90,
+    "paragraphs": [
+      "Listed on this site as a retired professional player.",
+      "The game’s site describes League of Legends as a 5v5 MOBA where teams battle to destroy the enemy Nexus, and says it is free to play, with over 140 champions."
+    ],
+    "features": [
+      "5v5 team battles",
+      "Free to play",
+      "The site says there are over 140 champions"
+    ],
+    "stackTodo": true,
+    "shots": [
+      {"file": "01-home.jpg", "alt": "League of Legends homepage", "caption": "leagueoflegends.com"},
+      {"file": "02-further.jpg", "alt": "Further down the League of Legends homepage", "caption": "Further down the homepage"}
+    ]
+  },
+  {
+    "slug": "ledger",
+    "name": "Ledger",
+    "initials": "L",
+    "logo": "assets/logos/ledger.png",
+    "dir": "projects",
+    "pitch": "Crypto wallets. The homepage features Ledger Atom.",
+    "card": "Crypto wallets for securing assets.",
+    "status": "Left",
+    "statusKind": "left",
+    "url": "https://www.ledger.com",
+    "urlLabel": "ledger.com",
+    "role": "Blockchain Developer across UTXO's, EVM's, Solana and Cosmos ecosystems",
+    "experienceNote": "Blockchain Developer across UTXO's, EVM's, Solana and Cosmos ecosystems",
+    "experienceOrder": 2,
+    "projectGroup": "more",
+    "projectOrder": 80,
+    "paragraphs": [
+      "The site describes Ledger as a crypto wallet for securing assets such as Bitcoin, Ethereum, XRP, Monero, and more, for DeFi and Web3.",
+      "The homepage captured here is headed “Ledger crypto wallets” and leads with Ledger Atom."
+    ],
+    "features": [
+      "Crypto wallets",
+      "Ledger Atom, as shown on the homepage",
+      "The site also links a Ledger Wallet app, plus buying, swapping, and staking crypto"
+    ],
+    "stackTodo": true,
+    "shots": [
+      {"file": "01-home.jpg", "alt": "Ledger homepage featuring Ledger Atom", "caption": "ledger.com"},
+      {"file": "02-further.jpg", "alt": "Further down the Ledger homepage", "caption": "Further down the homepage"}
+    ]
+  },
+  {
+    "slug": "ctrl",
+    "name": "Ctrl Wallet",
+    "initials": "Ctrl",
+    "logo": "assets/logos/ctrl.png",
+    "dir": "projects",
+    "pitch": "A multichain crypto wallet. Its site says it has been shut down.",
+    "card": "Multichain wallet. The site says it shut down in 2026.",
+    "status": "Left",
+    "statusKind": "left",
+    "url": "https://ctrl.xyz",
+    "urlLabel": "ctrl.xyz",
+    "role": "Head of Integration/Ecosystem for all products/protocols/blockchains",
+    "experienceNote": "Head of Integration/Ecosystem for all products/protocols/blockchains",
+    "experienceOrder": 3,
+    "projectGroup": "more",
+    "projectOrder": 70,
+    "paragraphs": [
+      "Ctrl’s site describes a crypto wallet with support for 2,500+ blockchains, and says Ctrl (formerly XDEFI) was founded in 2020.",
+      "The same page says that on August 19, 2026, Ctrl Wallet was permanently shut down, and that funds stay accessible by importing the recovery phrase into a compatible wallet."
+    ],
+    "features": [
+      "2,500+ blockchains, as stated on the site",
+      "Portfolio overview",
+      "Hardware wallet support: the site names Ledger and Trezor",
+      "Malicious address alerts",
+      "The site says it does not record user IP addresses"
+    ],
+    "stackTodo": true,
+    "shots": [
+      {"file": "01-home.jpg", "alt": "Ctrl Wallet shutdown notice", "caption": "ctrl.xyz, shutdown notice"},
+      {"file": "02-further.jpg", "alt": "Ctrl Wallet page below the shutdown notice", "caption": "Further down the page"}
+    ]
+  },
+  {
+    "slug": "stakelab",
+    "name": "Stakelab",
+    "initials": "S",
+    "logo": "assets/logos/stakelab.png",
+    "dir": "experience",
+    "pitch": "Staking platform: frontend (React + Vite) and backend (AdonisJS), multi-chain.",
+    "card": "Staking platform: frontend (React + Vite) and backend (AdonisJS), multi-chain.",
+    "status": "Live",
+    "statusKind": "live",
+    "url": "https://stakelab.zone",
+    "urlLabel": "stakelab.zone",
+    "role": "Founder of the Staking infrastructure managing $200M in assets",
+    "experienceNote": "Founder of the Staking infrastructure managing $200M in assets",
+    "experienceOrder": 4,
+    "projectGroup": "more",
+    "projectOrder": 40,
+    "paragraphs": [
+      "Staking platform: frontend (React + Vite) and backend (AdonisJS), multi-chain.",
+      "The public site says “Stake and get rewarded on the most secured and powerful staking platform.” It describes StakeLab as secure infrastructure that provides validating and relaying services for Proof of Stake blockchains, and lists networks, a rewards calculator, and staking."
+    ],
+    "features": [
+      "Networks and staking",
+      "Rewards calculator",
+      "Validating and relaying services for Proof of Stake blockchains, as described on the site"
+    ],
+    "implemented": [
+      "Monorepo: frontend (Vite + React) + backend (AdonisJS)",
+      "WebSocket + REST API",
+      "Multi-chain: Cosmos (CosmJS, Cosmos Kit), Starknet, EVM (Wagmi/Viem)"
+    ],
+    "stack": ["TypeScript", "React", "Vite", "Node.js", "AdonisJS"],
+    "services": ["AdonisJS", "MySQL", "Redis", "CosmJS", "Starknet.js", "Viem", "Wagmi", "CoinGecko", "Socket.io"],
+    "shots": [
+      {"file": "01-home.jpg", "alt": "StakeLab homepage", "caption": "stakelab.zone"},
+      {"file": "02-further.jpg", "alt": "Further down the StakeLab homepage", "caption": "Further down the homepage"}
+    ]
+  },
+  {
+    "slug": "junction",
+    "name": "Junction",
+    "initials": "J",
+    "logo": "assets/logos/junction.png",
+    "dir": "experience",
+    "pitch": "DeFi exchange platform: swap, bridge, perps API, referral system.",
+    "card": "DeFi exchange platform: swap, bridge, perps API, referral system.",
+    "status": "Live",
+    "statusKind": "live",
+    "url": "https://junction.exchange",
+    "urlLabel": "junction.exchange",
+    "role": "Founder of the trading infrastructure across all blockchains and tokens",
+    "experienceNote": "Founder of the trading infrastructure across all blockchains and tokens",
+    "experienceOrder": 5,
+    "projectGroup": "more",
+    "projectOrder": 50,
+    "paragraphs": [
+      "DeFi exchange platform: swap, bridge, perps API, referral system.",
+      "The homepage says “One app for all markets” and “Trade crypto, equities, FX, and commodities from one place.”",
+      "The site describes Junction as a cross-chain DeFi exchange that unifies liquidity from 1inch, LiFi, Morpho, Hyperliquid, and native bridges behind one REST API, GraphQL gateway, TypeScript SDK, embeddable widget, and MCP server. It lists same-chain and cross-chain swaps, one-call bridges, Hyperliquid perpetual futures, Morpho lending vaults, validator staking, and fiat on-ramp, across Ethereum, Arbitrum, Optimism, Base, Polygon, BSC, Avalanche, Solana, and Hyperliquid L1."
+    ],
+    "features": [
+      "Smart-routed swaps and one-call bridges",
+      "Hyperliquid perpetual futures",
+      "Morpho lending vaults and validator staking",
+      "Fiat on-ramp",
+      "REST API, GraphQL gateway, TypeScript SDK, embeddable widget, and MCP server"
+    ],
+    "implemented": [
+      "Perps API (Express + TypeScript)",
+      "Front-end (JunctionCode: gateway, junction-front-end)",
+      "Assets, balances, fees, routing, chains registry, CoinGecko proxy",
+      "Referral & invite system"
+    ],
+    "stack": ["TypeScript", "JavaScript", "React", "Vite", "Node.js"],
+    "services": ["Express", "Viem", "CoinGecko", "Hyperliquid", "OpenOcean", "CCTP"],
+    "shots": [
+      {"file": "01-home.jpg", "alt": "Junction homepage", "caption": "junction.exchange"},
+      {"file": "02-further.jpg", "alt": "Further down the Junction homepage", "caption": "Further down the homepage"}
+    ]
+  },
+  {
+    "slug": "philidor",
+    "name": "Philidor",
+    "initials": "P",
+    "logo": "assets/logos/philidor.png",
+    "dir": "experience",
+    "pitch": "Institutional-grade DeFi vault risk assessment and curation platform.",
+    "card": "Institutional-grade DeFi vault risk assessment and curation platform.",
+    "status": "Live",
+    "statusKind": "live",
+    "url": "https://philidor.io",
+    "urlLabel": "philidor.io",
+    "role": "Founder of the institutional DeFi layer focusing on transparent security and risk analysis",
+    "experienceNote": "Founder of the institutional DeFi layer focusing on transparent security and risk analysis",
+    "experienceOrder": 6,
+    "projectGroup": "more",
+    "projectOrder": 60,
+    "paragraphs": [
+      "Institutional-grade DeFi vault risk assessment and curation platform.",
+      "The site says Philidor scores and monitors vaults and tokenized funds, maps what each product depends on, and issues signed risk decisions under your policy, with an open methodology, dashboards, and APIs for institutional allocators.",
+      "The homepage shows 1000+ vaults scored, 450+ assets covered, 13 protocol modules, and 12 chains. It describes one score from 0 to 10 for each covered vault, with tiers Prime, Core, and Edge, and says scores are reproducible and are not changed by hand."
+    ],
+    "features": [
+      "Vault and tokenized-fund scoring and monitoring",
+      "Dependency mapping",
+      "Signed risk decisions under a policy",
+      "Dashboards, a public API, and MCP for agents"
+    ],
+    "implemented": [
+      "Monorepo (Turbo): landing, app, analytics, API, MCP, indexer",
+      "REST API (Hono): single backend for all clients",
+      "On-chain indexer (sync, events, risk scores)",
+      "MCP server for AI agents (vault search, risk breakdown)",
+      "PostgreSQL (TimescaleDB), Redis (rate limit + cache)",
+      "Vercel (frontends + MCP), VPS (API + indexer)"
+    ],
+    "stack": ["TypeScript", "React", "Next.js", "Node.js", "Hono"],
+    "services": ["Vercel", "PostgreSQL / TimescaleDB", "Redis", "Viem", "Enso", "Resend", "OpenAPI/Swagger"],
+    "shots": [
+      {"file": "01-home.jpg", "alt": "Philidor homepage", "caption": "philidor.io"},
+      {"file": "02-further.jpg", "alt": "Further down the Philidor homepage", "caption": "Further down the homepage"}
+    ]
+  },
+  {
+    "slug": "winnie",
+    "name": "Winnie and WinnieSwap",
+    "initials": "W",
+    "logo": null,
+    "dir": "projects",
+    "pitch": "Earning mobile wallet, and the liquidity and trading layer on Berachain.",
+    "card": "Earning mobile wallet, and the liquidity and trading layer on Berachain.",
+    "status": "Live",
+    "statusKind": "live",
+    "url": "https://winnie.app",
+    "urlLabel": "winnie.app",
+    "links": [
+      {"href": "https://winnie.app", "label": "winnie.app"},
+      {"href": "https://winnieswap.com", "label": "winnieswap.com"}
+    ],
+    "role": "Side project",
+    "projectGroup": "side",
+    "projectOrder": 1,
+    "paragraphs": [
+      "Listed on this site as an earning mobile wallet.",
+      "StakeLab’s site describes Winnie as a pocket earning companion to manage your finance from anywhere: earn, stake, trade, and spend from a phone.",
+      "The page at winnie.app keeps the Winnie name in the navigation and footer. Its hero currently reads “Your capital, at work” and “Philidor”, then “Unlock crypto earnings in seconds.” Further down, the page calls Winnie the first BERAligned wallet and describes yield using the Berachain Proof of Liquidity mechanism.",
+      "WinnieSwap is listed on this site as the liquidity and trading layer on Berachain. Its navigation is Swap, Earn, Explore, Portfolio, and Leaderboard, and the page shows a Swap on Mobile QR code."
+    ],
+    "features": [
+      "Sign in with Apple or email",
+      "Fiat-to-crypto onramp",
+      "Monitor yields and withdraw",
+      "Buy back: the page says part of Winnie revenue accumulates $BERA",
+      "Bribes: the page says $BERA staking is used to bribe vaults with $BGT accumulation",
+      "Incentives: the page says part of Winnie revenue is used to deploy incentives into vaults",
+      "App Store and Google Play links on the page",
+      "The page says “Powered by WinnieSwap”",
+      "WinnieSwap navigation: Swap, Earn, Explore, Portfolio, and Leaderboard",
+      "WinnieSwap shows a “Swap on Mobile” QR code"
+    ],
+    "stackTodo": true,
+    "shots": [
+      {"file": "01-home.jpg", "alt": "Winnie homepage", "caption": "winnie.app"},
+      {"file": "02-further.jpg", "alt": "Further down the Winnie homepage", "caption": "Further down winnie.app"},
+      {"file": "winnieswap-home.jpg", "alt": "WinnieSwap app", "caption": "winnieswap.com"},
+      {"file": "winnieswap-further.jpg", "alt": "WinnieSwap app and footer", "caption": "Further down winnieswap.com"}
+    ]
+  },
+  {
+    "slug": "mypump",
+    "name": "Mypump",
+    "initials": "MP",
+    "logo": null,
+    "dir": "projects",
+    "pitch": "The social economic layer for creators and callers.",
+    "card": "Social mobile app for creators",
+    "status": "Live",
+    "statusKind": "live",
+    "url": "https://getmypump.com",
+    "urlLabel": "getmypump.com",
+    "role": "Side project",
+    "projectGroup": "side",
+    "projectOrder": 3,
+    "paragraphs": [
+      "Listed on this site as a social mobile app for creators.",
+      "The site headlines “The social economic layer for creators and callers” and “Where content, attention, and community create shared value.” The page offers an iOS TestFlight link and a way to join as a creator, and it shows creator and caller profiles."
+    ],
+    "features": [
+      "Creator and caller profiles",
+      "iOS TestFlight link on the page",
+      "Join as a creator"
+    ],
+    "stackTodo": true,
+    "shots": [
+      {"file": "01-home.jpg", "alt": "MyPump homepage", "caption": "getmypump.com"},
+      {"file": "02-further.jpg", "alt": "Further down the MyPump homepage", "caption": "Further down the homepage"}
+    ]
+  },
+  {
+    "slug": "paygram",
+    "name": "Paygram",
+    "initials": "Pg",
+    "logo": null,
+    "dir": "projects",
+    "pitch": "Launch a token routed to a Telegram, X, GitHub, or Fomo @username.",
+    "card": "Launch a token routed to a Telegram, X, GitHub, or Fomo @username.",
+    "status": "Live",
+    "statusKind": "live",
+    "url": "https://usepaygram.com",
+    "urlLabel": "usepaygram.com",
+    "role": null,
+    "roleTodoDetail": "usepaygram.com does not name a personal title.",
+    "projectGroup": "more",
+    "projectOrder": 10,
+    "paragraphs": [
+      "Paygram’s site says you launch a token, stock, or basket paired to any handle on Telegram, X, GitHub, or Fomo. You pick a @username; Paygram mints the token, routes creator fees in SOL, and pays 80% to that handle’s social-linked wallet. Unclaimed fees stay in the vault.",
+      "The fees page says Paygram adds no trade fee on pump.fun launches. Of the creator fee, 80% goes to the handle and/or holders and 20% buys and burns $PAYGRAM. Creating a coin has no Paygram fee; network fees still apply, and a dev buy is optional."
+    ],
+    "features": [
+      "Launch a token, stock, or basket paired to a Telegram, X, GitHub, or Fomo handle",
+      "Creator fees paid in SOL to a social-linked wallet",
+      "80% of the creator fee to the handle and/or holders; 20% buys and burns $PAYGRAM",
+      "Unclaimed fees stay in the vault",
+      "No Paygram launch fee and no extra Paygram trade fee on pump.fun, per the site"
+    ],
+    "stackTodo": true,
+    "shots": [
+      {"file": "01-home.jpg", "alt": "Paygram homepage", "caption": "usepaygram.com"},
+      {"file": "02-further.jpg", "alt": "Further down the Paygram homepage", "caption": "Further down the homepage"}
+    ]
+  },
+  {
+    "slug": "struvo",
+    "name": "Struvo",
+    "initials": "St",
+    "logo": null,
+    "dir": "projects",
+    "pitch": "Find and book a coach. Train in person, follow an online plan, or get monthly coaching.",
+    "card": "Find and book a coach. Train in person, follow an online plan, or get monthly coaching.",
+    "status": "Preview",
+    "statusKind": "preview",
+    "url": "https://www.struvo.app",
+    "urlLabel": "struvo.app",
+    "role": null,
+    "roleTodoDetail": "struvo.app does not name a personal title.",
+    "projectGroup": "more",
+    "projectOrder": 30,
+    "paragraphs": [
+      "Struvo’s site says: find and book a coach near you. Train in person, follow an online plan, or get monthly coaching.",
+      "The homepage headline is “Find your coach. Make your next move.” It lists in-person sessions, written online plans, and monthly coaching with check-ins. Search is by sport and area, then compare profiles and book a time.",
+      "The site’s FAQ says payments are not live yet and booking is not open yet. Browsing coaches and plans, and creating a free account, are available. It says Struvo is for adults 18 and over, and that every coach is reviewed before a profile is public."
+    ],
+    "features": [
+      "In person: one-on-one or small group, at a gym, park, or studio, with prices and areas listed",
+      "Online plan: a written plan, week by week, one price shown before you buy",
+      "Monthly coaching: check-ins, feedback, sessions and reply times set by the coach",
+      "Search, compare, and book",
+      "Coaches are reviewed before they appear",
+      "The site says reviews are intended only from completed paid sessions"
+    ],
+    "stackTodo": true,
+    "shots": [
+      {"file": "01-home.jpg", "alt": "Struvo homepage", "caption": "struvo.app"},
+      {"file": "02-further.jpg", "alt": "Further down the Struvo homepage", "caption": "Further down the homepage"}
+    ]
+  },
+  {
+    "slug": "gymmy",
+    "name": "Gymmy",
+    "initials": "G",
+    "logo": null,
+    "dir": "projects",
+    "pitch": "Gym and studio software: schedule, members, payments, and a website.",
+    "card": "Gym and studio software: schedule, members, payments, and a website.",
+    "status": "Live",
+    "statusKind": "live",
+    "url": "https://hellogymmy.com",
+    "urlLabel": "hellogymmy.com",
+    "role": null,
+    "roleTodoDetail": "The terms of service say Gymmy is published by StakeLab Pte. Ltd. They do not state a personal title.",
+    "projectGroup": "more",
+    "projectOrder": 20,
+    "paragraphs": [
+      "Gymmy’s site says it gives gyms time back with their members and runs operations, with a modular dashboard for owners and an assistant for members.",
+      "The owners page describes schedule, members, memberships, and payments in one place. The pricing page says the plan includes a website. The terms of service say Gymmy is online software published by StakeLab Pte. Ltd.: a dashboard for owners and coaches (schedule, programming, members, payments) and an assistant for members."
+    ],
+    "features": [
+      "Class schedule with capped spots and a waitlist",
+      "Member profiles, attendance, and membership status",
+      "Memberships and payments, with card billing through Stripe and failed-payment follow-up",
+      "WODs and programming, including import from an existing document",
+      "Several gyms on one account",
+      "An assistant for schedule, members, and numbers",
+      "Analytics for attendance, class fill rate, and membership trends",
+      "Guided migration from other software",
+      "For members: book a class, waitlist alerts, today’s WOD with loads, scores and PR history",
+      "Website included, as stated on the pricing page"
+    ],
+    "stackTodo": true,
+    "shots": [
+      {"file": "01-home.jpg", "alt": "Gymmy homepage", "caption": "hellogymmy.com"},
+      {"file": "02-owners.jpg", "alt": "Gymmy owners product page", "caption": "Owners product page"},
+      {"file": "02-further.jpg", "alt": "Further down the Gymmy homepage", "caption": "Further down the homepage"}
+    ]
+  }
+]
