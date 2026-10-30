@@ -166,12 +166,8 @@ main { position: relative; z-index: 1; }
   width: 100%;
   height: 100%;
   object-fit: cover;
-  /* Face sits in the upper-middle of the tall source frame.
-     40% keeps the full head inside the circle; the slight scale
-     adds margin so the circle does not clip hair or chin. */
   object-position: center 40%;
-  transform: scale(0.9);
-  transform-origin: center 42%;
+  border-radius: 50%;
   display: block;
 }
 
@@ -205,12 +201,11 @@ main { position: relative; z-index: 1; }
 }
 
 .hero__tagline {
-  margin: 0.85rem 0 0;
+  margin: 0.75rem 0 0;
   color: var(--muted);
-  font-size: 0.78rem;
-  font-weight: 500;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 0;
 }
 
 .prose {
@@ -235,26 +230,16 @@ main { position: relative; z-index: 1; }
 
 .prose strong { color: var(--accent); font-weight: 500; }
 
-.invest-lead {
-  max-width: var(--measure);
-  margin: 0 auto 1.75rem;
-  text-align: center;
-  color: var(--muted);
-  font-size: 0.98rem;
-  font-style: italic;
-}
-
 /* Filters */
 .work { padding: 2.75rem 0 1rem; }
 
 .work__label {
-  margin: 0 0 0.35rem;
-  text-align: center;
-  font-size: 0.78rem;
-  font-weight: 500;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--muted);
+  margin: 0 0 1rem;
+  font-family: var(--serif);
+  font-size: clamp(2rem, 4vw, 2.6rem);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  color: var(--text);
 }
 
 .filters {
@@ -454,18 +439,14 @@ main { position: relative; z-index: 1; }
 }
 
 .tag {
-  font-size: 0.68rem;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
+  font-size: 0.8rem;
   color: var(--faint);
 }
 
 .badge {
   flex-shrink: 0;
-  font-size: 0.65rem;
+  font-size: 0.75rem;
   font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
   padding: 0.22rem 0.5rem;
   border-radius: 999px;
   border: 1px solid transparent;

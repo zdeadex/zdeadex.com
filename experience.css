@@ -143,10 +143,8 @@
 
 .callout__label {
   margin: 0 0 0.25rem;
-  font-size: 0.72rem;
+  font-size: 0.85rem;
   font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
   color: var(--accent);
 }
 

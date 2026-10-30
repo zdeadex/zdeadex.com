@@ -332,35 +332,40 @@
     "slug": "struvo",
     "name": "Struvo",
     "initials": "St",
-    "logo": null,
+    "logo": "assets/logos/struvo.svg",
     "dir": "projects",
-    "pitch": "Find and book a coach. Train in person, follow an online plan, or get monthly coaching.",
-    "card": "Find and book a coach. Train in person, follow an online plan, or get monthly coaching.",
-    "status": "Preview",
-    "statusKind": "preview",
-    "url": "https://www.struvo.app",
-    "urlLabel": "struvo.app",
+    "pitch": "Verified building companies, rated on real jobs.",
+    "card": "Verified building companies, rated on real jobs.",
+    "status": "Live",
+    "statusKind": "live",
+    "url": "https://struvo.fr",
+    "urlLabel": "struvo.fr",
     "role": null,
-    "roleTodoDetail": "struvo.app does not name a personal title.",
+    "roleTodoDetail": "struvo.fr does not name a personal title.",
     "projectGroup": "more",
     "projectOrder": 30,
     "paragraphs": [
-      "Struvo’s site says: find and book a coach near you. Train in person, follow an online plan, or get monthly coaching.",
-      "The homepage headline is “Find your coach. Make your next move.” It lists in-person sessions, written online plans, and monthly coaching with check-ins. Search is by sport and area, then compare profiles and book a time.",
-      "The site’s FAQ says payments are not live yet and booking is not open yet. Browsing coaches and plans, and creating a free account, are available. It says Struvo is for adults 18 and over, and that every coach is reviewed before a profile is public."
+      "Struvo’s site presents it as the trusted third party for the building trade. The page says it is not another directory: verified companies, certified reviews after a real job, and a selected network.",
+      "The headline is “Find a reliable professional, without stress or a bad surprise.”",
+      "Verification covers SIRET, Kbis, and insurance: an automatic OCR check against criteria, then a review. The site says this is not a simple online listing.",
+      "The Struvo badge is earned after seniority or several jobs, and a certified rating. A Premium badge is for companies that accept job-site audits.",
+      "Clients can upload before, during, and after photos. The site says those photos are timestamped and geolocated, and that only the client uploads them. It also mentions random or planned on-site checks.",
+      "How it works, as listed on the site: search verified companies rated on objective criteria, follow the job with a clear record, then leave a certified review after the real work.",
+      "For companies, the site describes a monthly subscription for visibility. The first five companies in each trade get one year free. The badge is then earned from proof and certified reviews."
     ],
     "features": [
-      "In person: one-on-one or small group, at a gym, park, or studio, with prices and areas listed",
-      "Online plan: a written plan, week by week, one price shown before you buy",
-      "Monthly coaching: check-ins, feedback, sessions and reply times set by the coach",
-      "Search, compare, and book",
-      "Coaches are reviewed before they appear",
-      "The site says reviews are intended only from completed paid sessions"
+      "Companies checked before they are listed",
+      "No anonymous reviews, and no reviews that are not tied to a job",
+      "Five objective quality criteria per review",
+      "SIRET, Kbis, and insurance checks, then a review",
+      "Badge after seniority or several jobs, plus a certified rating",
+      "Premium badge for companies that accept job-site audits",
+      "Client photos before, during, and after, timestamped and geolocated"
     ],
     "stackTodo": true,
     "shots": [
-      {"file": "01-home.jpg", "alt": "Struvo homepage", "caption": "struvo.app"},
-      {"file": "02-further.jpg", "alt": "Further down the Struvo homepage", "caption": "Further down the homepage"}
+      {"file": "01-home.jpg", "alt": "Struvo homepage", "caption": "struvo.fr"},
+      {"file": "02-further.jpg", "alt": "Further down the Struvo homepage", "caption": "Further down struvo.fr"}
     ]
   },
   {
