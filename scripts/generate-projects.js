@@ -207,6 +207,7 @@ ${linkHtml}
 function filterTokens(item) {
   const tokens = new Set();
   if (item.statusKind) tokens.add(item.statusKind);
+  if (item.alsoLive) tokens.add('live');
   if (item.projectGroup === 'side') tokens.add('side');
   if (item.experimental) tokens.add('experience');
   if (item.statusKind === 'preview') tokens.add('building');

@@ -181,7 +181,8 @@
         "alt": "Further down the StakeLab homepage",
         "caption": "Further down the homepage"
       }
-    ]
+    ],
+    "alsoLive": true
   },
   {
     "slug": "junction",
@@ -244,7 +245,8 @@
         "alt": "Further down the Junction homepage",
         "caption": "Further down the homepage"
       }
-    ]
+    ],
+    "alsoLive": true
   },
   {
     "slug": "philidor",
@@ -309,7 +311,8 @@
         "alt": "Further down the Philidor homepage",
         "caption": "Further down the homepage"
       }
-    ]
+    ],
+    "alsoLive": true
   },
   {
     "slug": "mypump",
