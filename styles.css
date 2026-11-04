@@ -611,3 +611,19 @@ main { position: relative; z-index: 1; }
   background: rgba(255, 255, 255, 0.05);
   border-color: rgba(255, 255, 255, 0.14);
 }
+
+.site-footer .wrap { flex-wrap: wrap; gap: 0.8rem 1.5rem; }
+
+.site-footer__nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.2rem;
+}
+
+.site-footer__nav a {
+  color: var(--faint);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.site-footer__nav a:hover { color: var(--text); }

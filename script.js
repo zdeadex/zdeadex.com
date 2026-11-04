@@ -61,6 +61,8 @@
       });
     });
     window.addEventListener("hashchange", function () {
+      var tabsEl = document.querySelector(".section-tab");
+      if (tabsEl) tabsEl.scrollIntoView({ block: "start" });
       var id = idFromHash();
       if (id) showSection(id, false);
     });
