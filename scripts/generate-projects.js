@@ -308,7 +308,7 @@ function homePage() {
     { name: 'Frachtis', initials: 'F', logo: 'assets/logos/frachtis.png', href: 'https://frachtis.com', card: 'Active', status: 'Active', statusKind: 'investment', group: 'active', external: true },
     { name: '50 Partners', initials: '50', logo: 'assets/logos/50partners.png', href: 'https://www.50partners.fr', card: 'Active', status: 'Active', statusKind: 'investment', group: 'active', external: true },
     { name: 'Rain.fi', initials: 'R', logo: 'assets/logos/rain.png', href: 'https://rain.fi', card: 'By Jupiter', status: 'Acquired', statusKind: 'investment', group: 'acquired', external: true },
-    { name: 'Skip', initials: 'Sk', logo: 'assets/logos/skip.png', href: 'https://skip.go', card: 'By ICF', status: 'Acquired', statusKind: 'investment', group: 'acquired', external: true },
+    { name: 'Skip', initials: 'Sk', logo: 'assets/logos/skip.png', href: 'https://go.skip.build', card: 'By ICF', status: 'Acquired', statusKind: 'investment', group: 'acquired', external: true },
   ];
   const holdings = [
     { name: 'Hyperliquid', initials: 'HYPE', logo: 'assets/logos/hype.png', href: 'https://hyperliquid.xyz', card: 'HYPE', entry: '~$30', exit: '', status: 'Active', statusKind: 'live', group: 'active', external: true },
