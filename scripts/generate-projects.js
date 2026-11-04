@@ -72,7 +72,7 @@ function badge(item) {
   return `<span class="badge badge--${escapeHtml(item.statusKind)}">${escapeHtml(item.status)}</span>`;
 }
 
-const BADGE_LABELS = { live: 'Live', building: 'Building', retired: 'Retired', side: 'Side project', experience: 'Experience', preview: 'Building' };
+const BADGE_LABELS = { live: 'Live', building: 'Building', retired: 'Retired', side: 'Side project', experience: 'Experimenting', preview: 'Building' };
 
 function badges(item) {
   const order = ['live', 'building', 'preview', 'retired', 'side', 'experience'];
@@ -244,7 +244,7 @@ function filterTokens(item) {
 function tagLabel(item) {
   if (item.kind === 'investment') return 'Investment';
   if (item.projectGroup === 'side') return 'Side project';
-  if (item.experimental) return 'Experience';
+  if (item.experimental) return 'Experimenting';
   return '';
 }
 
@@ -363,7 +363,7 @@ function homePage() {
           <button type="button" class="chip" data-filter="building" aria-pressed="false">Building</button>
           <button type="button" class="chip" data-filter="retired" aria-pressed="false">Retired</button>
           <button type="button" class="chip" data-filter="side" aria-pressed="false">Side projects</button>
-          <button type="button" class="chip" data-filter="experience" aria-pressed="false">Experience</button>
+          <button type="button" class="chip" data-filter="experience" aria-pressed="false">Experimenting</button>
           <span class="filters__count" aria-live="polite">${showcase.length} projects</span>
         </div>
         <ul class="showcase">
