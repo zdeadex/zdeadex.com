@@ -14,7 +14,7 @@ const ROOT = path.join(__dirname, '..');
 const projects = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'projects.json'), 'utf8'));
 
 const FONTS = 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Instrument+Serif&display=swap';
-const ASSET_V = '6';
+const ASSET_V = '7';
 
 function escapeHtml(s) {
   return String(s)
@@ -208,7 +208,7 @@ function filterTokens(item) {
   const tokens = new Set();
   if (item.statusKind) tokens.add(item.statusKind);
   if (item.projectGroup === 'side') tokens.add('side');
-  if (item.experienceOrder != null) tokens.add('experience');
+  if (item.experimental) tokens.add('experience');
   if (item.statusKind === 'preview') tokens.add('building');
   if (item.kind === 'investment') tokens.add('investment');
   return [...tokens].join(' ');
@@ -217,7 +217,7 @@ function filterTokens(item) {
 function tagLabel(item) {
   if (item.kind === 'investment') return 'Investment';
   if (item.projectGroup === 'side') return 'Side project';
-  if (item.experienceOrder != null) return 'Experience';
+  if (item.experimental) return 'Experience';
   return '';
 }
 
@@ -325,7 +325,6 @@ function homePage() {
           <button type="button" class="chip is-on" data-filter="all" aria-pressed="true">All</button>
           <button type="button" class="chip" data-filter="live" aria-pressed="false">Live</button>
           <button type="button" class="chip" data-filter="building" aria-pressed="false">Building</button>
-          <button type="button" class="chip" data-filter="left" aria-pressed="false">Left</button>
           <button type="button" class="chip" data-filter="retired" aria-pressed="false">Retired</button>
           <button type="button" class="chip" data-filter="side" aria-pressed="false">Side projects</button>
           <button type="button" class="chip" data-filter="experience" aria-pressed="false">Experience</button>

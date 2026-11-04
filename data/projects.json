@@ -27,8 +27,16 @@
     ],
     "stackTodo": true,
     "shots": [
-      {"file": "01-home.jpg", "alt": "League of Legends homepage", "caption": "leagueoflegends.com"},
-      {"file": "02-further.jpg", "alt": "Further down the League of Legends homepage", "caption": "Further down the homepage"}
+      {
+        "file": "01-home.jpg",
+        "alt": "League of Legends homepage",
+        "caption": "leagueoflegends.com"
+      },
+      {
+        "file": "02-further.jpg",
+        "alt": "Further down the League of Legends homepage",
+        "caption": "Further down the homepage"
+      }
     ]
   },
   {
@@ -39,8 +47,8 @@
     "dir": "projects",
     "pitch": "Crypto wallets. The homepage features Ledger Atom.",
     "card": "Crypto wallets for securing assets.",
-    "status": "Left",
-    "statusKind": "left",
+    "status": "Retired",
+    "statusKind": "retired",
     "url": "https://www.ledger.com",
     "urlLabel": "ledger.com",
     "role": "Blockchain Developer across UTXO's, EVM's, Solana and Cosmos ecosystems",
@@ -59,8 +67,16 @@
     ],
     "stackTodo": true,
     "shots": [
-      {"file": "01-home.jpg", "alt": "Ledger homepage featuring Ledger Atom", "caption": "ledger.com"},
-      {"file": "02-further.jpg", "alt": "Further down the Ledger homepage", "caption": "Further down the homepage"}
+      {
+        "file": "01-home.jpg",
+        "alt": "Ledger homepage featuring Ledger Atom",
+        "caption": "ledger.com"
+      },
+      {
+        "file": "02-further.jpg",
+        "alt": "Further down the Ledger homepage",
+        "caption": "Further down the homepage"
+      }
     ]
   },
   {
@@ -71,8 +87,8 @@
     "dir": "projects",
     "pitch": "A multichain crypto wallet. Its site says it has been shut down.",
     "card": "Multichain wallet. The site says it shut down in 2026.",
-    "status": "Left",
-    "statusKind": "left",
+    "status": "Retired",
+    "statusKind": "retired",
     "url": "https://ctrl.xyz",
     "urlLabel": "ctrl.xyz",
     "role": "Head of Integration/Ecosystem for all products/protocols/blockchains",
@@ -93,8 +109,16 @@
     ],
     "stackTodo": true,
     "shots": [
-      {"file": "01-home.jpg", "alt": "Ctrl Wallet shutdown notice", "caption": "ctrl.xyz, shutdown notice"},
-      {"file": "02-further.jpg", "alt": "Ctrl Wallet page below the shutdown notice", "caption": "Further down the page"}
+      {
+        "file": "01-home.jpg",
+        "alt": "Ctrl Wallet shutdown notice",
+        "caption": "ctrl.xyz, shutdown notice"
+      },
+      {
+        "file": "02-further.jpg",
+        "alt": "Ctrl Wallet page below the shutdown notice",
+        "caption": "Further down the page"
+      }
     ]
   },
   {
@@ -105,8 +129,8 @@
     "dir": "experience",
     "pitch": "Staking platform: frontend (React + Vite) and backend (AdonisJS), multi-chain.",
     "card": "Staking platform: frontend (React + Vite) and backend (AdonisJS), multi-chain.",
-    "status": "Live",
-    "statusKind": "live",
+    "status": "Retired",
+    "statusKind": "retired",
     "url": "https://stakelab.zone",
     "urlLabel": "stakelab.zone",
     "role": "Founder of the Staking infrastructure managing $200M in assets",
@@ -128,11 +152,35 @@
       "WebSocket + REST API",
       "Multi-chain: Cosmos (CosmJS, Cosmos Kit), Starknet, EVM (Wagmi/Viem)"
     ],
-    "stack": ["TypeScript", "React", "Vite", "Node.js", "AdonisJS"],
-    "services": ["AdonisJS", "MySQL", "Redis", "CosmJS", "Starknet.js", "Viem", "Wagmi", "CoinGecko", "Socket.io"],
+    "stack": [
+      "TypeScript",
+      "React",
+      "Vite",
+      "Node.js",
+      "AdonisJS"
+    ],
+    "services": [
+      "AdonisJS",
+      "MySQL",
+      "Redis",
+      "CosmJS",
+      "Starknet.js",
+      "Viem",
+      "Wagmi",
+      "CoinGecko",
+      "Socket.io"
+    ],
     "shots": [
-      {"file": "01-home.jpg", "alt": "StakeLab homepage", "caption": "stakelab.zone"},
-      {"file": "02-further.jpg", "alt": "Further down the StakeLab homepage", "caption": "Further down the homepage"}
+      {
+        "file": "01-home.jpg",
+        "alt": "StakeLab homepage",
+        "caption": "stakelab.zone"
+      },
+      {
+        "file": "02-further.jpg",
+        "alt": "Further down the StakeLab homepage",
+        "caption": "Further down the homepage"
+      }
     ]
   },
   {
@@ -143,8 +191,8 @@
     "dir": "experience",
     "pitch": "DeFi exchange platform: swap, bridge, perps API, referral system.",
     "card": "DeFi exchange platform: swap, bridge, perps API, referral system.",
-    "status": "Live",
-    "statusKind": "live",
+    "status": "Retired",
+    "statusKind": "retired",
     "url": "https://app.junction.exchange",
     "urlLabel": "app.junction.exchange",
     "role": "Founder of the trading infrastructure across all blockchains and tokens",
@@ -170,11 +218,32 @@
       "Assets, balances, fees, routing, chains registry, CoinGecko proxy",
       "Referral & invite system"
     ],
-    "stack": ["TypeScript", "JavaScript", "React", "Vite", "Node.js"],
-    "services": ["Express", "Viem", "CoinGecko", "Hyperliquid", "OpenOcean", "CCTP"],
+    "stack": [
+      "TypeScript",
+      "JavaScript",
+      "React",
+      "Vite",
+      "Node.js"
+    ],
+    "services": [
+      "Express",
+      "Viem",
+      "CoinGecko",
+      "Hyperliquid",
+      "OpenOcean",
+      "CCTP"
+    ],
     "shots": [
-      {"file": "01-home.jpg", "alt": "Junction homepage", "caption": "app.junction.exchange"},
-      {"file": "02-further.jpg", "alt": "Further down the Junction homepage", "caption": "Further down the homepage"}
+      {
+        "file": "01-home.jpg",
+        "alt": "Junction homepage",
+        "caption": "app.junction.exchange"
+      },
+      {
+        "file": "02-further.jpg",
+        "alt": "Further down the Junction homepage",
+        "caption": "Further down the homepage"
+      }
     ]
   },
   {
@@ -185,8 +254,8 @@
     "dir": "experience",
     "pitch": "Institutional-grade DeFi vault risk assessment and curation platform.",
     "card": "Institutional-grade DeFi vault risk assessment and curation platform.",
-    "status": "Live",
-    "statusKind": "live",
+    "status": "Building",
+    "statusKind": "building",
     "url": "https://philidor.io",
     "urlLabel": "philidor.io",
     "role": "Founder of the institutional DeFi layer focusing on transparent security and risk analysis",
@@ -213,11 +282,33 @@
       "PostgreSQL (TimescaleDB), Redis (rate limit + cache)",
       "Vercel (frontends + MCP), VPS (API + indexer)"
     ],
-    "stack": ["TypeScript", "React", "Next.js", "Node.js", "Hono"],
-    "services": ["Vercel", "PostgreSQL / TimescaleDB", "Redis", "Viem", "Enso", "Resend", "OpenAPI/Swagger"],
+    "stack": [
+      "TypeScript",
+      "React",
+      "Next.js",
+      "Node.js",
+      "Hono"
+    ],
+    "services": [
+      "Vercel",
+      "PostgreSQL / TimescaleDB",
+      "Redis",
+      "Viem",
+      "Enso",
+      "Resend",
+      "OpenAPI/Swagger"
+    ],
     "shots": [
-      {"file": "01-home.jpg", "alt": "Philidor homepage", "caption": "philidor.io"},
-      {"file": "02-further.jpg", "alt": "Further down the Philidor homepage", "caption": "Further down the homepage"}
+      {
+        "file": "01-home.jpg",
+        "alt": "Philidor homepage",
+        "caption": "philidor.io"
+      },
+      {
+        "file": "02-further.jpg",
+        "alt": "Further down the Philidor homepage",
+        "caption": "Further down the homepage"
+      }
     ]
   },
   {
@@ -246,9 +337,18 @@
     ],
     "stackTodo": true,
     "shots": [
-      {"file": "01-home.jpg", "alt": "MyPump homepage", "caption": "getmypump.com"},
-      {"file": "02-further.jpg", "alt": "Further down the MyPump homepage", "caption": "Further down the homepage"}
-    ]
+      {
+        "file": "01-home.jpg",
+        "alt": "MyPump homepage",
+        "caption": "getmypump.com"
+      },
+      {
+        "file": "02-further.jpg",
+        "alt": "Further down the MyPump homepage",
+        "caption": "Further down the homepage"
+      }
+    ],
+    "experimental": true
   },
   {
     "slug": "paygram",
@@ -279,9 +379,18 @@
     ],
     "stackTodo": true,
     "shots": [
-      {"file": "01-home.jpg", "alt": "Paygram homepage", "caption": "usepaygram.com"},
-      {"file": "02-further.jpg", "alt": "Further down the Paygram homepage", "caption": "Further down the homepage"}
-    ]
+      {
+        "file": "01-home.jpg",
+        "alt": "Paygram homepage",
+        "caption": "usepaygram.com"
+      },
+      {
+        "file": "02-further.jpg",
+        "alt": "Further down the Paygram homepage",
+        "caption": "Further down the homepage"
+      }
+    ],
+    "experimental": true
   },
   {
     "slug": "struvo",
@@ -319,8 +428,16 @@
     ],
     "stackTodo": true,
     "shots": [
-      {"file": "01-home.jpg", "alt": "Struvo homepage", "caption": "struvo.fr"},
-      {"file": "02-further.jpg", "alt": "Further down the Struvo homepage", "caption": "Further down struvo.fr"}
+      {
+        "file": "01-home.jpg",
+        "alt": "Struvo homepage",
+        "caption": "struvo.fr"
+      },
+      {
+        "file": "02-further.jpg",
+        "alt": "Further down the Struvo homepage",
+        "caption": "Further down struvo.fr"
+      }
     ]
   },
   {
@@ -372,9 +489,21 @@
       "Playwright"
     ],
     "shots": [
-      {"file": "01-landing.jpg", "alt": "Gymmy public landing", "caption": "hellogymmy.com"},
-      {"file": "02-app.jpg", "alt": "Gymmy web app sign-in on desktop", "caption": "Web app, desktop"},
-      {"file": "03-mobile.jpg", "alt": "Gymmy landing on a phone", "caption": "Landing, mobile"}
+      {
+        "file": "01-landing.jpg",
+        "alt": "Gymmy public landing",
+        "caption": "hellogymmy.com"
+      },
+      {
+        "file": "02-app.jpg",
+        "alt": "Gymmy web app sign-in on desktop",
+        "caption": "Web app, desktop"
+      },
+      {
+        "file": "03-mobile.jpg",
+        "alt": "Gymmy landing on a phone",
+        "caption": "Landing, mobile"
+      }
     ]
   }
 ]
