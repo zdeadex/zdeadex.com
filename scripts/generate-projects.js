@@ -315,7 +315,7 @@ function homePage() {
     { name: 'pump.fun', initials: 'PUMP', logo: 'assets/logos/pump.png', href: 'https://pump.fun', card: 'PUMP', entry: '~$0.002', exit: '', status: 'Active', statusKind: 'live', group: 'active', external: true },
     { name: 'Ethena', initials: 'ENA', logo: 'assets/logos/ena.svg', href: 'https://ethena.fi', card: 'ENA', entry: '~$0.07', exit: '', status: 'Active', statusKind: 'live', group: 'active', external: true },
     { name: 'Aave', initials: 'AAVE', logo: 'assets/logos/aave.svg', href: 'https://aave.com', card: 'AAVE', entry: '~$65', exit: '', status: 'Active', statusKind: 'live', group: 'active', external: true },
-    { name: 'Theta', initials: 'THETA', logo: 'assets/logos/theta.png', href: 'https://www.thetatoken.org', card: 'THETA', entry: '$0.09 (Feb 2018)', exit: '$9 (Mar 2021)', status: 'Past', statusKind: 'retired', group: 'past', external: true },
+    { name: 'Theta Network', initials: 'THETA', logo: 'assets/logos/theta.png', href: 'https://www.thetatoken.org', card: 'THETA', entry: '$0.09 (Feb 2018)', exit: '$9 (Mar 2021)', status: 'Past', statusKind: 'retired', group: 'past', external: true },
     { name: 'Travala', initials: 'AVA', logo: 'assets/logos/ava.png', href: 'https://www.travala.com', card: 'AVA', entry: '$0.07 (Sep 2018)', exit: '$4 (Sep 2021)', status: 'Past', statusKind: 'retired', group: 'past', external: true },
     { name: 'Stellar', initials: 'XLM', logo: 'assets/logos/xlm.png', href: 'https://stellar.org', card: 'XLM', entry: '$0.03 (Nov 2017)', exit: '$0.50 (Jan 2018)', status: 'Past', statusKind: 'retired', group: 'past', external: true },
   ];
