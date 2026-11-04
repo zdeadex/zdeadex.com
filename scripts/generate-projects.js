@@ -14,7 +14,7 @@ const ROOT = path.join(__dirname, '..');
 const projects = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'projects.json'), 'utf8'));
 
 const FONTS = 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Instrument+Serif&display=swap';
-const ASSET_V = '7';
+const ASSET_V = '8';
 
 function escapeHtml(s) {
   return String(s)
@@ -70,6 +70,23 @@ function logo(item, prefix) {
 
 function badge(item) {
   return `<span class="badge badge--${escapeHtml(item.statusKind)}">${escapeHtml(item.status)}</span>`;
+}
+
+const BADGE_LABELS = { live: 'Live', building: 'Building', retired: 'Retired', side: 'Side project', experience: 'Experience', preview: 'Building' };
+
+function badges(item) {
+  const order = ['live', 'building', 'preview', 'retired', 'side', 'experience'];
+  const tokens = filterTokens(item).split(' ');
+  const seen = new Set();
+  const out = [];
+  for (const t of order) {
+    if (!tokens.includes(t)) continue;
+    const label = BADGE_LABELS[t];
+    if (seen.has(label)) continue;
+    seen.add(label);
+    out.push(`<span class="badge badge--${t}">${label}</span>`);
+  }
+  return `<span class="vcard__badges">${out.join('')}</span>`;
 }
 
 function hrefFor(item) {
@@ -261,12 +278,11 @@ function showcaseCard(item) {
             <span class="vcard__body">
               <span class="vcard__top">
                 <span class="vcard__name">${escapeHtml(item.name)}</span>
-                ${badge(item)}
+                ${badges(item)}
               </span>
               <span class="vcard__note">${escapeHtml(item.card)}</span>
               ${!item.external && item.urlLabel ? `<span class="vcard__url">${escapeHtml(item.urlLabel)}</span>` : ''}
               ${role}
-              ${tag ? `<span class="vcard__tags"><span class="tag">${escapeHtml(tag)}</span></span>` : ''}
             </span>
           </a>
         </li>`;

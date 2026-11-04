@@ -597,3 +597,17 @@ main { position: relative; z-index: 1; }
     opacity: 1 !important;
   }
 }
+
+.vcard__badges {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 0.35rem;
+}
+
+.badge--side,
+.badge--experience {
+  color: var(--body);
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.14);
+}
