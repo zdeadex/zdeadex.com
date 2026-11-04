@@ -14,7 +14,7 @@ const ROOT = path.join(__dirname, '..');
 const projects = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'projects.json'), 'utf8'));
 
 const FONTS = 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Instrument+Serif&display=swap';
-const ASSET_V = '11';
+const ASSET_V = '12';
 
 function escapeHtml(s) {
   return String(s)
@@ -270,6 +270,7 @@ function markCard(item) {
                 ${item.status ? badge(item) : ''}
               </span>
               <span class="mark__note">${escapeHtml(item.card)}</span>
+              ${item.rental ? (item.image ? `<span class="mark__photo"><img src="${escapeHtml(item.image)}" alt="" /></span>` : `<span class="mark__photo mark__photo--empty"></span>`) : ''}
               ${item.entry ? `<span class="mark__prices"><span class="mark__price"><span>Entry</span><span>${escapeHtml(item.entry)}</span></span><span class="mark__price"><span>Exit</span><span>${escapeHtml(item.exit || '-')}</span></span></span>` : ''}
             </span>
           </${item.href ? 'a' : 'div'}>
@@ -321,8 +322,8 @@ function homePage() {
   ];
 
   const rentals = [
-    { name: 'France - Nice', initials: 'FR', card: 'Nice' },
-    { name: 'Portugal - Lisbon', initials: 'PT', card: 'Lisbon' },
+    { name: 'France - Nice', initials: 'FR', card: 'Nice', rental: true, image: '' },
+    { name: 'Portugal - Lisbon', initials: 'PT', card: 'Lisbon', rental: true, image: '' },
   ];
 
   return `${head('Adrien Faguet: Zdeadex', 'Adrien Faguet (Zdeadex). Operation, Product, Engineering, AI.', '', false)}
