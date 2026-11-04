@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Instrument+Serif&display=swap" rel="stylesheet" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231a1a18'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='Georgia,serif' font-size='16' fill='%23f3f2ee'%3EA%3C/text%3E%3C/svg%3E" />
-  <link rel="stylesheet" href="styles.css?v=8" />
+  <link rel="stylesheet" href="styles.css?v=9" />
   <script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
@@ -21,7 +21,7 @@
     <div class="wrap">
       <section class="hero" id="top">
         <div class="photo-container reveal">
-          <img class="photo" src="me.jpg?v=8" alt="Adrien Faguet" width="200" height="200" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+          <img class="photo" src="me.jpg?v=9" alt="Adrien Faguet" width="200" height="200" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
           <span class="photo-fallback">AF</span>
         </div>
         <div class="reveal">
@@ -281,64 +281,94 @@
       </section>
 
       <section class="panel" id="holdings" role="tabpanel" aria-labelledby="tab-holdings">
+        <div class="filters" role="toolbar" aria-label="Filter holdings">
+          <button type="button" class="chip is-on" data-filter="all" aria-pressed="true">All</button>
+          <button type="button" class="chip" data-filter="active" aria-pressed="false">Active</button>
+          <button type="button" class="chip" data-filter="past" aria-pressed="false">Past</button>
+          <span class="filters__count" aria-live="polite">7 coins</span>
+        </div>
         <ul class="marks">
         <li>
-          <a class="mark" href="https://hyperliquid.xyz" target="_blank" rel="noopener noreferrer">
+          <a class="mark" href="https://hyperliquid.xyz" data-filters="active" target="_blank" rel="noopener noreferrer">
             <span class="logo-tile"><img class="logo" src="assets/logos/hype.png" alt="" /></span>
             <span class="mark__body">
               <span class="mark__top">
                 <span class="mark__name">Hyperliquid</span>
-                
+                <span class="badge badge--live">Active</span>
               </span>
-              <span class="mark__note">HYPE</span>
+              <span class="mark__note">HYPE, entry around $30</span>
             </span>
           </a>
         </li>
         <li>
-          <a class="mark" href="https://pump.fun" target="_blank" rel="noopener noreferrer">
+          <a class="mark" href="https://pump.fun" data-filters="active" target="_blank" rel="noopener noreferrer">
             <span class="logo-tile"><img class="logo" src="assets/logos/pump.png" alt="" /></span>
             <span class="mark__body">
               <span class="mark__top">
                 <span class="mark__name">pump.fun</span>
-                
+                <span class="badge badge--live">Active</span>
               </span>
-              <span class="mark__note">PUMP</span>
+              <span class="mark__note">PUMP, entry around $0.002</span>
             </span>
           </a>
         </li>
         <li>
-          <a class="mark" href="https://ethena.fi" target="_blank" rel="noopener noreferrer">
+          <a class="mark" href="https://ethena.fi" data-filters="active" target="_blank" rel="noopener noreferrer">
             <span class="logo-tile"><img class="logo" src="assets/logos/ena.svg" alt="" /></span>
             <span class="mark__body">
               <span class="mark__top">
                 <span class="mark__name">Ethena</span>
-                
+                <span class="badge badge--live">Active</span>
               </span>
-              <span class="mark__note">ENA</span>
+              <span class="mark__note">ENA, entry around $0.07</span>
             </span>
           </a>
         </li>
         <li>
-          <a class="mark" href="https://aave.com" target="_blank" rel="noopener noreferrer">
+          <a class="mark" href="https://aave.com" data-filters="active" target="_blank" rel="noopener noreferrer">
             <span class="logo-tile"><img class="logo" src="assets/logos/aave.svg" alt="" /></span>
             <span class="mark__body">
               <span class="mark__top">
                 <span class="mark__name">Aave</span>
-                
+                <span class="badge badge--live">Active</span>
               </span>
-              <span class="mark__note">AAVE</span>
+              <span class="mark__note">AAVE, entry around $65</span>
             </span>
           </a>
         </li>
         <li>
-          <a class="mark" href="https://ondo.finance" target="_blank" rel="noopener noreferrer">
-            <span class="logo-tile"><img class="logo" src="assets/logos/ondo.svg" alt="" /></span>
+          <a class="mark" href="https://www.thetatoken.org" data-filters="past" target="_blank" rel="noopener noreferrer">
+            <span class="logo-tile"><img class="logo" src="assets/logos/theta.png" alt="" /></span>
             <span class="mark__body">
               <span class="mark__top">
-                <span class="mark__name">Ondo</span>
-                
+                <span class="mark__name">Theta</span>
+                <span class="badge badge--retired">Past</span>
               </span>
-              <span class="mark__note">ONDO</span>
+              <span class="mark__note">THETA, from $0.09 to $9</span>
+            </span>
+          </a>
+        </li>
+        <li>
+          <a class="mark" href="https://www.travala.com" data-filters="past" target="_blank" rel="noopener noreferrer">
+            <span class="logo-tile"><img class="logo" src="assets/logos/ava.png" alt="" /></span>
+            <span class="mark__body">
+              <span class="mark__top">
+                <span class="mark__name">Travala</span>
+                <span class="badge badge--retired">Past</span>
+              </span>
+              <span class="mark__note">AVA, from $0.06 in 2018 to $4 in 2021</span>
+            </span>
+          </a>
+        </li>
+        <li>
+          <a class="mark" href="https://stellar.org" data-filters="past" target="_blank" rel="noopener noreferrer">
+            <span class="logo-tile"><img class="logo" src="assets/logos/xlm.png" alt="" /></span>
+            <span class="mark__body">
+              <span class="mark__top">
+                <span class="mark__name">Stellar</span>
+                <span class="badge badge--retired">Past</span>
+              </span>
+              <span class="mark__note">XLM, from $0.03 to $0.50, Nov 2017 to Jan 2018</span>
             </span>
           </a>
         </li>
@@ -381,6 +411,6 @@
       <a href="#top">Back to top</a>
     </div>
   </footer>
-  <script src="script.js?v=8"></script>
+  <script src="script.js?v=9"></script>
 </body>
 </html>

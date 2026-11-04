@@ -116,4 +116,5 @@
 
   bindFilters(document.querySelector("#work"), ".showcase > li", "project");
   bindFilters(document.querySelector("#investments"), ".marks > li", "investment");
+  bindFilters(document.querySelector("#holdings"), ".marks > li", "coin");
 })();

@@ -14,7 +14,7 @@ const ROOT = path.join(__dirname, '..');
 const projects = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'projects.json'), 'utf8'));
 
 const FONTS = 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Instrument+Serif&display=swap';
-const ASSET_V = '8';
+const ASSET_V = '9';
 
 function escapeHtml(s) {
   return String(s)
@@ -301,11 +301,13 @@ function homePage() {
     { name: 'Skip', initials: 'Sk', logo: 'assets/logos/skip.png', href: 'https://skip.go', card: 'Exit', status: 'Acquired', statusKind: 'investment', group: 'acquired', external: true },
   ];
   const holdings = [
-    { name: 'Hyperliquid', initials: 'HYPE', logo: 'assets/logos/hype.png', href: 'https://hyperliquid.xyz', card: 'HYPE', external: true },
-    { name: 'pump.fun', initials: 'PUMP', logo: 'assets/logos/pump.png', href: 'https://pump.fun', card: 'PUMP', external: true },
-    { name: 'Ethena', initials: 'ENA', logo: 'assets/logos/ena.svg', href: 'https://ethena.fi', card: 'ENA', external: true },
-    { name: 'Aave', initials: 'AAVE', logo: 'assets/logos/aave.svg', href: 'https://aave.com', card: 'AAVE', external: true },
-    { name: 'Ondo', initials: 'ONDO', logo: 'assets/logos/ondo.svg', href: 'https://ondo.finance', card: 'ONDO', external: true },
+    { name: 'Hyperliquid', initials: 'HYPE', logo: 'assets/logos/hype.png', href: 'https://hyperliquid.xyz', card: 'HYPE, entry around $30', status: 'Active', statusKind: 'live', group: 'active', external: true },
+    { name: 'pump.fun', initials: 'PUMP', logo: 'assets/logos/pump.png', href: 'https://pump.fun', card: 'PUMP, entry around $0.002', status: 'Active', statusKind: 'live', group: 'active', external: true },
+    { name: 'Ethena', initials: 'ENA', logo: 'assets/logos/ena.svg', href: 'https://ethena.fi', card: 'ENA, entry around $0.07', status: 'Active', statusKind: 'live', group: 'active', external: true },
+    { name: 'Aave', initials: 'AAVE', logo: 'assets/logos/aave.svg', href: 'https://aave.com', card: 'AAVE, entry around $65', status: 'Active', statusKind: 'live', group: 'active', external: true },
+    { name: 'Theta', initials: 'THETA', logo: 'assets/logos/theta.png', href: 'https://www.thetatoken.org', card: 'THETA, from $0.09 to $9', status: 'Past', statusKind: 'retired', group: 'past', external: true },
+    { name: 'Travala', initials: 'AVA', logo: 'assets/logos/ava.png', href: 'https://www.travala.com', card: 'AVA, from $0.06 in 2018 to $4 in 2021', status: 'Past', statusKind: 'retired', group: 'past', external: true },
+    { name: 'Stellar', initials: 'XLM', logo: 'assets/logos/xlm.png', href: 'https://stellar.org', card: 'XLM, from $0.03 to $0.50, Nov 2017 to Jan 2018', status: 'Past', statusKind: 'retired', group: 'past', external: true },
   ];
 
   const rentals = [
@@ -371,6 +373,12 @@ ${investments.map(markCard).join('\n')}
       </section>
 
       <section class="panel" id="holdings" role="tabpanel" aria-labelledby="tab-holdings">
+        <div class="filters" role="toolbar" aria-label="Filter holdings">
+          <button type="button" class="chip is-on" data-filter="all" aria-pressed="true">All</button>
+          <button type="button" class="chip" data-filter="active" aria-pressed="false">Active</button>
+          <button type="button" class="chip" data-filter="past" aria-pressed="false">Past</button>
+          <span class="filters__count" aria-live="polite">${holdings.length} coins</span>
+        </div>
         <ul class="marks">
 ${holdings.map(markCard).join('\n')}
         </ul>
