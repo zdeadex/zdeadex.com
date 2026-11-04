@@ -26,7 +26,7 @@
 
   var tabs = document.querySelectorAll(".section-tab");
   var panels = document.querySelectorAll(".panel");
-  var sectionIds = ["work", "investments", "holdings"];
+  var sectionIds = ["work", "investments", "holdings", "rentals"];
 
   function showSection(id, updateHash) {
     if (sectionIds.indexOf(id) === -1) id = "work";

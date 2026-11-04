@@ -235,7 +235,7 @@ function markCard(item) {
   const external = item.external ? ' target="_blank" rel="noopener noreferrer"' : '';
   const filters = item.group ? ` data-filters="${escapeHtml(item.group)}"` : '';
   return `        <li>
-          <a class="mark" href="${escapeHtml(item.href)}"${filters}${external}>
+          <${item.href ? 'a' : 'div'} class="mark"${item.href ? ` href="${escapeHtml(item.href)}"` : ''}${filters}${external}>
             ${logo(item, '')}
             <span class="mark__body">
               <span class="mark__top">
@@ -244,7 +244,7 @@ function markCard(item) {
               </span>
               <span class="mark__note">${escapeHtml(item.card)}</span>
             </span>
-          </a>
+          </${item.href ? 'a' : 'div'}>
         </li>`;
 }
 
@@ -291,6 +291,11 @@ function homePage() {
     { name: 'Ondo', initials: 'ONDO', logo: 'assets/logos/ondo.svg', href: 'https://ondo.finance', card: 'ONDO', external: true },
   ];
 
+  const rentals = [
+    { name: 'France - Nice', initials: 'FR', card: 'Nice' },
+    { name: 'Portugal - Lisbon', initials: 'PT', card: 'Lisbon' },
+  ];
+
   return `${head('Adrien Faguet: Zdeadex', 'Adrien Faguet (Zdeadex). Operation, Product, Engineering, AI.', '', false)}
 <body>
   ${atmosphere()}
@@ -318,6 +323,7 @@ function homePage() {
         <a class="section-tab is-on" id="tab-work" href="#work" role="tab" aria-selected="true" aria-controls="work">Work</a>
         <a class="section-tab" id="tab-investments" href="#investments" role="tab" aria-selected="false" aria-controls="investments">Investments</a>
         <a class="section-tab" id="tab-holdings" href="#holdings" role="tab" aria-selected="false" aria-controls="holdings">Holdings</a>
+        <a class="section-tab" id="tab-rentals" href="#rentals" role="tab" aria-selected="false" aria-controls="rentals">Rentals</a>
       </div>
 
       <section class="panel is-on" id="work" role="tabpanel" aria-labelledby="tab-work">
@@ -350,6 +356,12 @@ ${investments.map(markCard).join('\n')}
       <section class="panel" id="holdings" role="tabpanel" aria-labelledby="tab-holdings">
         <ul class="marks">
 ${holdings.map(markCard).join('\n')}
+        </ul>
+      </section>
+
+      <section class="panel" id="rentals" role="tabpanel" aria-labelledby="tab-rentals">
+        <ul class="marks">
+${rentals.map(markCard).join('\n')}
         </ul>
       </section>
     </div>
