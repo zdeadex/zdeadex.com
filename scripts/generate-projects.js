@@ -14,7 +14,7 @@ const ROOT = path.join(__dirname, '..');
 const projects = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'projects.json'), 'utf8'));
 
 const FONTS = 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Instrument+Serif&display=swap';
-const ASSET_V = '14';
+const ASSET_V = '15';
 
 function escapeHtml(s) {
   return String(s)

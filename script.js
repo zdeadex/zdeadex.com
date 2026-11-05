@@ -119,14 +119,100 @@
   var lightbox = document.querySelector(".lightbox");
   if (lightbox) {
     var lbImg = lightbox.querySelector("img");
+    var EASE = "cubic-bezier(.2,.8,.2,1)";
+    var DUR = 420;
+    var current = null;
+    var token = 0;
+    var anims = [];
+
+    function stopAnims() {
+      anims.forEach(function (an) { try { an.cancel(); } catch (e) {} });
+      anims = [];
+    }
+
+    function flipFrom(thumb) {
+      var from = thumb.getBoundingClientRect();
+      var to = lbImg.getBoundingClientRect();
+      if (!to.width || !from.width) return null;
+      var dx = (from.left + from.width / 2) - (to.left + to.width / 2);
+      var dy = (from.top + from.height / 2) - (to.top + to.height / 2);
+      var s = from.width / to.width;
+      return "translate(" + dx + "px," + dy + "px) scale(" + s + ")";
+    }
+
+    function run(el, frames, opts) {
+      var an = el.animate(frames, opts);
+      anims.push(an);
+      return an;
+    }
+
+    function unhideThumbs() {
+      document.querySelectorAll(".gallery__item img").forEach(function (im) { im.style.visibility = ""; });
+    }
+
+    function open(btn) {
+      var my = ++token;
+      stopAnims();
+      unhideThumbs();
+      current = btn;
+      lbImg.src = btn.getAttribute("data-full");
+      lightbox.hidden = false;
+      lightbox.classList.add("is-open");
+      document.documentElement.classList.add("lb-lock");
+      var go = function () {
+        if (my !== token) return;
+        var thumbImg = btn.querySelector("img") || btn;
+        if (reduce) {
+          run(lightbox, [{ opacity: 0 }, { opacity: 1 }], { duration: 200, easing: "ease-out" });
+          return;
+        }
+        var t = flipFrom(thumbImg);
+        thumbImg.style.visibility = "hidden";
+        run(lightbox, [{ opacity: 0 }, { opacity: 1 }], { duration: DUR * 0.8, easing: "ease-out", fill: "both" });
+        run(lightbox, [{ "--halo": 0.4 }, { "--halo": 1 }], { duration: DUR, easing: EASE });
+        var an = run(lbImg, [
+          { transform: t || "scale(.92)", borderRadius: "14px", opacity: t ? 1 : 0 },
+          { transform: "none", borderRadius: "10px", opacity: 1 }
+        ], { duration: DUR, easing: EASE, fill: "both" });
+        an.finished.then(function () { thumbImg.style.visibility = ""; }, function () { thumbImg.style.visibility = ""; });
+      };
+      if (lbImg.decode) lbImg.decode().then(go, go); else go();
+    }
+
+    function close() {
+      if (lightbox.hidden || !current) return;
+      var my = ++token;
+      var btn = current;
+      current = null;
+      var thumbImg = btn.querySelector("img") || btn;
+      var done = function () {
+        thumbImg.style.visibility = "";
+        if (my !== token) return;
+        stopAnims();
+        lightbox.hidden = true;
+        lightbox.classList.remove("is-open");
+        document.documentElement.classList.remove("lb-lock");
+        lbImg.removeAttribute("src");
+      };
+      stopAnims();
+      if (reduce) {
+        run(lightbox, [{ opacity: 1 }, { opacity: 0 }], { duration: 160, fill: "both" }).finished.then(done, done);
+        return;
+      }
+      var t = flipFrom(thumbImg);
+      thumbImg.style.visibility = "hidden";
+      run(lightbox, [{ opacity: 1 }, { opacity: 0 }], { duration: DUR * 0.9, easing: "ease-in", fill: "both" });
+      run(lbImg, [
+        { transform: "none", borderRadius: "10px", opacity: 1 },
+        { transform: t || "scale(.92)", borderRadius: "14px", opacity: t ? 1 : 0 }
+      ], { duration: DUR, easing: EASE, fill: "both" }).finished.then(done, done);
+    }
+
     document.querySelectorAll(".gallery__item").forEach(function (btn) {
-      btn.addEventListener("click", function () {
-        lbImg.src = btn.getAttribute("data-full");
-        lightbox.hidden = false;
-      });
+      btn.addEventListener("click", function () { open(btn); });
     });
-    lightbox.addEventListener("click", function () { lightbox.hidden = true; });
-    document.addEventListener("keydown", function (e) { if (e.key === "Escape") lightbox.hidden = true; });
+    lightbox.addEventListener("click", close);
+    document.addEventListener("keydown", function (e) { if (e.key === "Escape") close(); });
   }
 
   bindFilters(document.querySelector("#work"), ".showcase > li", "project");
