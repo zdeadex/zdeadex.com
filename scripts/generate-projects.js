@@ -14,7 +14,7 @@ const ROOT = path.join(__dirname, '..');
 const projects = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'projects.json'), 'utf8'));
 
 const FONTS = 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Instrument+Serif&display=swap';
-const ASSET_V = '16';
+const ASSET_V = '17';
 
 function escapeHtml(s) {
   return String(s)
@@ -432,7 +432,7 @@ ${interviews.map(interviewCard).join('\n')}
         <div class="gallery">
 ${gallery.map((n) => `          <button type="button" class="gallery__item" data-full="assets/interviews/p${n}.jpg?v=${ASSET_V}"><img src="assets/interviews/p${n}.jpg?v=${ASSET_V}" alt="" loading="lazy" /></button>`).join('\n')}
         </div>
-        <div class="lightbox" hidden><img alt="" /></div>
+        <div class="lightbox" hidden><div class="lightbox__backdrop"></div><div class="lightbox__halo"></div><div class="lightbox__frame"><img alt="" /></div></div>
       </section>
     </div>
   </main>

@@ -118,9 +118,13 @@
 
   var lightbox = document.querySelector(".lightbox");
   if (lightbox) {
-    var lbImg = lightbox.querySelector("img");
+    var lbBackdrop = lightbox.querySelector(".lightbox__backdrop");
+    var lbHalo = lightbox.querySelector(".lightbox__halo");
+    var lbFrame = lightbox.querySelector(".lightbox__frame");
+    var lbImg = lbFrame.querySelector("img");
     var EASE = "cubic-bezier(.2,.8,.2,1)";
     var DUR = 420;
+    var state = "closed";
     var current = null;
     var token = 0;
     var anims = [];
@@ -129,83 +133,127 @@
       anims.forEach(function (an) { try { an.cancel(); } catch (e) {} });
       anims = [];
     }
-
-    function flipFrom(thumb) {
-      var from = thumb.getBoundingClientRect();
-      var to = lbImg.getBoundingClientRect();
-      if (!to.width || !from.width) return null;
-      var dx = (from.left + from.width / 2) - (to.left + to.width / 2);
-      var dy = (from.top + from.height / 2) - (to.top + to.height / 2);
-      var s = from.width / to.width;
-      return "translate(" + dx + "px," + dy + "px) scale(" + s + ")";
-    }
-
     function run(el, frames, opts) {
+      opts.fill = "both";
       var an = el.animate(frames, opts);
       anims.push(an);
       return an;
     }
+    function thumbOf(btn) { return btn.querySelector("img") || btn; }
+    function nextFrame() { return new Promise(function (r) { requestAnimationFrame(function () { r(); }); }); }
 
-    function unhideThumbs() {
-      document.querySelectorAll(".gallery__item img").forEach(function (im) { im.style.visibility = ""; });
+    function preload(src) {
+      var im = new Image();
+      im.src = src;
+      var ready = im.decode ? im.decode() : new Promise(function (r) { im.onload = r; im.onerror = r; });
+      return ready.then(function () { return im; }, function () { return im; });
+    }
+
+    function targetRect(w, h) {
+      var maxW = Math.min(window.innerWidth * 0.92, 1400);
+      var maxH = window.innerHeight * 0.88;
+      var s = Math.min(maxW / w, maxH / h, 1.6);
+      var tw = Math.round(w * s), th = Math.round(h * s);
+      return { left: Math.round((window.innerWidth - tw) / 2), top: Math.round((window.innerHeight - th) / 2), width: tw, height: th };
+    }
+
+    function fromTransform(thumbRect, t) {
+      var s = thumbRect.width / t.width;
+      var dx = thumbRect.left - t.left;
+      var dy = thumbRect.top - t.top;
+      return "translate3d(" + dx + "px," + dy + "px,0) scale(" + s + ")";
+    }
+
+    function finishClose() {
+      stopAnims();
+      lightbox.hidden = true;
+      lightbox.classList.remove("is-open");
+      document.documentElement.classList.remove("lb-lock");
+      lbFrame.style.transform = "";
+      state = "closed";
+      current = null;
     }
 
     function open(btn) {
+      if (state === "opening" || state === "open") return;
       var my = ++token;
-      stopAnims();
-      unhideThumbs();
+      if (state === "closing") {
+        stopAnims();
+        if (current) thumbOf(current).style.visibility = "";
+        finishClose();
+      }
+      state = "opening";
       current = btn;
-      lbImg.src = btn.getAttribute("data-full");
-      lightbox.hidden = false;
-      lightbox.classList.add("is-open");
-      document.documentElement.classList.add("lb-lock");
-      var go = function () {
+      var src = btn.getAttribute("data-full");
+      var thumb = thumbOf(btn);
+      preload(src).then(function (im) {
         if (my !== token) return;
-        var thumbImg = btn.querySelector("img") || btn;
-        if (reduce) {
-          run(lightbox, [{ opacity: 0 }, { opacity: 1 }], { duration: 200, easing: "ease-out" });
-          return;
-        }
-        var t = flipFrom(thumbImg);
-        thumbImg.style.visibility = "hidden";
-        run(lightbox, [{ opacity: 0 }, { opacity: 1 }], { duration: DUR * 0.8, easing: "ease-out", fill: "both" });
-        run(lightbox, [{ "--halo": 0.4 }, { "--halo": 1 }], { duration: DUR, easing: EASE });
-        var an = run(lbImg, [
-          { transform: t || "scale(.92)", borderRadius: "14px", opacity: t ? 1 : 0 },
-          { transform: "none", borderRadius: "10px", opacity: 1 }
-        ], { duration: DUR, easing: EASE, fill: "both" });
-        an.finished.then(function () { thumbImg.style.visibility = ""; }, function () { thumbImg.style.visibility = ""; });
-      };
-      if (lbImg.decode) lbImg.decode().then(go, go); else go();
+        lbImg.src = src;
+        return (lbImg.decode ? lbImg.decode().catch(function () {}) : Promise.resolve()).then(function () {
+          if (my !== token) return;
+          var w = im.naturalWidth || thumb.naturalWidth || 16;
+          var h = im.naturalHeight || thumb.naturalHeight || 10;
+          var t = targetRect(w, h);
+          lbFrame.style.left = t.left + "px";
+          lbFrame.style.top = t.top + "px";
+          lbFrame.style.width = t.width + "px";
+          lbFrame.style.height = t.height + "px";
+          var start = fromTransform(thumb.getBoundingClientRect(), t);
+          var scale = thumb.getBoundingClientRect().width / t.width;
+          lbFrame.style.transform = reduce ? "none" : start;
+          lbFrame.style.borderRadius = "";
+          lightbox.hidden = false;
+          lightbox.classList.add("is-open");
+          document.documentElement.classList.add("lb-lock");
+          if (reduce) {
+            run(lightbox, [{ opacity: 0 }, { opacity: 1 }], { duration: 180, easing: "ease-out" })
+              .finished.then(function () { if (my === token) state = "open"; }, function () {});
+            return;
+          }
+          var r0 = 10 / scale;
+          run(lbBackdrop, [{ opacity: 0 }, { opacity: 1 }], { duration: DUR, easing: "ease-out" });
+          run(lbHalo, [{ opacity: 0, transform: "translate(-50%,-50%) scale(.4)" }, { opacity: 1, transform: "translate(-50%,-50%) scale(1)" }], { duration: DUR + 120, easing: EASE });
+          var an = run(lbFrame, [
+            { transform: start, borderRadius: r0 + "px" },
+            { transform: "translate3d(0,0,0) scale(1)", borderRadius: "12px" }
+          ], { duration: DUR, easing: EASE });
+          // Hide the thumbnail only once the clone is painted over it.
+          nextFrame().then(function () { if (my === token) thumb.style.visibility = "hidden"; });
+          an.finished.then(function () { if (my === token) state = "open"; }, function () {});
+        });
+      });
     }
 
     function close() {
-      if (lightbox.hidden || !current) return;
+      if (state !== "open" && state !== "opening") return;
+      if (!current) return;
       var my = ++token;
       var btn = current;
-      current = null;
-      var thumbImg = btn.querySelector("img") || btn;
-      var done = function () {
-        thumbImg.style.visibility = "";
-        if (my !== token) return;
-        stopAnims();
-        lightbox.hidden = true;
-        lightbox.classList.remove("is-open");
-        document.documentElement.classList.remove("lb-lock");
-        lbImg.removeAttribute("src");
-      };
+      var thumb = thumbOf(btn);
       stopAnims();
-      if (reduce) {
-        run(lightbox, [{ opacity: 1 }, { opacity: 0 }], { duration: 160, fill: "both" }).finished.then(done, done);
+      state = "closing";
+      if (reduce || lightbox.hidden) {
+        var done0 = function () { if (my !== token) return; thumb.style.visibility = ""; finishClose(); };
+        if (lightbox.hidden) { done0(); return; }
+        run(lightbox, [{ opacity: 1 }, { opacity: 0 }], { duration: 160, easing: "ease-in" }).finished.then(done0, function () {});
         return;
       }
-      var t = flipFrom(thumbImg);
-      thumbImg.style.visibility = "hidden";
-      run(lightbox, [{ opacity: 1 }, { opacity: 0 }], { duration: DUR * 0.9, easing: "ease-in", fill: "both" });
-      run(lbImg, [
-        { transform: "none", borderRadius: "10px", opacity: 1 },
-        { transform: t || "scale(.92)", borderRadius: "14px", opacity: t ? 1 : 0 }
-      ], { duration: DUR, easing: EASE, fill: "both" }).finished.then(done, done);
+      var t = lbFrame.getBoundingClientRect();
+      var tr = { left: parseFloat(lbFrame.style.left), top: parseFloat(lbFrame.style.top), width: parseFloat(lbFrame.style.width) };
+      var tb = thumb.getBoundingClientRect();
+      var end = fromTransform(tb, tr);
+      var r1 = 10 / (tb.width / tr.width);
+      run(lbBackdrop, [{ opacity: 1 }, { opacity: 0 }], { duration: DUR, easing: "ease-in" });
+      run(lbHalo, [{ opacity: 1 }, { opacity: 0 }], { duration: DUR * 0.7, easing: "ease-in" });
+      run(lbFrame, [
+        { transform: "translate3d(0,0,0) scale(1)", borderRadius: "12px" },
+        { transform: end, borderRadius: r1 + "px" }
+      ], { duration: DUR, easing: EASE }).finished.then(function () {
+        if (my !== token) return;
+        // Show the thumbnail under the clone first, then drop the clone next frame.
+        thumb.style.visibility = "";
+        nextFrame().then(function () { if (my === token) finishClose(); });
+      }, function () {});
     }
 
     document.querySelectorAll(".gallery__item").forEach(function (btn) {
