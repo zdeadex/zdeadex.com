@@ -14,7 +14,7 @@ const ROOT = path.join(__dirname, '..');
 const projects = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'projects.json'), 'utf8'));
 
 const FONTS = 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Instrument+Serif&display=swap';
-const ASSET_V = '12';
+const ASSET_V = '13';
 
 function escapeHtml(s) {
   return String(s)
@@ -217,6 +217,7 @@ ${linkHtml}
         <a href="${prefix}index.html#investments">Investments</a>
         <a href="${prefix}index.html#holdings">Holdings</a>
         <a href="${prefix}index.html#rentals">Rentals</a>
+        <a href="${prefix}index.html#interviews">Interviews</a>
       </nav>
       <nav class="site-footer__nav" aria-label="Socials">
         <a href="https://x.com/zdeadex" target="_blank" rel="noopener noreferrer">X</a>
@@ -326,6 +327,25 @@ function homePage() {
     { name: 'Portugal - Lisbon', initials: 'PT', card: 'Lisbon', rental: true, image: '' },
   ];
 
+  const interviews = [
+    { title: 'Ledger 4 Developers, episode 1', meta: 'Ledger · Rio de Janeiro', href: 'https://youtu.be/fltKAIgh228', photos: ['p06', 'p01', 'p03'] },
+    { title: 'Ledger 4 Developers, episode 2', meta: 'Ledger', href: 'https://youtu.be/_OnkirU5ty0', photos: ['p08', 'p11'] },
+    { title: 'Ledger 4 Developers, episode 3', meta: 'Ledger · Barcelona', href: 'https://youtu.be/ysDL4otHlGU', photos: ['p04', 'p02'] },
+    { title: 'Ledger 4 Developers, Dubai', meta: 'Ledger · Dubai', href: 'https://youtu.be/R4rY_xYI1J4', photos: ['p05', 'p09'] },
+    { title: 'How to connect your project with Ledger', meta: 'ETHDubai · talk', href: 'https://youtu.be/H81eteJQEFU', photos: ['p07', 'p15'] },
+    { title: 'Boost your dApp adoption with Ledger', meta: 'Cosmoverse 2022 · Medellín · with Roman Beyon', href: 'https://youtu.be/cNRrTuf3XBY', photos: ['p12', 'p13', 'p14'] },
+    { title: 'Does Cosmos have an identity problem?', meta: 'Nebular Summit 2023 · panel with Jelena Djuric and Charles d\'Haussy', href: 'https://youtu.be/_xE_Vqy7T_Y', photos: ['p19', 'p20'] },
+    { title: 'Managing a validator node on Cosmos', meta: 'Paris P2P Festival #1 · talk', href: 'https://youtu.be/-WMXR8rwlVA', photos: ['p16', 'p17'] },
+  ];
+
+  const interviewCard = (it) => `          <li>
+            <a class="talk" href="${escapeHtml(it.href)}" target="_blank" rel="noopener noreferrer">
+              <span class="talk__photos talk__photos--${it.photos.length}">${it.photos.map((ph) => `<img src="assets/interviews/${ph}.jpg?v=${ASSET_V}" alt="" loading="lazy" />`).join('')}</span>
+              <span class="talk__title">${escapeHtml(it.title)}</span>
+              <span class="talk__meta">${escapeHtml(it.meta)}</span>
+            </a>
+          </li>`;
+
   return `${head('Adrien Faguet: Zdeadex', 'Adrien Faguet (Zdeadex). Operation, Product, Engineering, AI.', '', false)}
 <body>
   ${atmosphere()}
@@ -354,6 +374,7 @@ function homePage() {
         <a class="section-tab" id="tab-investments" href="#investments" role="tab" aria-selected="false" aria-controls="investments">Investments</a>
         <a class="section-tab" id="tab-holdings" href="#holdings" role="tab" aria-selected="false" aria-controls="holdings">Holdings</a>
         <a class="section-tab" id="tab-rentals" href="#rentals" role="tab" aria-selected="false" aria-controls="rentals">Rentals</a>
+        <a class="section-tab" id="tab-interviews" href="#interviews" role="tab" aria-selected="false" aria-controls="interviews">Interviews</a>
       </div>
 
       <section class="panel is-on" id="work" role="tabpanel" aria-labelledby="tab-work">
@@ -400,6 +421,12 @@ ${holdings.map(markCard).join('\n')}
 ${rentals.map(markCard).join('\n')}
         </ul>
       </section>
+
+      <section class="panel" id="interviews" role="tabpanel" aria-labelledby="tab-interviews">
+        <ul class="talks">
+${interviews.map(interviewCard).join('\n')}
+        </ul>
+      </section>
     </div>
   </main>
   <footer class="site-footer">
@@ -410,6 +437,7 @@ ${rentals.map(markCard).join('\n')}
         <a href="#investments">Investments</a>
         <a href="#holdings">Holdings</a>
         <a href="#rentals">Rentals</a>
+        <a href="#interviews">Interviews</a>
       </nav>
       <nav class="site-footer__nav" aria-label="Socials">
         <a href="https://x.com/zdeadex" target="_blank" rel="noopener noreferrer">X</a>
