@@ -328,19 +328,21 @@ function homePage() {
   ];
 
   const interviews = [
-    { title: 'Ledger 4 Developers, episode 1', meta: 'Ledger · Rio de Janeiro', href: 'https://youtu.be/fltKAIgh228', photos: ['p06', 'p01', 'p03'] },
-    { title: 'Ledger 4 Developers, episode 2', meta: 'Ledger', href: 'https://youtu.be/_OnkirU5ty0', photos: ['p08', 'p11'] },
-    { title: 'Ledger 4 Developers, episode 3', meta: 'Ledger · Barcelona', href: 'https://youtu.be/ysDL4otHlGU', photos: ['p04', 'p02'] },
-    { title: 'Ledger 4 Developers, Dubai', meta: 'Ledger · Dubai', href: 'https://youtu.be/R4rY_xYI1J4', photos: ['p05', 'p09'] },
-    { title: 'How to connect your project with Ledger', meta: 'ETHDubai · talk', href: 'https://youtu.be/H81eteJQEFU', photos: ['p07', 'p15'] },
-    { title: 'Boost your dApp adoption with Ledger', meta: 'Cosmoverse 2022 · Medellín · with Roman Beyon', href: 'https://youtu.be/cNRrTuf3XBY', photos: ['p12', 'p13', 'p14'] },
-    { title: 'Does Cosmos have an identity problem?', meta: 'Nebular Summit 2023 · panel with Jelena Djuric and Charles d\'Haussy', href: 'https://youtu.be/_xE_Vqy7T_Y', photos: ['p19', 'p20'] },
-    { title: 'Managing a validator node on Cosmos', meta: 'Paris P2P Festival #1 · talk', href: 'https://youtu.be/-WMXR8rwlVA', photos: ['p16', 'p17'] },
+    { title: 'Ledger 4 Developers, episode 1', meta: 'Ledger · Rio de Janeiro', href: 'https://youtu.be/fltKAIgh228', photo: 'l4d1' },
+    { title: 'Ledger 4 Developers, episode 2', meta: 'Ledger · Rio de Janeiro', href: 'https://youtu.be/_OnkirU5ty0', photo: 'l4d2' },
+    { title: 'Ledger 4 Developers, episode 3', meta: 'Ledger · Barcelona', href: 'https://youtu.be/ysDL4otHlGU', photo: 'l4d3' },
+    { title: 'Ledger 4 Developers, Dubai', meta: 'Ledger · Dubai', href: 'https://youtu.be/R4rY_xYI1J4', photo: 'l4d4' },
+    { title: 'How to connect your project with Ledger', meta: 'ETHDubai · talk', href: 'https://youtu.be/H81eteJQEFU', photo: 'p07' },
+    { title: 'Boost your dApp adoption with Ledger', meta: 'Cosmoverse 2022 · Medellín · with Roman Beyon', href: 'https://youtu.be/cNRrTuf3XBY', photo: 'p12' },
+    { title: 'Does Cosmos have an identity problem?', meta: 'Nebular Summit 2023 · panel with Jelena Djuric and Charles d\'Haussy', href: 'https://youtu.be/_xE_Vqy7T_Y', photo: 'p19' },
+    { title: 'Managing a validator node on Cosmos', meta: 'Paris P2P Festival #1 · talk', href: 'https://youtu.be/-WMXR8rwlVA', photo: 'p16' },
   ];
+
+  const gallery = ['01', '02', '03', '04', '05', '06', '07', '08', '09', '11', '12', '13', '14', '15', '16', '17', '19', '20'];
 
   const interviewCard = (it) => `          <li>
             <a class="talk" href="${escapeHtml(it.href)}" target="_blank" rel="noopener noreferrer">
-              <span class="talk__photos talk__photos--${it.photos.length}">${it.photos.map((ph) => `<img src="assets/interviews/${ph}.jpg?v=${ASSET_V}" alt="" loading="lazy" />`).join('')}</span>
+              <span class="talk__photo"><img src="assets/interviews/${it.photo}.jpg?v=${ASSET_V}" alt="" loading="lazy" /></span>
               <span class="talk__title">${escapeHtml(it.title)}</span>
               <span class="talk__meta">${escapeHtml(it.meta)}</span>
             </a>
@@ -426,6 +428,11 @@ ${rentals.map(markCard).join('\n')}
         <ul class="talks">
 ${interviews.map(interviewCard).join('\n')}
         </ul>
+        <h2 class="gallery__heading">Behind the scenes</h2>
+        <div class="gallery">
+${gallery.map((n) => `          <button type="button" class="gallery__item" data-full="assets/interviews/p${n}.jpg?v=${ASSET_V}"><img src="assets/interviews/p${n}.jpg?v=${ASSET_V}" alt="" loading="lazy" /></button>`).join('\n')}
+        </div>
+        <div class="lightbox" hidden><img alt="" /></div>
       </section>
     </div>
   </main>

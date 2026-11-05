@@ -116,6 +116,19 @@
     });
   }
 
+  var lightbox = document.querySelector(".lightbox");
+  if (lightbox) {
+    var lbImg = lightbox.querySelector("img");
+    document.querySelectorAll(".gallery__item").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        lbImg.src = btn.getAttribute("data-full");
+        lightbox.hidden = false;
+      });
+    });
+    lightbox.addEventListener("click", function () { lightbox.hidden = true; });
+    document.addEventListener("keydown", function (e) { if (e.key === "Escape") lightbox.hidden = true; });
+  }
+
   bindFilters(document.querySelector("#work"), ".showcase > li", "project");
   bindFilters(document.querySelector("#investments"), ".marks > li", "investment");
   bindFilters(document.querySelector("#holdings"), ".marks > li", "coin");
