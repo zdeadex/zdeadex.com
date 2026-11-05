@@ -14,7 +14,7 @@ const ROOT = path.join(__dirname, '..');
 const projects = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'projects.json'), 'utf8'));
 
 const FONTS = 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Instrument+Serif&display=swap';
-const ASSET_V = '13';
+const ASSET_V = '14';
 
 function escapeHtml(s) {
   return String(s)
@@ -217,7 +217,7 @@ ${linkHtml}
         <a href="${prefix}index.html#investments">Investments</a>
         <a href="${prefix}index.html#holdings">Holdings</a>
         <a href="${prefix}index.html#rentals">Rentals</a>
-        <a href="${prefix}index.html#interviews">Interviews</a>
+        <a href="${prefix}index.html#media">Media</a>
       </nav>
       <nav class="site-footer__nav" aria-label="Socials">
         <a href="https://x.com/zdeadex" target="_blank" rel="noopener noreferrer">X</a>
@@ -376,7 +376,7 @@ function homePage() {
         <a class="section-tab" id="tab-investments" href="#investments" role="tab" aria-selected="false" aria-controls="investments">Investments</a>
         <a class="section-tab" id="tab-holdings" href="#holdings" role="tab" aria-selected="false" aria-controls="holdings">Holdings</a>
         <a class="section-tab" id="tab-rentals" href="#rentals" role="tab" aria-selected="false" aria-controls="rentals">Rentals</a>
-        <a class="section-tab" id="tab-interviews" href="#interviews" role="tab" aria-selected="false" aria-controls="interviews">Interviews</a>
+        <a class="section-tab" id="tab-media" href="#media" role="tab" aria-selected="false" aria-controls="media">Media</a>
       </div>
 
       <section class="panel is-on" id="work" role="tabpanel" aria-labelledby="tab-work">
@@ -424,7 +424,7 @@ ${rentals.map(markCard).join('\n')}
         </ul>
       </section>
 
-      <section class="panel" id="interviews" role="tabpanel" aria-labelledby="tab-interviews">
+      <section class="panel" id="media" role="tabpanel" aria-labelledby="tab-media">
         <ul class="talks">
 ${interviews.map(interviewCard).join('\n')}
         </ul>
@@ -444,7 +444,7 @@ ${gallery.map((n) => `          <button type="button" class="gallery__item" data
         <a href="#investments">Investments</a>
         <a href="#holdings">Holdings</a>
         <a href="#rentals">Rentals</a>
-        <a href="#interviews">Interviews</a>
+        <a href="#media">Media</a>
       </nav>
       <nav class="site-footer__nav" aria-label="Socials">
         <a href="https://x.com/zdeadex" target="_blank" rel="noopener noreferrer">X</a>
