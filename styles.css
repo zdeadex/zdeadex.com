@@ -507,7 +507,7 @@ main { position: relative; z-index: 1; }
 
 .marks {
   list-style: none;
-  margin: 0.15rem 0 0;
+  margin: 0.35rem 0 0;
   padding: 0;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
@@ -767,3 +767,7 @@ main { position: relative; z-index: 1; }
   will-change: transform;
 }
 html.lb-lock { overflow: hidden; }
+
+/* Panels without a filter row start at the same height as panels with one */
+.panel > .marks:first-child,
+.panel > .talks:first-child { margin-top: 4.15rem; }
