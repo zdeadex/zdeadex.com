@@ -128,7 +128,7 @@ function projectPage(item) {
   const prefix = '../';
   const paragraphs = (item.paragraphs || []).map((p) => `          <p>${escapeHtml(p)}</p>`).join('\n');
   const why = item.why
-    ? `<p>${escapeHtml(item.why)}</p>`
+    ? [].concat(item.why).map((t) => `<p>${escapeHtml(t)}</p>`).join('\n        ')
     : todo(item.whyTodo || WHY_TODO);
   const role = item.role
     ? `<p>${escapeHtml(item.role)}</p>`

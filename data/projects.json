@@ -254,6 +254,7 @@
     "initials": "P",
     "logo": "assets/logos/philidor.png",
     "dir": "experience",
+    "why": ["After watching curators lose millions in DeFi on risky assets, we decided to build Philidor: a risk engine and analytics for anything DeFi, from vaults and protocols to RWAs, tokenized funds and individual assets. The goal was an open methodology that anyone can follow, built on 4 risk vectors that roll many parameters into one score, so you can see what is actually behind a vault: its underlyings, timelocks, governance and history.", "Today users, asset managers, data providers, researchers and builders use the risk engine and its data to build strategies, or to get block-level information that helps them protect themselves from hacks, depegs and other on-chain and off-chain events."],
     "pitch": "Institutional-grade DeFi vault risk assessment and curation platform.",
     "card": "Institutional-grade DeFi vault risk assessment and curation platform.",
     "status": "Building",
