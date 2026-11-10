@@ -362,7 +362,7 @@ function homePage() {
         <div class="reveal">
           <h1>Adrien Faguet</h1>
           <p class="hero__handle">Zdeadex</p>
-          <p class="hero__tagline">Operation, Product, Engineering, AI</p>
+          <p class="hero__tagline">Operation, Product, Engineering, AI, Advisor</p>
         </div>
         <div class="hero__body">
         <div class="prose reveal">
