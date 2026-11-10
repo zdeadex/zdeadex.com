@@ -14,7 +14,7 @@ const ROOT = path.join(__dirname, '..');
 const projects = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'projects.json'), 'utf8'));
 
 const FONTS = 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Instrument+Serif&display=swap';
-const ASSET_V = '17';
+const ASSET_V = '18';
 
 function escapeHtml(s) {
   return String(s)
@@ -364,10 +364,16 @@ function homePage() {
           <p class="hero__handle">Zdeadex</p>
           <p class="hero__tagline">Operation, Product, Engineering, AI</p>
         </div>
+        <div class="hero__body">
         <div class="prose reveal">
           <p class="lead">Hi, I'm Adrien, better known as <strong>Zdeadex</strong>, a retired professional League of Legends player with a background in Engineering and Economics.</p>
           <p>I've spent the last few years building products and leading teams to production-ready infrastructure in the crypto ecosystem (staking, DeFi, exchanges).</p>
           <p>Experienced in scaling startups from 1 to 900+ people, fostering growth and engineering excellence.</p>
+        </div>
+        <aside class="book reveal" aria-label="Book a meeting">
+          <a class="book__link" href="https://cal.boardy.ai/zdeadex" target="_blank" rel="noopener">Book a meeting<span class="book__arrow" aria-hidden="true">↗</span></a>
+          <p class="book__note">Pick a time on my calendar.</p>
+        </aside>
         </div>
       </section>
 

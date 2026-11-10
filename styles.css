@@ -207,6 +207,68 @@ main { position: relative; z-index: 1; }
 
 .prose strong { color: var(--accent); font-weight: 500; }
 
+/* Bio row: bio stays centered, booking link sits in the right gutter. */
+.hero__body {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, var(--measure)) minmax(0, 1fr);
+  column-gap: 2.5rem;
+  margin-top: 2.4rem;
+}
+
+.hero__body .prose {
+  grid-column: 2;
+  margin: 0;
+}
+
+.book {
+  grid-column: 3;
+  justify-self: start;
+  text-align: left;
+  padding-top: 0.2rem;
+}
+
+.book__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.55rem 1rem;
+  border: 1px solid rgba(34, 197, 94, 0.45);
+  border-radius: 999px;
+  background: rgba(34, 197, 94, 0.06);
+  color: var(--accent);
+  font-size: 0.95rem;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 0.2s var(--ease), border-color 0.2s var(--ease), color 0.2s var(--ease);
+}
+
+.book__link:hover {
+  background: var(--accent-soft);
+  border-color: rgba(34, 197, 94, 0.7);
+}
+
+.book__link:focus-visible { border-radius: 999px; }
+
+.book__arrow {
+  display: inline-block;
+  transition: transform 0.2s var(--ease);
+}
+
+.book__link:hover .book__arrow { transform: translate(2px, -2px); }
+
+.book__note {
+  margin: 0.6rem 0 0 0.15rem;
+  color: var(--faint);
+  font-size: 0.82rem;
+}
+
+@media (max-width: 1100px) {
+  .hero__body { grid-template-columns: minmax(0, var(--measure)); justify-content: center; }
+  .hero__body .prose,
+  .book { grid-column: 1; }
+  .book { padding-top: 0.4rem; }
+}
+
 /* Section tabs. One line of serif headings. */
 .section-tabs {
   display: flex;
@@ -587,6 +649,8 @@ main { position: relative; z-index: 1; }
   .mark,
   .vcard__media img,
   .chip,
+  .book__link,
+  .book__arrow,
   .section-tab,
   .home-link a,
   .back,
