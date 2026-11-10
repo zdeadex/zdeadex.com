@@ -348,7 +348,7 @@ function homePage() {
             </a>
           </li>`;
 
-  return `${head('Adrien Faguet: Zdeadex', 'Adrien Faguet (Zdeadex). Operation, Product, Engineering, AI.', '', false)}
+  return `${head('Adrien Faguet: Zdeadex', 'Adrien Faguet (Zdeadex). Operation, Product, Engineering, AI, Advisor.', '', false)}
 <body>
   ${atmosphere()}
   ${nav(true)}
